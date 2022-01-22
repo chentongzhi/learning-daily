@@ -1,0 +1,59 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+//struct stu
+//{
+//	char name[20];
+//	short age;
+//	char tele[12];
+//	char sex[5];
+//};
+//int main()
+//{
+//	struct stu s = { "张三", 20, "16654254125", "未知" };
+//	printf("%s\n", s.name);
+//	printf("%d\n", s.age);
+//	printf("%s\n", s.tele);
+//	printf("%s\n", s.sex);
+//	return 0;
+//}
+//typedef struct stu
+//{
+//	char name[20];
+//	short age;
+//	char tele[12];
+//	char sex[5];
+//}stu;
+//int main()
+//{
+//	stu a = { "李四", 18, "15454544", "男" };
+//	printf("%s\n", a.name);
+//	return 0;
+//}
+//typedef struct stu
+//{
+//	char name[20];
+//	short age;
+//	char tele[12];
+//	char sex[5];
+//}stu;
+//void Print1(stu a)
+//{
+//	printf("%s\n", a.name);
+//	printf("%d\n", a.age);
+//	printf("%s\n", a.tele);
+//	printf("%s\n", a.sex);
+//}
+//void Print2(stu* a)
+//{
+//	printf("%s\n", a->name);
+//	printf("%d\n", a->age);
+//	printf("%s\n", a->tele);
+//	printf("%s\n", a->sex);
+//}//更好一些
+//int main()
+//{
+//	stu a = { "陈无", 21, "1541474132", "女" };
+//	Print1(a);
+//	Print2(&a);
+//	return 0;
+//}
