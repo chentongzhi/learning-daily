@@ -1,0 +1,59 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <string.h>
+//int main()
+//{
+//	char a[] = "##################";
+//	char b[] = "bit";
+//	strcpy(a, b);
+//	printf("%s\n", a);
+//	return 0;
+//}
+//void my_strcpy(char* dest, char* src)
+//{
+//	while (*src!=\0)
+//	{
+//		*dest = *src;
+//		dest++;
+//		src++;
+//	}*dest=*src
+//}
+
+//优化 my_strcpy
+
+#include <assert.h>
+//char* my_strcpy(char* dest, const char* src)
+//{
+//	char* c = dest;
+//	assert(dest != NULL);
+//	assert(src != NULL);
+//	while (*dest++ = *src++)
+//	{
+//		;
+//	}return c;
+//}
+//int main()
+//{
+//	char a[] = "##################";
+//	char b[] = "bit";
+//	printf("%s\n", my_strcpy(a, b));
+//	return 0;
+//}
+int my_strlen(const char* b)
+{
+	int count = 0;
+	assert(b != NULL);
+	while (*b != '\0')
+	{
+		count++;
+		b++;
+	}
+	return count;
+}
+int main()
+{
+	char arr[] = "abudhifhnf";
+	int len = my_strlen(arr);
+	printf("%d\n", len);
+	return 0;
+}
