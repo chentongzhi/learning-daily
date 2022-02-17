@@ -1,0 +1,38 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include<string.h>
+#include<assert.h>
+
+char* my_strcat(char*dest, const char*src)
+{
+	char* ret = dest;
+	assert(dest);
+	assert(src);
+	
+	//1.找到目的字符串的'\0'
+	while (*dest != '\0')
+	{
+		dest++;
+	}
+	//2.追加
+	while (*dest++ = *src++)
+			{
+				;
+			}
+	return ret;
+}
+int main()
+{
+	char arr1[30] = "hello";
+	char arr2[] = "bit";
+
+	my_strcat(arr1, arr2);
+	//strcat(arr1, arr2);
+	printf("%s\n", arr1);
+	return 0;
+}
+
+//1.源字符串必须以'\0'结束
+//2.目标空间必须足够大，能容纳下源字符串的内容
+//3.目标空间必须可以修改
+//4.strcat不可以实现自己对自己的追加
