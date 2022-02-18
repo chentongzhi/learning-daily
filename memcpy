@@ -1,0 +1,48 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<string.h>
+#include<stdio.h>
+#include<assert.h>
+
+struct S
+{
+	char name[20];
+	int age;
+};
+
+void* my_memcpy(void* dest,const void* src, size_t num)
+{
+	void* ret = dest;
+	assert(dest&&src);
+
+	while (num--)
+	{
+		*(char*)dest = *(char*)src;
+		dest = (char*)dest+1;
+		src = (char*)src + 1;
+	}
+	return ret;
+}
+
+int main()
+{
+	int i =0 ;
+
+	int arr1[] = { 1, 2, 3, 4, 5 };
+	int arr2[5] = { 0 };
+	struct S arr3[] = { { "张三", 20 }, { "李四",18 } };
+	struct S arr4[3] = { 0 };
+	int sz = sizeof(arr4) / sizeof(arr4[0]);
+	//memcpy(arr2, arr1, sizeof(arr1));
+
+	//my_memcpy(arr2, arr1, sizeof(arr1));
+	//for (i = 0; i < sz; i++)
+	//{
+	//	printf("%d\n", arr2[i]);
+	//}
+	my_memcpy(arr4, arr3, sizeof(arr4));
+	for (i = 0; i < sz; i++)
+	{
+		printf("%s\n", arr4[i].name);
+	}
+	return 0;
+}
