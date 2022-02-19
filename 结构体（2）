@@ -1,0 +1,169 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+
+//1.结构体自引用+重命名
+//typedef struct Node
+//{
+//	int data;
+//	struct Node* next;//结构体自引用
+//}Node;
+//
+//int main()
+//{
+//	struct Node n1;
+//	Node n2;
+//
+//	return 0;
+//}
+
+//2.结构体初始化+打印
+
+//struct T
+//{
+//	double weight;
+//	int age;
+//};
+//struct S
+//{
+//	char c;
+//	struct T st;
+//	int a;
+//	double d;
+//	char arr[20];
+//
+//};
+//int main()
+//{
+//	//struct S s = {'c' , 100, 3.14 ,"hello bit"};
+//	struct S s = { 'c', {55.6,30}, 100, 3.14, "hello bit" };
+//	
+//	printf("%c %d %lf %s\n", s.c, s.a, s.d, s.arr);
+//	printf("%lf\n", s.st.weight);
+//	return 0;
+//}
+
+
+
+//3.结构体内存对齐
+//（1）第一个成员在与结构体变量偏移量为0的地址处
+//（2）其他成员变量要对齐到某个数字（对齐数）的整数倍的地址处
+//对齐数=编译器默认的对齐数与该成员大小的较小值
+//vs中默认值为8，gcc没有默认值
+//（3）结构体总大小为最大对齐数（每个成员变量都有一个对齐数）的整数倍
+//（4）如果嵌套了结构体的情况，嵌套的结构体对齐到自己的最大对齐数的整数倍处，结构体的整体大小，
+//就是所有最大对齐数（含嵌套结构体的对齐数）的整数倍
+//struct S1
+//{
+//	char c1;
+//	int a;
+//	char c2;
+//};
+//
+//struct S2
+//{
+//	char c1;
+//	char c2;
+//	int a;
+//};
+//
+//struct S3
+//{
+//	char d;//1
+//	//7
+//	struct S2 s;//8
+//	int f;//4
+//};
+//
+//int main()
+//{
+//	struct S1 s1 = { 0 };
+//	printf("%d\n", sizeof(s1));//12
+//	struct S2 s2 = { 0 };
+//	printf("%d\n", sizeof(s2));//8
+//	struct S3 s3 = { 0 };
+//	printf("%d\n", sizeof(s3));//16
+//	return 0;
+//}
+
+//
+//4.修改默认对齐数
+
+//设置默认对齐数为4
+//#pragma pack(4)
+//struct S
+//{
+//	char c;
+//	double a;
+//
+//};
+////取消设置的默认对齐数
+//#pragma pack( )
+//int main()
+//{
+//	struct S s;
+//	printf("%d\n", sizeof(s));
+//	return 0;
+//}
+
+
+
+//5.查看偏移量 - offsetof（）
+
+//#include<stddef.h>
+//
+//struct S
+//{
+//	char a;
+//	int b;
+//	double c;
+//};
+//
+//int main()
+//{
+//	printf("%d\n", offsetof(struct S, a));
+//	printf("%d\n", offsetof(struct S, b));
+//	printf("%d\n", offsetof(struct S, c));
+//	return 0;
+//}
+
+//
+//6.结构体传值&传址
+
+
+struct S
+{
+	char a;
+	int b;
+	double c;
+};
+
+void Init(struct S* ps)
+{
+	ps->a = 'w';
+	ps->b = 4;
+	ps->c = 3.14;
+}
+void Print1(struct S tmp)
+{
+	printf("%c %d %lf\n", tmp.a, tmp.b, tmp.c);
+
+}
+
+void Print2(struct S* ps)
+{
+	printf("%c %d %lf\n", ps->a, ps->b, ps->c);
+
+}
+
+
+int main()
+{
+	struct S s = { 0 };
+	Init(&s);
+	/*s.a = 'w';
+	s.b = 4;
+	s.c = 3.14;*/
+	Print1(s);
+	Print2(&s);
+	return 0;
+}
