@@ -1,0 +1,144 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+//int main()
+//{
+//	int a = 10000;
+//	FILE*pf = fopen("text.txt", "wb");
+//	fwrite(&a, 4, 1, pf);//二进制形式写入文件中
+//	fclose(pf);
+//	pf = NULL;
+//
+//	return 0;
+//}
+
+#include<errno.h>
+#include<string.h>
+
+//int main()
+//{
+//	//打开文件test.txt
+//	//相对路径
+//	//.. 表示上一级路径
+//	//. 表示当前路径
+//	//fopen("../../test.txt","r");
+//	//fopen("test.txt","r");
+//
+//	//绝对路径写入
+//	//fopen("F:\C语言代码\文件操作\文件操作\\test.txt","r");
+//
+//	FILE* pf = fopen("test.txt", "r");
+//	if (pf == NULL)
+//	{
+//		printf("%s\n", strerror(errno));
+//		return 0;
+//	}
+//	//打开成功
+//	//读文件
+//	//关闭文件
+//	fclose(pf);
+//	pf = NULL;
+//	return 0;
+//}
+
+
+//int main()
+//{
+//	FILE* pfWrite = fopen("TEST.txt", "w");
+//	if (pfWrite == NULL)
+//	{
+//		printf("%s\n", strerror(errno));
+//		return 0;
+//	}
+//	//写文件
+//	fputc('b', pfWrite);
+//	fputc('i', pfWrite);
+//	fputc('t', pfWrite);
+//
+//	//关闭文件
+//	fclose(pfWrite);
+//	pfWrite = NULL;
+//
+//	return 0;
+//}
+
+//int main()
+//{
+//	FILE* pfWrite = fopen("test.txt", "w");
+//	if (pfWrite == NULL)
+//	{
+//		printf("%s\n", strerror(errno));
+//		return 0;
+//	}
+//	//读文件
+//	printf("%c", fgetc(pfWrite));//b
+//	printf("%c", fgetc(pfWrite));//i
+//	printf("%c", fgetc(pfWrite));//t
+//
+//	//关闭文件
+//	fclose(pfWrite);
+//	pfWrite = NULL;
+//
+//	return 0;
+//}
+
+
+//int main()
+//{
+//	//从键盘读取一行文本信息
+//	char buf[1024] = { 0 };
+//	//fgets(buf,1024,stdin);//从标准输入流读取
+//	//fputs(buf,stdout);//输出到标准输出流
+//
+//	gets(buf);
+//	puts(buf);
+//
+//	return 0;
+//}
+
+
+//struct S
+//{
+//	int n;
+//	float score;
+//	char arr[10];
+//
+//};
+//int main()
+//{
+//	struct S s = { 0 };
+//
+//	fscanf(stdin, "%d %f %s", &(s.n), &(s.score), s.arr);
+//	fprintf(stdout, "%d %.2f %s", s.n, s.score, s.arr);
+//
+//	return 0;
+//}
+
+
+//scanf/printf 是针对标准输入流/标准输出流的 格式化输入/输出语句
+//fscanf / fprintf 是针对所有输入流 / 所有输出流的 格式化输入 / 输出语句
+//sscanf/sprintf sscanf是从字符串中读取格式化的数据
+//               sprintf是把格式化数据输出成（存储到字符串
+
+
+//struct S
+//{
+//	int n;
+//	float score;
+//	char arr[10];
+//
+//};
+//
+//int main()
+//{
+//	struct S s = { 100, 3.14f, "abcdef" };
+//	struct S tmp = { 0 };
+//	char buf[1024] = { 0 };
+//	//把格式化的数据转换成字符串存储到buf
+//	sprintf(buf, "%d %f %s", s.n, s.score, s.arr);
+//	//printf("%s\n",buf);
+//	//从buf中读取格式化的数据到tmp中
+//	sscanf(buf, "%d %f %s", &(tmp.n), &(tmp.score), tmp.arr);
+//	printf("%d %f %s", tmp.n,tmp.score,tmp.arr);
+//
+//	return 0;
+//}
