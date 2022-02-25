@@ -1,0 +1,24 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+
+#include<stdio.h>
+
+extern int add(int a, int b);//声明外部文件
+
+int main()
+{
+	int a = 10;
+	int b = 20;
+	int c = add(a, b);
+	printf("%d\n", c);
+
+	return 0;
+}
+
+----------------------------------------------------------------------
+
+#define _CRT_SECURE_NO_WARNINGS 1
+
+int add(int a, int b)
+{
+	return a + b;
+}
