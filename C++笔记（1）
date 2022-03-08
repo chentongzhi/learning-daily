@@ -1,0 +1,146 @@
+The First Example 
+1 #include <iostream>             // header file
+2 using namespace std;          // name space
+3 int main() {                           // main function
+4      cout << "Welcome to C++!" << endl;     // output
+5      return 0;
+6 }
+Programming errors
+Programming errors can be categorized into three types:
+syntax errors (语法错误),
+[Error] missing terminating " character in function 'int main( )'
+runtime errors (运行时错误),
+[Error]int i=1,j=0;
+cout<<i/j;
+ 
+logic errors (逻辑错误).
+Errors of this kind occur for many different reasons.
+To get the correct result, you need to use 9.0 / 5, which results is 1.8.
+
+Data types
+ 
+The name of a variable is an identifier, and must obey the rules of identifier(consisting of _and digits and letters ,the names must start with _or letters)
+
+ 
+
+Operators
+Arithmetic Operators:+ - * / % ++ --
+Assignment Operators:= += -= *= /= %=
+Comma Operator: , 
+Relational Operators:< > == != <= >=
+Logical Operators:! && ||
+Conditional Operator: ?:
+ 
+
+Data Type Conversions
+Implicit Conversion
+The order of primitive data types is:
+bool < char < short < unsigned short < int < unsigned < long < unsigned long < float < double < long double
+Explicit Conversion:
+Syntax:
+ (1)  static_cast<Type>(expression)
+ (2)  const_cast<Type>(expression)
+ (3)  dynamic_cast<Type>(expression)
+ (4)  reinterpret_cast<Type>(expression)
+For example:
+cout << static_cast<int>(1.7);       
+typedef:
+The syntax form is:
+typedef  known data type   list of new type names;
+
+statements
+"continue" Statement: can be used inside a loop body to end this loop immediately, and then start the next loop if the loop condition is satisfied.(i++)
+
+Functions (函数)
+Calling-by-reference:
+void swap(int &a, int &b);
+swap(x, y);
+reference type:  
+ 
+ 
+常用的系统函数
+三角函数
+ 
+
+ 
+指数函数和对数函数
+ 
+近似函数
+ 
+ 
+Service Functions（max/min/abs）
+The min and max functions return the minimum and maximum numbers of two numbers (int, long, float, or double).
+The abs function returns the absolute value of the number (int, long, float, or double).
+Passing Arrays to Functions
+Passing Arrays to Functions:
+ void PrintArray(int A[ ], int n);
+   PrintArray(myList, N);
+Character Array and C-String:
+    char s1[ ] = {'C', 'h', 'i', 'n', 'a'};   // 字符数组
+      for (int i = 0; i < 5; i++)             // 输出字符数组
+        cout << s1[i];
+     char s2[ ] = {'C', 'h', 'i', 'n', 'a', '\0'};  // 字符串
+       cout << s2 << endl;                       // 输出字符串
+    A C-String can also be initialized as follows:
+       char s2[ ] = {'C', 'h', 'i', 'n', 'a', '\0'};
+       char s2[6] = "China"; // Correct
+       char s2[ ] = "China";  // Correct
+       char s2[5] = "China"; // Wrong
+C-String Functions:
+ 
+sizeof:
+char s[8] = "China";
+    cout << strlen(s) << endl; // display 5
+    cout << sizeof(s) << endl; // display 8
+    int a[5] = {1, 2, 3};
+    cout << sizeof(a) << endl; // display 20
+char s1[ ] = "abc\0xyz";
+    cout << sizeof(s1) << endl; // 8
+    cout << strlen(s1) << endl; // 3
+    char s2[10];
+    strcpy(s2, s1); // Only copy "abc"
+    cout << s2 << endl; // output "abc"
+  input name
+   char name[10];
+    cout << "Enter your name: ";
+    cin >> name; // Read to array name
+    cout << "Your name is " << name << endl;  //err
+instead
+ 
+Processing Strings
+ obj.assign(str) and =
+   
+ obj.at(size_type pos) <=> obj[pos]
+ 
+ obj.length( ) <=> obj.size( )
+ 
+ obj.append(str), + and +=
+ 
+ obj.find(str)
+ 
+ obj.compare(str) and Relational Operation
+ Example
+    string obj1("green apple");
+    string obj2("red apple");
+   if (obj1.compare(obj2) == 0) // false
+   if (obj1.compare(6, 5, "apple") == 0) // true
+   if (obj2.compare(obj2.size( )-5, 5, "apple") == 0) // true
+   if (obj1.compare(6, 5, obj2, 4, 5) == 0) // true
+ obj.replace(pos, len, str)
+ 
+ obj.substr(pos, len)
+ 
+ obj1.swap(obj2)
+ 
+ obj.erase(pos, len)
+ 
+ obj.insert(pos, str)
+ 
+Multidimensional Arrays
+Initializing Two-Dimensional Arrays
+ 
+Processing Two-Dimensional Arrays
+学生学习页面 (chaoxing.com)
+Multidimensional Arrays
+ 
+ 
