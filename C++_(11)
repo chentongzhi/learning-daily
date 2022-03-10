@@ -1,0 +1,26 @@
+#include<iostream>  //preprocesser
+using namespace std;  //namespace
+//int main()     //main function
+//{
+//	cout<<"hello world"<<endl;   //output   ——comment (注解) 
+//	return 0;            //endl——换行
+	//没有引号：会输出的是运算结果 
+//}
+
+//int main()
+//{
+//	cout<<"2+3=";
+//	cout<<2+3<<endl;
+//	return 0;
+//}
+
+
+int main() {
+	double num1,num2,num3;
+	//input the numbers
+	cout<<"please input three number:>"<<endl;
+	cin>>num1>>num2>>num3;
+	//average
+	double average=(num1+num2+num3)/3;
+	cout<<"The average is :"<<average<<endl;
+}
