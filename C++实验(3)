@@ -1,0 +1,89 @@
+/*#include<iostream>
+using namespace std;
+
+double sin(int x)
+{
+	double n=1,f=1,p=x,i=-1;
+	double result=p/f;
+	double term=0;
+	while(1)
+	{
+		i+=2;
+		p=p*x*x;
+		f=f*(i+1)*(i+2);
+		n=-n;
+		term=p/f;
+		if(term<1.0e-7)
+		break;
+		result=result+n*term;
+	}
+	return result;
+}
+
+int f(int a,int b)
+{
+	int result=1;
+	for(int i=0;i<b;i++)
+	{
+		result*=a;
+	}
+	return result;
+}
+
+int g(int a)
+{
+	int result=1;
+	for(int i=1;i<=a;i++)
+	{
+		result*=i;
+	}
+	return result;
+}
+
+int main()
+{
+	cout<<f(7,4)+sin(1)+g(4)+sin(3)+f(2,10)+g(5)+sin(5)<<endl;
+	return 0;
+ } 
+ 
+ 
+ #include<iostream>
+ using namespace std;
+ 
+ int F(int n)
+ {
+ 	if(n==0||n==1)
+ 	{
+ 		return 1;
+	 }
+	else
+	{
+		return F(n-1)+F(n-2);
+	}
+ }
+ int main()
+ {
+ 	int n;
+ 	cout<<"请输入一个整数: ";
+ 	cin>>n;
+ 	cout<<F(n);
+ 	return 0;
+ }*/
+ 
+ #include<iostream>
+ using namespace std;
+ 
+ void sw(int& x,int& y)
+ {
+ 	int t;
+ 	t=x;
+ 	x=y;
+ 	y=t;
+ }
+ int main()
+ {
+ 	int x=3,y=4;
+ 	sw(x,y);
+ 	cout<<x<<y;
+ 	return 0;
+ }
