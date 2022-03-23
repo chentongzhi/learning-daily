@@ -1,0 +1,191 @@
+//1. 请编写程序将“China”译成密码，密码规则是：用原来的字母后边第4个
+//   字母代替原来的字母。例如：字母'A'后边第4个字母为'E'，用'E'代替'A',
+//   因此，"China"应该译为"Glmre"，请编写一段程序，用赋初值的方法使
+//	 c1,c2,c3,c4,c5分别变为'G''l'等。分别用putchar函数和printf函数输出
+//   这五个字符
+#include <stdio.h>
+int main()
+{
+	char c1, c2, c3, c4, c5;
+	scanf("%c%c%c%c%c", &c1, &c2, &c3, &c4, &c5);
+	c1 += 4;
+	c2 += 4;
+	c3 += 4;
+	c4 += 4;
+	c5 += 4;
+	putchar(c1);
+	putchar(c2);
+	putchar(c3);
+	putchar(c4);
+	putchar(c5);
+	printf("\n");
+	printf("%c%c%c%c%c%c", c1, c2, c3, c4, c5);
+	return 0;
+}
+//设圆半径为r=1.5，圆柱高为h=3,求圆周长、圆面积、圆球表面积、
+//圆球体积、圆柱体积。用scanf输入数据，输出计算结果，输出时要求
+//有文字说明，取小数点后2位数字。编写程序
+#include <stdio.h>
+int main()
+{
+	const double PI = 3.14159;
+	double r = 1.5;
+	int h = 3;
+	printf("请输入所求半径和高:");
+	scanf("%lf%d", &r, &h);
+	double S1 = PI*r*r;
+	double C = 2 * PI*r;
+	double V1 = 4 / 3 * PI*r*r*r;
+	double S2 = 4 * PI*r*r;
+	double V2 = S1*h;
+	printf("圆周长为%.2lf，圆面积为%.2lf，圆球表面积为%.2lf，圆球体积为%.2lf，圆柱体积为%.2lf",C,S1,S2,V1,V2);
+	printf("\n");
+	return 0;
+}
+//编写程序，用getchar函数读入两个字符给c1和c2，然后分别从putchar和printf
+//函数中输出这两个字符。思考以下问题
+//（1）变量c1和c2应定义为字符型、整形还是二者皆可--皆可
+//（2）要求输出c1和c2值的ASCII码，应如何处理？用putchar函数还是printf函数--printf
+//（3）整型变量与字符变量是否在任何情况下都可以相互代替？如：
+//     char c1,c2;
+//   与
+//     int c1,c2;
+//   是否无条件等价 --sizeof,
+#include <stdio.h>
+int main()
+{
+	char c1 = getchar();
+	char c2 = getchar();//getchar输入时，不可加空格，会算作下一个c2的输入
+	int c3 = c1 + c2;
+	putchar(c1);
+	putchar(c2);
+	printf("%c%c\n", c1, c2);
+	printf("%d%d%d\n", c1, c2,c3);
+	return 0;
+}
+//用键盘键入a,b,c。假设a,b,c的值任意，并保证b^2-4ac>=0。
+//需要在程序中进行判别，如果b^2-4ac>=0，就计算并输出方程的
+//两个根，如果b^2-4ac<0，就输出“此方程无实根”
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+	double a, b, c;
+	scanf("%lf%lf%lf", &a, &b, &c);
+	double x1, x2;
+	double q = b*b - 4 * a*c;
+	double p = -b / 2 * a;
+	if ( q < 0)
+	{
+		printf("此方程无实根");
+	}
+	else
+	{
+		double m = sqrt(q) / 2 * a;
+		x1 = p + m;
+		x2 = p - m;
+		printf("%lf%lf", x1, x2);
+	}
+	return 0;
+}
+//输入一个字符，判断是不是大写字母，如果是，将他转换成小写
+//如果不是，不转换直接输出
+
+#include<stdio.h>
+int main()
+{
+	char a = getchar();
+	if (a >= 'A'&&a <= 'Z')
+	{
+		a = a + 'a' - 'A';
+		putchar(a);
+	}
+	else
+	{
+		putchar(a);
+	}
+	return 0;
+}
+-----------
+#include<stdio.h>
+int main()
+{
+	char a = getchar();
+	if (a >= 'A'&&a <= 'Z')
+	{
+		a = tolower(a);
+		putchar(a);
+	}
+	else
+	{
+		putchar(a);
+	}
+	return 0;
+}
+//从键盘键入一个小于1000的正数，要求输出它的平方根（如果平方根不是整数，
+//则输出其整数部分），要求输入数据后对其进行检查是否为小于1000的正数。
+//若不是，则要求重新输入
+//
+
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+	double a = 1;
+	do
+	{
+		scanf("%lf", &a);
+		if (a < 1000 && a > 0)
+		{
+			double b = sqrt(a);
+			printf("%.lf", b);
+		}
+	} while (!(a < 1000 && a > 0));
+	return 0;
+}
+//有一个函数
+//    y = x(x<0)
+//      = 2x-1(1<=x<10)
+//      = 3x-11(x>=10)
+
+#include<stdio.h>
+int main()
+{
+	double x = 0,y;
+	scanf("%lf", &x);
+	if (x < 0)
+	{
+		y = x;
+	}
+	else if (x >= 10)
+	{
+		y = 3 * x - 11;
+	}
+	else
+	{
+		y = 2 * x - 1;
+	}
+	printf("%.2lf", y);
+	return 0;
+}
+//给一个不多于5位的正整数，要求：
+//求出他的位数
+//分别输出每一位数字
+//按逆序输出各位数字，例如原来是123，则应输出321
+#include<stdio.h>
+int main()
+{
+	int n = 12345;
+	scanf("%d", &n);
+	int t = n;
+	int i = 1,x = 0;
+	//输出位数
+	for (i = 1; t > 9; i++)
+	{
+		x = x * 10 + t % 10;
+		t = t / 10;
+	}
+	x = x * 10 + t ;
+	printf("共有%d位,%d", i, x );
+	return 0;
+}
