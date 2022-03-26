@@ -1,0 +1,286 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <windows.h>
+#include <math.h>
+
+void gotoxy(int x, int y)
+{
+	COORD cd = { x, y };
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), cd);
+}
+
+float absf(float x)
+{
+	if (x<0)return -x;
+	return x;
+}
+
+typedef struct vec2 vec2;
+struct vec2
+{
+	float m_x;
+	float m_y;
+};
+
+typedef struct mat22 mat22;
+struct mat22
+{
+	float m_00, m_01;
+	float m_10, m_11;
+};
+
+mat22 Mat22_Scale(float sx, float sy)
+{
+	mat22 m = { sx, 0, 0, sy };
+	return m;
+}
+
+
+mat22 Mat22_MultMat22(mat22 m1, mat22 m2)
+{
+	mat22 m = { m1.m_00*m2.m_00 + m1.m_01*m2.m_10, m1.m_00*m2.m_01 + m1.m_01*m2.m_11,
+		m1.m_10*m2.m_00 + m1.m_11*m2.m_10, m1.m_10*m2.m_01 + m1.m_11*m2.m_11 };
+	return m;
+}
+
+mat22 Mat22_AddMat22(mat22 m1, mat22 m2)
+{
+	mat22 m = { m1.m_00 + m2.m_00, m1.m_01*m2.m_01,
+		m1.m_10*m2.m_10, m1.m_11*m2.m_11 };
+	return m;
+}
+
+vec2 Vec2_Scalar(vec2 v1, float k)
+{
+	vec2 v = { v1.m_x*k, v1.m_y*k };
+	return v;
+}
+
+mat22 Mat22_Transposition(mat22 m1)
+{
+	mat22 m = { m1.m_00, m1.m_10,
+		m1.m_01, m1.m_11 };
+	return m;
+}
+
+vec2 Mat22_MultVec2(mat22 m1, vec2 v2)
+{
+	vec2 v = { m1.m_00*v2.m_x + m1.m_01*v2.m_x, m1.m_10*v2.m_x + m1.m_11*v2.m_y };
+	return v;
+}
+
+float Mat22_Determinant(mat22 m1)
+{
+	return m1.m_00*m1.m_11 - m1.m_01*m1.m_10;
+}
+
+typedef struct vec3 vec3;
+struct vec3
+{
+	float m_x;
+	float m_y;
+	float m_z;
+};
+
+typedef struct mat33 mat33;
+struct mat33
+{
+	float m_00, m_01, m_02;
+	float m_10, m_11, m_12;
+	float m_20, m_21, m_22;
+};
+
+vec3 Mat33_MultVec3(mat33 m1, vec3 v2)
+{
+	vec3 v = {
+		m1.m_00*v2.m_x + m1.m_01*v2.m_y + m1.m_02*v2.m_z,
+		m1.m_10*v2.m_x + m1.m_11*v2.m_y + m1.m_12*v2.m_z,
+		m1.m_20*v2.m_x + m1.m_21*v2.m_y + m1.m_22*v2.m_z,
+	};
+	return v;
+};
+
+
+vec2 Vec3_ToVec2(vec3 v1)
+{
+	vec2 v = { v1.m_x, v1.m_y };
+	return v;
+}
+
+vec3 Vec2_ToVec3(vec2 v1)
+{
+	vec3 v = { v1.m_x, v1.m_y, 0 };
+	return v;
+}
+
+mat33 Mat22_ToMat33(mat22 m1)
+{
+	mat33 m = { m1.m_00, m1.m_01, 0,
+		m1.m_10, m1.m_11, 0,
+		0, 0, 0 };
+	return m;
+}
+
+mat33 Mat33_MultMat33(mat33 m1, mat33 m2)
+{
+	mat33 m = { m1.m_00*m2.m_00 + m1.m_01*m2.m_10 + m1.m_02*m2.m_20, m1.m_00*m2.m_01 + m1.m_01*m2.m_11 + m1.m_02*m2.m_21, m1.m_00*m2.m_02 + m1.m_01*m2.m_12 + m1.m_02*m2.m_22,
+		m1.m_10*m2.m_00 + m1.m_11*m2.m_10 + m1.m_12*m2.m_20, m1.m_10*m2.m_01 + m1.m_11*m2.m_11 + m1.m_12*m2.m_21, m1.m_10*m2.m_02 + m1.m_11*m2.m_12 + m1.m_12*m2.m_22,
+		m1.m_20*m2.m_00 + m1.m_21*m2.m_10 + m1.m_22*m2.m_20, m1.m_20*m2.m_01 + m1.m_21*m2.m_11 + m1.m_22*m2.m_21, m1.m_20*m2.m_02 + m1.m_21*m2.m_12 + m1.m_22*m2.m_22 };
+	return m;
+
+}
+
+void Mat22_Print(mat22 m1)
+{
+	printf("[%.2f, %.2f | %.2f, %.2f]", m1.m_00, m1.m_01, m1.m_10, m1.m_11);
+}
+
+void Mat33_Print(mat33 m1)
+{
+	printf("[%.2f, %.2f, %.2f | %.2f, %.2f, %.2f | %.2f, %.2f, %.2f]", m1.m_00, m1.m_01, m1.m_02, m1.m_10, m1.m_11, m1.m_12, m1.m_20, m1.m_21, m1.m_22);
+}
+
+mat33 Mat33_Offset(float ox, float oy)
+{
+	mat33 m = { 1, 0, ox,
+		0, 1, oy,
+		0, 0, 1 };
+	return m;
+}
+
+mat33 Mat33_Scale(float sx, float sy)
+{
+	mat33 m = { sx, 0, 0,
+		0, sy, 0,
+		0, 0, 1 };
+	return m;
+};
+
+void Vec2_Print(vec2 v1)
+{
+	printf("(%.2f, %.2f)", v1.m_x, v1.m_y);
+}
+
+void Vec3_Print(vec3 v1)
+{
+	printf("(%.2f, %.2f, %.2f)", v1.m_x, v1.m_y, v1.m_z);
+}
+
+main()
+{
+	{
+		mat33 m1 = Mat33_Offset(300, 200);
+		mat33 m2 = Mat33_Scale(100, 100);
+		mat33 m3 = { 1, 0, 0,
+			0, -1, 0,
+			0, 0, 1 };
+		mat33 mm = Mat33_MultMat33(Mat33_MultMat33(m1, m2), m3);
+
+
+		HWND hwnd = GetConsoleWindow();
+		HDC hdc = GetDC(hwnd);
+		HPEN hpen = CreatePen(PS_SOLID, 2, RGB(0xFF, 0x7F, 0xFF));
+		HGDIOBJ obj = SelectObject(hdc, hpen);
+
+		{
+			float x = -2.f;
+			float y = sqrtf(1.f - powf((absf(x) - 1), 2.f));
+			vec3 v1 = { x, y, 1 };
+			vec3 v2 = Mat33_MultVec3(mm, v1);
+			MoveToEx(hdc, v2.m_x, v2.m_y, NULL);
+			Sleep(1000);
+		}
+
+		for (float x = -2.f; x <= 2.f; x += 0.02f)
+		{
+			float y = sqrtf(1.f - powf((absf(x) - 1), 2.f));
+			vec3 v1 = { x, y, 1 };
+			vec3 v2 = Mat33_MultVec3(mm, v1);
+			LineTo(hdc, v2.m_x, v2.m_y);
+			Sleep(1);
+		}
+
+		for (float x = 2.f; x >= -2.f; x -= 0.02f)
+		{
+			float y = -2.f * sqrtf(1.f - 0.5f*absf(x));
+			vec3 v1 = { x, y, 1 };
+			vec3 v2 = Mat33_MultVec3(mm, v1);
+			LineTo(hdc, v2.m_x, v2.m_y);
+			Sleep(1);
+		}
+
+		DeleteObject(hpen);
+		SelectObject(hdc, obj);
+		ReleaseDC(hwnd, hdc);
+	}
+
+	{
+	mat33 m0 = Mat33_Offset(0, 0);
+	mat33 m1 = Mat33_Offset(300, 200);
+	mat33 m2 = Mat33_Scale(75, 75);
+	mat33 m3 = { 1, 0, 0,
+		0, -1, 0,
+		0, 0, 1 };
+
+	mat33 mm = Mat33_MultMat33(Mat33_MultMat33(Mat33_MultMat33(m0, m1), m2), m3);
+
+
+	HWND hwnd = GetConsoleWindow();
+	HDC hdc = GetDC(hwnd);
+	HPEN hpen = CreatePen(PS_SOLID, 2, RGB(0xFF, 0x7F, 0xFF));
+	HGDIOBJ obj = SelectObject(hdc, hpen);
+
+	MoveToEx(hdc, 0, 0, NULL);
+
+	{
+		float x = -2.f;
+		float y = sqrtf(1.f - powf((absf(x) - 1), 2.f));
+		vec3 v1 = { x, y, 1 };
+		vec3 v2 = Mat33_MultVec3(mm, v1);
+		MoveToEx(hdc, v2.m_x, v2.m_y, NULL);
+	}
+
+	for (float x = -2.f; x <= 2.f; x += 0.02f)
+	{
+		float y = sqrtf(1.f - powf((absf(x) - 1), 2.f));
+		vec3 v1 = { x, y, 1 };
+		vec3 v2 = Mat33_MultVec3(mm, v1);
+		LineTo(hdc, v2.m_x, v2.m_y);
+		Sleep(1);
+	}
+
+	for (float x = 2.f; x >= -2.f; x -= 0.02f)
+	{
+		float y = -2.f * sqrtf(1.f - 0.5f*absf(x));
+		vec3 v1 = { x, y, 1 };
+		vec3 v2 = Mat33_MultVec3(mm, v1);
+		LineTo(hdc, v2.m_x, v2.m_y);
+		Sleep(1);
+	}
+
+	DeleteObject(hpen);
+	SelectObject(hdc, obj);
+	ReleaseDC(hwnd, hdc);
+}
+
+	{
+		char love_str[] = "i love you";
+		const int str_len = strlen(love_str);
+
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 0x0D);
+
+		for (int i = 0;; i++)
+		{
+			gotoxy(32, 14);
+
+			int index = i%str_len;
+			love_str[index] = toupper(love_str[index]);
+
+			printf("%s", love_str);
+
+			love_str[index] = tolower(love_str[index]);
+
+			Sleep(150);
+		}
+	}
+} 
