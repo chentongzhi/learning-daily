@@ -1,0 +1,245 @@
+#include<iostream>
+#include<cmath>
+/*using namespace std;
+
+class QuadEqt{
+	private:
+		double a,b,c;
+	public:
+		void creat(double A,double B,double C)
+		{
+			a=A;b=B;c=C;
+		}
+	void show()
+	{
+		cout<<a<<"x^2"
+		    <<(b>=0?"+":"-")<<abs(b)<<"x"
+		    <<(c>=0?"+":"-")<<abs(c)<<"= 0"
+		    <<endl;
+	}
+	void solve();
+}; 
+
+void QuadEqt::solve(){
+	if(abs(a)<=1e-7)return;
+	double delta=b*b-4*a*c;
+	if(delta>1e-7){
+		double s=sqrt(delta);
+		cout<<"x1:"<<s1<<"+"<<s2<<'i'<<endl;
+		cout<<"x2:"<<s1<<"-"<<s2<<'i'<<endl;
+	}
+	else
+	cout<<"x1,x2:"<<-b/a/2<<endl;
+}
+
+int main()
+{
+	QuadEqt eq;
+	eq.creat(1,-6,5);
+}
+
+using namespace std;
+class Test{
+	public:
+		int x;
+		Test(){
+			cout<<"Test";
+		}
+};
+int main()
+{
+	Test test;
+	cout<<test.x;
+	return 0;
+}
+using namespace std;
+class TempClass{
+	public:
+		int i;
+		TempClass()
+		{
+			int i=5;
+		}
+};
+int main()
+{
+	TempClass temp(2);//err
+	return 0;
+}
+class AA {
+	private:
+		int a;
+	public:
+	int getRef( ) const { return &a; }    // err
+};
+using namespace std;
+class A{
+	public:
+		A();
+		double getNumber();
+	private:
+		double number;
+};
+	A::A(){
+    	number=1;
+	}
+	double A::getNumber(){
+		return number;
+	}
+void printA(A &a) {
+	cout << "The numberr is " << a.getNumber() << endl;
+}
+int main(){
+	A myObject;
+	printA(myObject);
+	return 0; 
+}
+using namespace std;
+class Count{
+	public:
+		int count;
+		Count(int c){
+			count=c;
+		}
+		Count(){
+			count=0;
+		}
+}; 
+void increment(Count&c,int& n)
+{
+	c.count++;
+	n++;
+}
+int main()
+{
+	Count myCount;
+	int times=0;
+	for(int i=0;i<100;i++)
+	    increment(myCount,times);
+	cout<<myCount.count;
+	cout<<times;
+	return 0;
+}
+#include <iostream>
+
+#include <string>
+
+using namespace std;
+
+
+
+class Name {
+
+public:
+
+  string firstName;
+
+  char mi;
+
+  string lastName;
+
+  Name(string firstName1, char mi1, string lastName1) {
+
+    firstName = firstName1;
+
+    mi = mi1;
+
+    lastName = lastName1;
+
+  }
+
+};
+
+
+
+int main( ) {
+
+  string firstName("John");
+
+  Name name(firstName, 'F', "Smith");
+
+  firstName = "Peter";
+
+  name.lastName = "Pan";
+
+  cout << name.firstName << " " << name.lastName << endl;
+
+}
+using namespace std;
+
+class Count {
+
+public:
+
+  int count;
+
+  Count(int c) { count = c; }
+
+  Count( ) { count = 0; }
+
+};
+
+void increment(Count c, int &n) {
+
+  c.count++;
+
+  n++;
+
+}
+
+int main( ) {
+
+  Count myCount;
+
+  int times = 0;
+
+  for (int i = 0; i < 100; i++)
+
+    increment(myCount, times);
+
+  cout << "myCount.count is " << myCount.count;
+
+  cout << " times is " << times;
+
+  return 0;
+
+}*/
+using namespace std;
+
+class Count {
+
+public:
+
+  int count;
+
+  Count(int c) { count = c; }
+
+  Count( ) { count = 0; }
+
+};
+
+void increment(Count c, int times) {
+
+  c.count++;
+
+  times++;
+
+}
+
+int main( ) {
+
+  Count myCount;
+
+  int times = 0;
+
+  for (int i = 0; i < 100; i++)
+
+    increment(myCount, times);
+
+  cout << "myCount.count is " << myCount.count;
+
+  cout << " times is " << times;
+
+  return 0;
+
+}
