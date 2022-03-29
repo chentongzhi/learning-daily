@@ -1,0 +1,25 @@
+for num in [1,2,3]:
+
+    print(num)
+
+    if num == 2:
+        break
+else:
+    # 如果循环体内部使用break退出了循环
+    # else 下方的代码就不会被执行
+    print("会执行吗")
+print("循环结束")
+----------------------------------------------------------
+students = [{"name" : "xiaoming"},
+            {"name" : "lisi"}]
+find_name = input("输入姓名")
+
+for stu_dict in students:
+    print(stu_dict)
+    if stu_dict["name"] == find_name:
+        print("找到了")
+        break
+else:
+    print("没找到")
+print("循环结束")
+------------------------------------------------------------
