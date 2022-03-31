@@ -1,0 +1,120 @@
+// 写一篇文章，共有三行文字，每行有80个字符。要求分别统计
+// 出其中英文大写字母、小写字母、数字、空格以及其他字符的个数
+#include<stdio.h>
+int main()
+{
+	int i, j, upp, low, dig, spa, oth;
+	char text[3][80];
+	upp = low = dig = spa = oth = 0;
+	for (i = 0; i < 3; i++)
+	{
+		printf("please input line %d: \n", i + 1);
+		gets(text[i]);
+		for (j = 0; j < 80 && text[i][j] != '\0'; j++)
+		{
+			if (text[i][j] >= 'A'&&text[i][j] <= 'Z')
+				upp++;
+			else if (text[i][j] >= 'a'&&text[i][j] <= 'z')
+				low++;
+			else if (text[i][j] >= '0'&&text[i][j] <= '9')
+				dig++;
+			else if (text[i][j] == ' ')
+				spa++;
+			else
+				oth++;
+		}
+	}
+	printf("\nupper case:%d\n", upp);
+	printf("lower case:%d\n", low);
+	printf("digit:%d\n", dig);
+	printf("space:%d\n", spa);
+	printf("other:%d\n", oth);
+	return 0;
+}
+----------------------------------------------------------------------
+// 输出一下图案
+//* * * * *
+//  * * * * *
+//    * * * * * 
+//      * * * * * 
+#include<stdio.h>
+void print()
+{
+	printf("* * * * *");
+}
+int main()
+{
+	char space = ' ';
+	for (int i = 0; i < 5; i++)
+	{
+		for (int j = 1; j <= i; j++)
+		{
+			printf("%c", space);
+		}
+		print();
+		printf("\n");
+	}
+	return 0;
+}
+------------------------------------------------------------------------
+// 有一行电文，已按下面规则译成密码：
+//                            A -> Z   a -> z
+//                            B -> Y   b -> y
+// 即第一个字母变成第26个字母，第i个字母变成第（26-i+1）个字母，
+// 非字母字符不变。要求编程序将密码译回原文，并输出密码和原文
+#include<stdio.h>
+int main()
+{
+	char password[100];
+	gets(password);
+	for (int i = 0; password[i] != '\0'; i++)
+	{
+		if (password[i] >= 'a'&&password[i] <= 'z')
+			password[i] = 219 - password[i];
+		else if (password[i] >= 'A'&&password[i] <= 'Z')
+			password[i] = 155 - password[i];
+	}
+	puts(password);
+	return 0;
+}
+----------------------------------------------------------------------------
+// 编写程序，将两个字符串连接起来，不要用strcat函数
+#include<stdio.h>
+int main()
+{
+	char str1[20] = { "I love " };
+	char str2[10] = { "you" };
+	for (int i = 0; i < 20; i++)
+	{
+		if (str1[i] == '\0')
+		{
+			int j ,k;
+			for (j = i, k = 0; str2[k] != '\0'; j++, k++)
+			{
+				str1[j] = str2[k];
+			}
+			str1[j] = '\0';
+			break;
+		}
+	}
+	puts(str1);
+	return 0;
+}
+-----------------------------------------------------------------------------
+// 编写程序，将字符数组s2中的全部字符复制到字符数组s1中。
+// 不用strcpy函数，复制时，'\0'也要复制过去。'\0'后边的字符不用复制
+#include<stdio.h>
+int main()
+{
+	char str1[20] = { "Don't be sad!" };
+	char str2[20] = { "I am happy!" };
+	for (int i = 0; i < 20; i++)
+	{
+		str1[i] = str2[i];
+		if (str2[i] == '\0')
+			break;
+	}
+	puts(str1);
+	return 0;
+}
+
