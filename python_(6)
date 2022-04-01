@@ -1,0 +1,45 @@
+info_tuple = ("zhangsan",18,1.75,"zhangsan")
+
+# 1.取值和取索引
+print(info_tuple[0])
+# 已经知道数据的内容，希望知道该数据在元组中的索引
+print(info_tuple.index("zhangsan"))
+
+# 2.统计计数
+print(info_tuple.count("zhangsan"))
+# 统计元组中包含元素的个数
+print(len(info_tuple))
+--------------------------------------------------------
+# 字典是一个无序的数据集合，使用print函数输出字典时，通常
+# 输出的顺序和定义的顺序是不一致的
+xiaoming = {"name":"小明",
+            "age":18,
+            "gender":True,
+            "height":1.75,
+            "weight":75.5}
+
+print(xiaoming)
+----------------------------------------------------------
+xiaoming_dict = {"name":"xiaoming",
+                 "age":18}
+# 1.统计键值对数量
+print(len(xiaoming_dict))
+
+# 2.合并字典
+temp_dict = {"height":1.75,
+             "weight":45.5}
+
+# 注意:如果被合并的字典中包含已经存在的键值对，会覆盖原有的键值对
+xiaoming_dict.update(temp_dict)
+
+# 3.清空字典
+xiaoming_dict.clear()
+----------------------------------------------------------
+xiaoming_dict = {"name":"xiaoming",
+                 "qq":"123456",
+                 "phone":"10086"}
+
+# 迭代遍历字典
+# 变量k是每一次循环中，获取到的键值对的key
+for k in xiaoming_dict:
+    print("%s  -  %s"%(k,xiaoming_dict[k]))
