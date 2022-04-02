@@ -1,0 +1,66 @@
+class Cat:
+
+    def eat(self):
+        print("%s 爱吃鱼"%self.name)
+
+tom = Cat()
+tom.name = "Tom"
+tom.eat()
+
+lazy_cat = Cat()
+lazy_cat.name = "大懒猫"
+lazy_cat.eat()
+------------------------------------------------
+class Cat:
+
+    def __init__(self):
+
+        print("这是一个初始化方法")
+
+        # self.属性名 = 属性的初始值
+        self.name = "Tom"
+
+    def eat(self):
+        print("%s 爱吃鱼"%self.name)
+
+# 使用类名()创建对象的时候，会自动调用初始化方法 __init__
+tom = Cat()
+print(tom.name)
+------------------------------------------------------
+class Cat:
+
+    def __init__(self,new_name):
+
+        print("这是一个初始化方法")
+
+        # self.属性名 = 属性的初始值
+        # self.name = "Tom"
+        self.name = new_name
+
+    def eat(self):
+        print("%s 爱吃鱼"%self.name)
+
+# 使用类名()创建对象的时候，会自动调用初始化方法 __init__
+tom = Cat("Tom")
+print(tom.name)
+lazy_cat = Cat("大懒猫")
+lazy_cat.eat()
+-------------------------------------------------------------
+class Cat:
+    def __init__(self,new_name):
+        self.name = new_name
+
+        print("%s 来了"%self.name)
+
+    def __del__(self):
+
+        print("%s 去了"%self.name)
+
+    def __str__(self):
+
+        # 必须返回一个字符串
+        return "我是一只小猫咪"
+
+# tom 是一个全局变量
+tom = Cat("Tom")
+print(tom)
