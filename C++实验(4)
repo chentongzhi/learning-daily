@@ -1,0 +1,57 @@
+#include <iostream>
+#include <windows.h>
+using namespace std;
+struct Clock{
+	int hour;
+	int minute;
+	int second;
+};
+
+void input(struct Clock& clock)
+{
+	cin>>clock.hour>>clock.minute>>clock.second;
+}
+
+void showTime(const struct Clock clock)
+{
+	cout<<clock.hour<<":"<<clock.minute<<":"<<clock.second;
+	system("cls");
+}
+
+void nextTime(struct Clock& s)
+{
+	s.second+=1;
+	if(s.second==60)
+	{
+		s.minute+=1;
+		s.second=0;
+	}
+	if(s.minute==60)
+	{
+		s.hour+=1;
+		s.minute=0;
+	}
+	if(s.hour==24)
+	s.hour=0;
+	cout<<s.hour<<":"<<s.minute<<":"<<s.second;
+}
+
+int main(){
+	Clock clock;
+
+	input(clock);
+	
+	while(true){
+
+		system("cls");
+
+		showTime(clock);
+
+		nextTime(clock);
+
+		Sleep(1000);
+	}
+	
+	return 0;
+}
+--------------------------------------------------------------------------
