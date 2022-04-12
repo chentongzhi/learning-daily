@@ -1,0 +1,66 @@
+#ifndef CLOCK_H
+#define CLOCK_H
+
+#include<iostream>
+#include<windows.h>
+using namespace std;
+
+class Clock
+{
+private:
+	int h, min, s;
+public:
+	void input();
+	void show();
+};
+
+#endif
+==================================
+#ifndef CLOCK_CPP
+#define CLOCK_CPP
+
+#include"clock.h"
+void Clock::input()
+{
+	cin >> h >> min >> s;
+	system("cls");
+}
+void Clock::show()
+{
+	cout << h << ":" << min << ":" << s << endl;
+	Sleep(1000);
+	while (1)
+	{
+		system("cls");
+		s += 1;
+		if (60 == s)
+		{
+			min += 1;
+			s = 0;
+		}
+		if (60 == min)
+		{
+			h += 1;
+			min = 0;
+		}
+		if (24 == h)
+			h = 0;
+		cout << h << ":" << min << ":" << s << endl;
+		Sleep(1000);
+	}
+}
+
+#endif
+==================================
+#define _CRT_SECURE_NO_WARNINGS 1
+
+#include"clock.h"
+using namespace std;
+int main()
+{
+	Clock c1;
+	c1.input();
+	c1.show();
+	return 0;
+}
+=============================
