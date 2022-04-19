@@ -1,0 +1,293 @@
+//写两个函数，分别求两个整数的最大公约数和最小公倍数，
+//用主函数调用这两个函数，并输出结果。两个整数由键盘键入
+#include<iostream>
+using namespace std;
+int hcf(int u,int v)
+{
+	int t,r;
+	if(v>u)
+	{
+		t=u;
+		u=v;
+		v=t;
+	}
+	while((r=u%v)!=0)
+	{
+		u=v;
+		v=r;
+	}
+	return v;
+}
+int lcd(int u,int v,int h)
+{
+	return u*v/h;
+}
+int main()
+{
+	int x,y;
+	cin>>x>>y;
+	int max = hcf(x,y);
+	int min = lcd(x,y,max);
+	cout<<"最大公约数是 "<<max<<endl;
+	cout<<"最小公倍数是 "<<min<<endl; 
+	return 0;
+ } 
+ 
+ =======================================================
+ //求方程ax^2+bx+c=0的根，用3个函数分别求当：b^2-4ac大于0、等于0、小于0时的根
+//并输出结果，从主函数中输入a，b，c的值
+#include<iostream>
+#include<cmath>
+using namespace std;
+void A(int a,int b,int c)
+{
+	double tmp=-(double)b/2/a;
+	double exp=(double)sqrt(b*b-4*a*c)/2/a;
+	double x1=tmp+exp;
+	double x2=tmp-exp;
+	cout<<x1<<" "<<x2;
+}
+void B(int a,int b,int c)
+{
+	double x=-b/(double)2/a;
+	cout<<x;
+}
+void C()
+{
+	cout<<"无解"; 
+}
+int main()
+{
+	double a,b,c;
+	cin>>a>>b>>c;
+	double p = b*b-4*a*c;
+	if(abs(p)>1e-16)
+	    A(a,b,c);
+	else if(p<-1e-16)
+	    C();
+	else
+	    B(a,b,c);
+	return 0;
+ } 
+ 
+ =================================================
+ //写一个判素数的函数，在主函数输入一个整数
+//输出是否为素数的信息
+#include<iostream>
+#include<cmath> 
+using namespace std;
+void det(int x)
+{
+	int i;
+	if(x<=1)
+	{
+		cout<<"不是素数";
+	    return; 
+	}
+	for(i=2;i<=sqrt(x);i++)
+	{
+		if(x%i==0)
+		break;
+	}
+	if(i>sqrt(x))
+	    cout<<"是素数";
+	else
+	    cout<<"不是素数"; 
+}
+
+int main()
+{
+	int x;
+	cin>>x;
+	det(x);
+	return 0;
+ } 
+ 
+ =================================================
+ 
+ //写一个函数，使给定的3x3的二位整型数组转置，即行列互换
+#include<iostream>
+using namespace std;
+void dev(int arr[][3],int row,int col)
+{
+	int z=-1;
+	for(int i=0;i<row;i++)
+	{
+		z+=1;
+		for(int j=z;j<col;j++)
+	    {
+	    	int tmp=arr[i][j];
+	    	arr[i][j]=arr[j][i];
+	    	arr[j][i]=tmp;
+		}
+	}
+	
+
+}
+void Print(int arr[][3],int row,int col)
+{
+	for(int i=0;i<row;i++)
+	{
+		for(int j=0;j<col;j++)
+	    {
+	    	cout<<arr[i][j]<<" ";
+		}
+		cout<<endl;
+	}
+	cout<<endl;	
+}
+int main()
+{
+	int arr[3][3]={{1,2,3},{4,5,6},{7,8,9}};
+	dev(arr,3,3);
+	Print(arr,3,3);
+	return 0;
+ } 
+ 
+ =======================================================
+ 
+ //写一个函数，使输入的一个字符串按反序存放，在主函数中输入和输出字符串
+#include<iostream>
+#include<cstring>
+using namespace std;
+void invert(char str[],int len)
+{
+	int left=0;
+	int right=len-1;
+	while(left<right)
+	{
+		char tmp=str[left];
+		str[left]=str[right];
+		str[right]=tmp;
+		left++;
+		right--;
+	 } 
+}
+int main()
+{
+	char str1[30];
+	cin>>str1;
+	int len=strlen(str1);
+	invert(str1,len);
+	cout<<str1;
+	return 0;
+ } 
+ 
+ =====================================================
+ 
+ //写一个函数，将两个字符串连接
+#include<iostream>
+#include<cstring>
+using namespace std;
+void stick(char str1[],char str2[],int len)
+{
+	int i=0;
+	while(str2[i])
+	{
+		str1[len]=str2[i];
+		len++;
+		i++;
+	}
+}
+int main()
+{
+	char str1[30]={"chenxin"};
+	char str2[10]={"ping"};
+	int len=strlen(str1);
+	stick(str1,str2,len);
+	cout<<str1;
+	return 0;
+ } 
+ 
+ ===================================================
+ 
+ //写一个函数，将一个字符串中的元音字母(小写)复制到另一个字符串，然后输出
+#include<iostream>
+using namespace std;
+void do_it(char str2[],char str1[])
+{
+	int i=0,j=0;
+	while(str1[i])
+	{
+		if(str1[i]=='a'
+		||str1[i]=='e'
+		||str1[i]=='i'
+		||str1[i]=='o'
+		||str1[i]=='u')
+		str2[j++]=str1[i];
+		i++;
+	}
+}
+int main()
+{
+	char str1[30];
+	char str2[30]={0};
+	cin>>str1;
+	do_it(str2,str1);
+	cout<<str2;
+	return 0;
+ } 
+ 
+ ==========================================
+ 
+ //写一个函数，输入一个4位数字，要求输出这4个数字字符，
+//但每两个数字间多一个空格，例如输入1990，则输出1 9 9 0
+#include<iostream>
+using namespace std;
+void Print(int a)
+{
+	for(int i=1000;i>0;i/=10)
+	{
+		cout<<a/i<<" ";
+		a%=i;
+	}
+}
+int main()
+{
+	int a=0;
+	cin>>a;
+	Print(a);
+	return 0;
+ }
+ 
+ ==================================================
+ 
+ //编写一个函数，由实参传来一个字符串，统计此字符串中
+//字母、数字、空格和其他字符的个数，在主函数中输入
+//字符串以及输出上述的结果
+#include<iostream>
+using namespace std;
+int word=0,dig=0,space=0,other=0;
+void count(char str[])
+{
+	int i=0;
+	while(str[i]!='\0')
+	{
+		if((str[i]>='a'&&str[i]<='z')
+		||(str[i]>='A'&&str[i]<='Z'))
+		    word++;
+		else if(str[i]>='0'&&str[i]<='9')
+		    dig++;
+		else if(str[i]==32)
+		    space++;
+		else
+		    other++;
+		i++;
+	}
+}
+int main()
+{
+	char str[30]={0};
+	//gets(str);//cin则不可计算空格 ,空格不会作为字符串内容 
+	gets(str);
+	count(str);
+	cout<<"字母个数为 "<<word<<endl;
+	cout<<"数字个数为 "<<dig<<endl;
+	cout<<"空格个数为 "<<space<<endl;
+	cout<<"其它字符为 "<<other<<endl; 
+	return 0;
+ } 
+ 
+ ================================================================
+ 
+ 
