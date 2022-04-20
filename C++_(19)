@@ -1,0 +1,363 @@
+What is correct in the following code?
+
+#include <iostream>
+
+using namespace std;
+
+class TempClass {
+
+public:
+
+  int i;
+
+  TempClass( ) { int i = 5; }
+
+};
+
+
+
+int main( ) {
+
+  TempClass temp(2);
+
+  return 0;
+
+}
+
+
+
+A、
+The program has a compilation error because TempClass does not have a default constructor.
+
+B、
+The program has a compilation error because TempClass does not have a constructor with an int argument.
+
+C、
+The program compiles and runs fine.
+
+D、
+None of the above.
+
+正确答案： B 我的答案：B得分： 1.1分
+答案解析：
+
+构造函数中的 i 是局部变量，与类的数据成员 i 是互不相关的
+===============================================================================================
+
+【单选题】
+在下列函数原型中，可以作为类 AA 的构造函数的是______。
+
+A、
+void AA(int);
+
+B、
+int AA( );
+
+C、
+AA(int)const;
+
+D、
+AA(int);
+
+正确答案： D 我的答案：D得分： 1.1分
+答案解析：
+
+构造函数的不能是常函数，也不能有返回值类型
+
+===================================================================
+
+【单选题】
+关于成员函数特征的描述中，______是错误的。
+
+A、
+成员函数一定是内联函数
+
+B、
+成员函数可以重载
+
+C、
+成员函数可以设置参数的默认值
+
+D、
+成员函数可以是静态的
+
+正确答案： A 我的答案：A得分： 1.1分
+答案解析：
+
+成员函数在类外实现，且没用inline声明，则该成员函数不是内联的
+
+============================================================
+
+【单选题】
+Which of the following statements are true?
+
+A、
+A constant member function cannot change the data fields in the object.
+
+B、
+A constant memebr function may be an instance or a static function.
+
+C、
+A constant function may be defined for any functions not just instance member functions.
+
+D、
+A constructor can be defined as a constant member funciton.
+
+正确答案： A 我的答案：C
+
+====================================================================
+
+【单选题】
+由于常对象不能被更新，因此（　　）。
+
+A、
+通过常对象只能调用它的常成员函数
+
+B、
+通过常对象只能调用静态成员函数
+
+C、
+常对象的成员都是常成员
+
+D、
+通过常对象可以调用任何不改变对象值的成员函数
+
+正确答案： A 我的答案：C得分： 0.0分
+答案解析：
+
+常对象只能调用常成员函数
+
+===================================================================
+
+【单选题】
+如下类中定义的 4 个成员函数，正确的是______。
+
+class AA {
+
+private:
+
+  int a;
+
+public:
+
+  int getRef( ) const { return &a; }    // (1)
+
+  int getValue( )const{ return a; }     // (2)
+
+  void set(int n)const{ a = n; }          // (3)
+
+  friend void show(AA aa)const {cout << a; } // (4)
+
+};
+
+A、
+1
+
+B、
+2
+
+C、
+3
+
+D、
+4
+
+正确答案： B 我的答案：A得分： 0.0分
+答案解析：
+
+A 选项返回 a 的地址（&A），因此返回值类型应该为 int *型；
+
+C 选项是用常成员修改数据成员，这是 C++不允许的；
+
+D 选修定义友元函数为常的，这是不对的，因为友元是普通函数，不能定义为常函数
+
+=========================================================
+
+3
+【单选题】
+You should add the static keyword in the place of ? in which of the following function:
+
+#include <iostream>
+
+using namespace std;
+
+class Test {
+
+public:
+
+  ? int square(int n) { return n*n; }
+
+  ? int getAge( ) { return age; }
+
+private:
+
+  int age;
+
+};
+
+A、
+in the square function because the function does not use any instance data fields.
+
+B、
+in the getAge function
+
+C、
+in both lthe square function and the getAge function
+
+D、
+none
+
+正确答案： A 我的答案：B得分： 0.0分
+答案解析：
+
+如果必须加的话只能在 square 函数加，因为它没有访问非静态数据成员
+
+============================================================================
+
+【单选题】
+在下面的类定义中，错误的语句是______。
+class Sample {
+private:
+  int a = 2.5;     // (1)
+
+public:
+  Sample ( ) { }                      // (2)
+
+  Sample(int val) { a = 2.5; } // (3)
+  ~Sample ( ) { }                   // (4)
+};
+
+A、
+(1)(2)(3)(4)
+
+B、
+(4)
+
+C、
+(1)
+
+D、
+(1)(3)(4)
+
+正确答案： C 我的答案：D得分： 0.0分
+答案解析：
+
+只有(1)是错误的，因为数据成员不能在类中直接初始化
+
+=====================================================
+
+【单选题】
+设有以下定义:
+typedef union {
+  long i;
+  int k;
+  char c;
+}DATE;
+struct date {
+  int cat;
+  DATE cow;
+  double dog;
+} too;
+DATE max1;
+则下列语句的执行结果是______。
+cout << sizeof(struct date) + sizeof(max1);
+
+A、
+18
+
+B、
+30
+
+C、
+20
+
+D、
+17
+
+正确答案： C 我的答案：C得分： 1.1分
+答案解析：
+
+DATE 是 union 类型的名称，占 4 (= max{4, 4, 1}) 个字节；
+
+date 为结构体类型的名称，占16 ( = 4 + 4 + 8) 个字节，因此 cout 输出 16+4 = 20
+
+============================================================================
+
+【单选题】
+下面代码的输出结果是（   ）
+
+#include <iostream>
+
+using namespace std;
+
+
+
+struct st {
+
+  int no;
+
+  char name[2];    // 2 个字符
+
+  float score;
+
+}s1;
+
+
+
+int main( ) {
+
+  cout << sizeof(s1) << endl;
+
+  return 0;
+
+}
+
+A、
+12
+
+B、
+10
+
+C、
+11
+
+D、
+8
+
+正确答案： A 我的答案：B得分： 0.0分
+答案解析：
+
+此处只需填写理论值 10。
+
+但在实际中，现在的 C++ 以结构体中的最大类型（占字节数最多的类型）为基本单位，来为每个域分配空间，整个结构体只能占整数倍的最大类型。例如：
+
+struct st {                  // 最大字节数为 4【因为 int 占 4 个字节，char 占 1 个字节，float 占 4 个字节】
+
+  int no;                    // 先申请 4 个字节，并全部占用
+
+  char name[2];        // 再申请 4 个字节，只占用前 2 个，还剩下 2 个
+
+  float score;            // 上次申请的 4 个字节还剩下 2 个，存不下 score，需要再申请 4 个字节
+
+}s1;
+
+故 s1 占用了 12 个字节。
+
+
+
+再如：
+
+struct st {            // 最大字节数是 8【因为 int 占 4 个字节，char 占 1 个字节，double 占 8 个字节】
+
+  int no;               // 先申请 8 个字节，no 占用 4 个，还剩下 4 个
+
+  char name[2];    // name 只占 2 个字节，可以在 no 后面剩下的区域里再占用 2 个，这样还剩下 2 个字节
+
+  double score;    // score 需要占 8 个字节，但是上一个区域还剩下 2 个，不够分配，因此再申请 8 个字节。
+
+}s2;
+
+故 s2 共占 16 个字节
+
+===============================================================================================
+
