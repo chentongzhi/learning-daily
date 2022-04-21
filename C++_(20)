@@ -1,0 +1,256 @@
+【单选题】
+______不是属于面向对象程序设计的特性。
+
+A、
+抽象性
+
+B、
+数据相关性
+
+C、
+多态性
+
+D、
+继承性
+
+正确答案： B 我的答案：B得分： 4.5分
+答案解析：
+
+面向对象的特征是：封装性、继承性和多态性
+
+==============================================
+
+【单选题】
+下列选型中，均为合法常量的选项是______。
+
+A、
+25    1L     0Xfffe
+
+B、
+'好!'     33333     01U
+
+C、
+108       '\'       '\n'
+
+D、
+08     false     1e+08
+
+正确答案： A 我的答案：A得分： 0.9分
+答案解析：
+
+B 选项中的 '好!' 是错误的；C 选项中的 '\' 不正确，如果表示斜杠，应为 '\\'；D 选项里的 08 是不正确的
+
+===================================================
+
+【单选题】
+以下选项中可作为 C++ 合法整数的是______。
+
+A、
+10110B
+
+B、
+0386
+
+C、
+0Xffa
+
+D、
+x2a2
+
+正确答案： C 我的答案：C得分： 0.9分
+答案解析：
+
+C 选项是十六进制整数；C++ 本身没有二进制表示法（A 选项错误）；B 选项以 0 开头，表示八进制，但数字里带有 8，这是不合法的；D 是错误的，十六进制是 0X 或 0x 开头，而不是 x 开头
+
+=================================================
+
+【单选题】
+若 t 是 double 类型，表达式 t = 1, t + 5, t ++ 的值是______。
+
+A、
+1
+
+B、
+6.0
+
+C、
+2.0
+
+D、
+1.0
+
+正确答案： D 我的答案：D得分： 0.9分
+答案解析：
+
+逗号表达式，最后一个逗号后面的值为整个表达式的值
+
+==========================================================
+
+【单选题】
+If an expression does not contain any parentheses, which of the following operators is performed first in the expression?
+
+A、
+arithmetic
+
+B、
+comparison
+
+C、
+logical
+
+D、
+you can't tell without seeing the expression
+
+正确答案： D 我的答案：D得分： 0.9分
+答案解析：
+
+逻辑非(!)的优先级高于比较运算符，而逻辑与(&&)和逻辑或(||)的优先级都低于关系运算符，关系运算符都低于算术运算符
+
+===================================================
+
+【单选题】
+A company pays a 3% annual bonus to employees who have been with the company more than 5 years; other employees receive a 1% bonus. Which control structure would an algorithm use to calculate every employee's bonus?
+
+A、
+repetition
+
+B、
+selection
+
+C、
+both repetition and selection
+
+正确答案： B 我的答案：B
+
+===========================================================
+
+43
+【单选题】
+What is 1 + 1 + 1 + 1 + 1 == 5?
+
+A、
+true
+
+B、
+false
+
+C、
+There is no guarantee that 1 + 1 + 1 + 1 + 1 == 5 is true.
+
+正确答案： A 我的答案：A得分： 0.8分
+答案解析：
+
+先前面的5个1相加，再判断是否相等
+
+44
+【单选题】
+What is 1.0 + 1.0 + 1.0 + 1.0 + 1.0 == 5.0?
+
+A、
+true
+
+B、
+false
+
+C、
+There is no guarantee that 1.0 + 1.0 + 1.0 + 1.0 + 1.0 == 5.0 is true.
+
+正确答案： C 我的答案：C得分： 0.8分
+答案解析：
+
+先前面的 5 个 1.0 相加，再判断是否相等。但是 double 数据在保存和运算过程中可能会有误差
+
+=============================================================================
+
+【单选题】
+Which of the following loops prints "Welcome to C++" 10 times?
+
+(I)
+
+for (int count = 1; count <= 10; count++) {
+
+  cout << "Welcome to C++" << endl;
+
+}
+
+(II)
+
+for (int count = 0; count < 10; count++) {
+
+  cout << "Welcome to C++" << endl;
+
+}
+
+(III)
+
+for (int count = 1; count < 10; count++) {
+
+  cout << "Welcome to C++" << endl;
+
+}
+
+(IV)
+
+for (int count = 0; count <= 10; count++) {
+
+  cout << "Welcome to C++" << endl;
+
+}
+
+A、
+(II)(IV)
+
+B、
+(I)(II)(III)
+
+C、
+(I)(III)
+
+D、
+(II)(III)
+
+E、
+(I)(II)
+
+正确答案： E 我的答案：E得分： 0.8分
+答案解析：
+
+代码(III)和(IV)分别循环9次和11次
+
+=====================================================
+
+
+【单选题】
+Analyze the following fragment:
+
+double sum = 0;
+
+double d = 0;
+
+while (d != 10.0) {
+
+  d += 0.1;
+
+  sum += d;
+
+}
+
+A、
+The program does not compile because sum and d are declared double, but assigned with integer value 0.
+
+B、
+The program never stops because d is always 0.1 inside the loop.
+
+C、
+The program may not stop because of the phenomenon referred to as numerical inaccuracy for operating with floating-point numbers.
+
+D、
+After the loop, sum is 0 + 0.1 + 0.2 + 0.3 + ... + 1.9
+
+正确答案： C 我的答案：C得分： 0.8分
+答案解析：
+
+d从0开始，每次循环加0.1。理论上讲，d能逐步变为10。但是由于计算机在计算上的误差，可能导致d不会准确地变成10
+
+====================================================
+
