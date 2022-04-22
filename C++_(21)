@@ -1,0 +1,970 @@
+【单选题】
+若已定义的函数有返回值，则以下关于该函数调用的叙述中错误的是___________。
+
+A、
+函数调用可以作为独立的语句存在
+
+B、
+函数调用可以作为一个函数的实参
+
+C、
+函数调用可以出现在表达式中
+
+D、
+函数调用可以作为一个函数的形参
+
+正确答案： D 我的答案：D得分： 1.4分
+答案解析：
+
+函数调用本身是个表达式,不可以作为函数的形参
+
+=======================================================================
+
+【单选题】
+以下正确的函数头（非原型）为___________。
+
+A、
+void fun(void)
+
+B、
+double fun(int x; int y)
+
+C、
+int fun( );
+
+D、
+double fun(int x, y)
+
+正确答案： A 我的答案：A得分： 1.4分
+答案解析：
+
+函数中不需要参数时，可以在小括号里写 void 或什么都不写
+
+=============================================================
+
+【单选题】
+If the function definitions section is located below the main function in a program, 
+the program will have one function prototype for each program-defined function automatically.
+
+A、
+True
+
+B、
+False
+
+正确答案： B 我的答案：B得分： 1.4分
+答案解析：
+
+如果函数定义在使用的后面，必须在使用前写明函数原型
+
+======================================================
+
+【单选题】
+Which of the following calls a void function named displayName, passing it no actual arguments?
+
+A、
+call displayName( );
+
+B、
+displayName;
+
+C、
+displayName( )
+
+D、
+displayName( );
+
+正确答案： C 我的答案：C得分： 1.4分
+答案解析：
+
+函数调用时，即使不需要传递参数，小括号不能省略。另外，函数调用是表达式，后面没有分号
+
+=====================================================
+
+【单选题】
+When a void function ends, the computer continues program execution with ________.
+
+A、
+the statement immediately above the one that called the function
+
+B、
+the statement that called the function
+
+C、
+the statement immediately below the one that called the function
+
+正确答案： C 我的答案：C得分： 1.4分
+答案解析：
+
+void 型的函数结束后，会直接返回到主调函数调用行的下一条语句继续执行。
+
+如果不是void型，则返回到主调函数的调用行执行
+
+==================================================
+
+【单选题】
+int i = 100; 下列引用方法中，正确的是___________。
+
+A、
+int &r = i;
+
+B、
+int &r = 100;
+
+C、
+int &r;
+
+D、
+int &r = &i;
+
+正确答案： A 我的答案：A得分： 1.4分
+答案解析：
+
+定义引用必须初始化，且只有变量才有引用，D 选项中的 &i 表示取 i 的地址
+
+====================================================
+
+【单选题】
+Which of the following is false?
+
+A、
+When you pass a variable by reference, the receiving function can change the variable's contents.
+
+B、
+When you pass a variable by value, the receiving function creates a local variable that it uses to store the value.
+
+C、
+Unless specified otherwise, all variables in C++ are passed by value.
+
+D、
+To pass a variable by reference in C++, you place an ampersand (&) before the variable's name in the statement that calls the function.
+
+正确答案： D 我的答案：D得分： 1.4分
+答案解析：
+
+引用传递必须使用 & 号定义形参
+
+==============================================================
+
+【单选题】
+Analyze the following code.
+#include <iostream>
+using namespace std;
+int m(int num) {
+  return num;
+}
+void m(int num) {
+  cout << num;
+}
+int main( ) {
+  cout << m(2);
+  return 0;
+}
+
+A、
+The program has a compile error because the two functions m have the same signature.
+
+B、
+The program has a compile error because the second m function is defined, but not invoked in the main function.
+
+C、
+The program runs and prints 2 once.
+
+D、
+The program runs and prints 2 twice.
+
+正确答案： A 我的答案：A得分： 1.4分
+答案解析：
+
+函数 m 被重载，但是它们不满足重载条件（因为形参个数和对应的类型完全一样）
+
+=====================================================================
+
+【单选题】
+系统在调用重载函数时会根据一些条件确定调用哪个函数，下列条件中不正确的是_______。
+
+A、
+实参个数
+
+B、
+实参类型
+
+C、
+函数名称
+
+D、
+函数类型
+
+正确答案： D 我的答案：D得分： 1.4分
+答案解析：
+
+函数类型不能作为函数重载的条件
+
+=====================================================
+
+【多选题】
+The client can use a function without knowing how it is implemented. 
+The details of the implementation are encapsulated in the function 
+and hidden from the client who invokes the function. This is known as __________. 
+
+A、
+information hiding
+
+B、
+encapsulation
+
+C、
+function hiding
+
+D、
+simplifying function
+
+正确答案： AB 我的答案：AB得分： 1.4分
+答案解析：
+
+函数的作用是信息隐藏和封装
+
+========================================================
+
+【多选题】
+Analyze the following statements.
+
+A、
+Inline functions and regular functions can perform the same function. The difference is in performance and memory use.
+
+B、
+Inline functions use more memory than regular functions.
+
+C、
+Inline functions execute faster than regular functions.
+
+D、
+Inline functions are appropriate for very short functions.
+
+正确答案： ABCD 我的答案：ABCD得分： 1.4分
+答案解析：
+
+内联函数在需要的地方被展开，因此可执行代码会变长（内存使用上与普通函数不同）；
+
+由于不再发生函数调用，因此可以节约函数调用的时间（一种典型的用空间代替时间的策略）
+
+======================================================
+
+
+【单选题】
+Does the function call in the following function cause compile errors?
+#include <iostream>
+#include <math>
+using namespace std;
+int main( ) {
+  pow(2.0, 4);
+  return 0;
+}
+
+A、
+Yes
+
+B、
+No
+
+正确答案： A 我的答案：A得分： 2.3分
+答案解析：
+
+头文件有错误,应该是cmath，函数pow(2.0, 4)是计算2.0的4次方
+
+============================================
+
+【单选题】
+The __________ function returns a raised to the power of b.
+
+A、
+power(a, b)
+
+B、
+exponent(a, b)
+
+C、
+pow(a, b)
+
+D、
+pow(b, a)
+
+正确答案： C 我的答案：C得分： 2.3分
+答案解析：
+
+pow(a, b)返回a的b次方，a和b的类型都是double
+
+=================================================
+
+【单选题】
+pow(4.0, 1 / 2) returns __________.
+
+A、
+0
+
+B、
+1
+
+C、
+2
+
+D、
+3
+
+正确答案： B 我的答案：B得分： 2.3分
+答案解析：
+
+pow(a, b)返回a的b次方
+
+===============================================
+
+【单选题】
+Which of the following are not the functions in C++?
+
+A、
+srand
+
+B、
+rand
+
+C、
+rint
+
+D、
+pow
+
+E、
+random
+
+正确答案： E 我的答案：E得分： 2.3分
+
+===============================================
+
+【单选题】
+The following code displays ________.
+cout << "a" << setw(6) << "abc";
+
+A、
+a abc
+
+B、
+aabc
+
+C、
+a
+
+D、
+abc
+
+正确答案： A 我的答案：A得分： 2.3分
+答案解析：
+
+setw(6)表示在6个列宽上输出后面的数据
+
+========================================
+
+【单选题】
+下列程序运行的结果是______。
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main( ) {
+  cout << setprecision(4) << setw(3) << hex << 100/3.0 << ", ";
+  cout << 24 << endl;
+  return 0;
+}
+
+A、
+3.333e+001, 18
+
+B、
+33.33, 18
+
+C、
+21, 18
+
+D、
+33.3, 24
+
+正确答案： B 我的答案：B得分： 2.3分
+答案解析：
+
+setprecision(4) 设置有效数字为 4 个，setw(3) 表示输出宽度，hex 表示采用16 进制，
+但是 100/3.0 是 double 型，hex 只能针对整数，因此它在这里无效；另外，100/3.0 保留 4 位有效数字，
+再加小数点共 5 位，超出了 setw(3) 的限制。怎么办呢？C++ 的解决这类问题的准则是：准确大于格式。
+也就是说，C++ 优先考虑数据的准确性，其次考虑格式，因此此处的 setw(3) 失效。
+第二个 cout 输出的 24 按 16 进制输出，这表明 hex 具有持久性（也就是说 hex 一旦被设置，
+它不仅影响所在的 cout，还会影响后面的 cout）。
+
+========================================================
+
+【单选题】
+Which of the following creates a variable that can store whole numbers only?
+
+A、
+int numItems = 0;
+
+B、
+int numItems = '0';
+
+C、
+int numItems = "0";
+
+D、
+integer numItems = 0;
+
+正确答案： A 我的答案：A得分： 2.3分
+答案解析：
+
+A选项能把整数0赋给整型变量
+
+========================================================
+
+【多选题】
+Which of the following is a stream manipulator function?
+
+A、
+setw(width)
+
+B、
+setprecision(n)
+
+C、
+fixed
+
+D、
+showpoint
+
+E、
+left
+
+正确答案： AB 我的答案：AB得分： 2.3分
+答案解析：
+
+setw和setprecision是流操作函数，fixed、showpoint和left虽然也与流操作相关，但不是函
+
+==========================================================
+
+【多选题】
+You can assign a value in _____ to an int variable.
+
+A、
+'x'
+
+B、
+120
+
+C、
+120.0
+
+D、
+"x"
+
+E、
+"120"
+
+正确答案： ABC 我的答案：ABC得分： 2.3分
+答案解析：
+
+120 为整型常量，可以直接赋值整型变量；'x' 为字符型常量，
+它的 ASCII 码可以赋给整型变量；120.0 为 double 型常量，赋给整型变量后小数部分会被忽略
+
+=============================================================
+
+
+【单选题】
+Analyze the following code.
+#include <iostream>
+using namespace std;
+int main( ) {
+  int x[3];
+  cout << "x[0] is " << x[0];
+  return 0;
+}
+
+A、
+The program has a compile error because the size of the array wasn't specified when declaring the array.
+
+B、
+The program has a runtime error because the array elements are not initialized.
+
+C、
+The program runs fine and displays x[0] is 0.
+
+D、
+The program has a runtime error because the array element x[0] is not defined.
+
+E、
+x[0] has an unpredictable value.
+
+正确答案： E 我的答案：E得分： 1.3分
+答案解析：
+
+不是所有的编译器都会对数组元素进行初始化
+
+==================================================================
+
+
+【单选题】
+Analyze the following code.
+#include <iostream>
+using namespace std;
+int main( ) {
+  int x[3];
+  cout << "x[0] is " << x[0];
+  return 0;
+}
+
+A、
+The program has a compile error because the size of the array wasn't specified when declaring the array.
+
+B、
+The program has a runtime error because the array elements are not initialized.
+
+C、
+The program runs fine and displays x[0] is 0.
+
+D、
+The program has a runtime error because the array element x[0] is not defined.
+
+E、
+x[0] has an unpredictable value.
+
+正确答案： E 我的答案：E得分： 1.3分
+答案解析：
+
+不是所有的编译器都会对数组元素进行初始化
+
+===========================================================
+
+【单选题】
+设有数组定义：char array[ ] = "China"; 则数组 array 所占的空间为(      )。
+
+A、
+四个字节
+
+B、
+五个字节
+
+C、
+六个字节
+
+D、
+七个字节
+
+正确答案： C 我的答案：C得分： 1.3分
+答案解析：
+
+字符串后面带一个 '\0
+
+============================================================
+
+【单选题】
+Are the following two declarations the same?
+char city[ ] = {'D', 'a', 'l', 'l', 'a', 's'};
+char city[ ] = "Dallas";
+
+A、
+yes
+
+B、
+no
+
+正确答案： B 我的答案：B得分： 1.3分
+答案解析：
+
+一个是定义字符数组，另一个是定义字符串
+
+========================================================
+
+【单选题】
+以下程序段的输出是(    )。
+char a[ ] = "abcdefg", b[10] = "abcdefg";
+cout << sizeof(a) << " " << sizeof(b) << " " << strlen(a) << " " << strlen(b);
+
+A、
+7 7 7 7
+
+B、
+8 8 8 8
+
+C、
+8 10 7 7
+
+D、
+10 10 8 8
+
+正确答案： C 我的答案：C得分： 1.3分
+答案解析：
+
+sizeof返回数组的大小，strlen返回字符串长度(碰到'\0'就把不再计数了)
+
+===================================================
+
+【单选题】
+What is the output of the following code?
+string s("中国\n");
+cout << s.size( ) << endl;
+
+A、
+1
+
+B、
+2
+
+C、
+3
+
+D、
+4
+
+E、
+5
+
+正确答案： E 我的答案：E得分： 1.3分
+答案解析：
+
+返回字符串长度，一个汉字占两个字节，'\n' 是一个转义字符（escape character），表示回车
+
+=======================================================
+
+【单选题】
+If you read a string input: PROGRAMMING IS FUN using the following code, what will be is s?
+cout << "Enter a string:";
+string s;
+getline(cin, s);
+
+A、
+PROGRAMMING IS FUN
+
+B、
+PROGRAMMING
+
+C、
+IS
+
+D、
+FUN
+
+正确答案： A 我的答案：A得分： 1.3分
+答案解析：
+
+getline以回车作为输入的结束符
+
+========================================================
+
+【单选题】
+What is the output of the following code?
+string s("abc");
+s.append("welcome", 0, 3);
+cout << s << endl;
+
+A、
+abcwelcome
+
+B、
+abc
+
+C、
+abcwel
+
+D、
+welcomeabc
+
+正确答案： C 我的答案：C得分： 1.3分
+答案解析：
+
+字符串追加，追加的内容为第一个参数（字符串）的第0个位置算起的连续3个字符（也就是前3个）
+
+如果写成s.append("welcome", 1, 3)，则表示追加第1个位置算起的连续3个字符（也就是第2、3、4个字符）
+
+==================================================
+
+【单选题】
+What is the output of the following code?
+string s("abc");
+s.assign("welcome", 0, 3);
+cout << s << endl;
+
+A、
+abcwelcome
+
+B、
+abc
+
+C、
+welcome
+
+D、
+abcwww
+
+E、
+wel
+
+正确答案： E 我的答案：E得分： 1.3分
+答案解析：
+
+字符串赋值，选字符串的前三个字符
+
+===============================================
+
+【单选题】
+What is the output of the following code?
+string s("abcdefg");
+cout << s.substr(1, 3);
+
+A、
+abc
+
+B、
+bcd
+
+C、
+a
+
+D、
+c
+
+正确答案： B 我的答案：B得分： 1.3分
+答案解析：
+
+取第1个位置开始的连续3个字符构成的子串（sub-string
+
+=====================================================
+
+【单选题】
+What is the output of the following code?
+string s("abcdefag");
+cout << s.find("def") << " " << s.find("a", 3);
+
+A、
+3 0
+
+B、
+3 6
+
+C、
+2 4
+
+D、
+0 0
+
+正确答案： B 我的答案：B得分： 1.3分
+答案解析：
+
+第一个find表示查找子串"def"首次出现的位置,
+
+第二个find表示从第3个位置开始查找子串"a"出现的位置
+
+==========================================================
+
+
+【多选题】
+Which of the following statements are true?
+
+A、
+Each element in an array has the same type.
+
+B、
+The array size is fixed after it is created.
+
+C、
+The array size used to declare an array must be a constant expression.
+
+D、
+The array elements are initialized when an array is created.
+
+正确答案： ABC 我的答案：ABC得分： 1.3分
+答案解析：
+
+定义数组的注意事项，不是所有的编译器都会对数组元素进行初始化
+
+==================================================
+
+【多选题】
+Suppose int i = 5, which of the following can be used as an index for array double t[100]?
+
+A、
+i
+
+B、
+rand( ) % 100
+
+C、
+i + 10
+
+D、
+i + 6.5
+
+正确答案： ABC 我的答案：ABC得分： 1.3分
+答案解析：
+
+数组元素的下标必须为整数
+
+===================================================
+
+【多选题】
+Suppose two strings are declared as 
+
+   string s1 = "ABC"; 
+
+and 
+
+   string s2 = "DEFG";
+
+Which of the following expressions are correct?
+
+A、
+s1 + s2
+
+B、
+"ABC" + "DEFG"
+
+C、
+s1 + "TEMP"
+
+D、
+"TEMP" + s1
+
+E、
+s1 + s2 + "TEMP"
+
+正确答案： ACDE 我的答案：ACDE得分： 1.3分
+答案解析：
+
+加号(+)是运算符重载，表示字符串串接
+
+================================================
+
+【多选题】
+Suppose two strings are declared as 
+
+  string s1 = "ABC"; 
+
+and
+
+  string s2 = "DEFG";
+
+Which of the following is a correct expression?
+
+A、
+s1 > s2
+
+B、
+s1 >= s2
+
+C、
+s1 < s2
+
+D、
+s1 <= s2
+
+E、
+s1 == s2
+
+正确答案： ABCDE 我的答案：ABCDE得分： 1.3分
+答案解析：
+
+关系运算符重载，表示字符串比较
+
+===================================================
+
+【单选题】
+When you declare an array using the following statement inside a function, the element values are automatically initialized to 0.
+int matrix[5][5];
+
+A、
+True
+
+B、
+False
+
+正确答案： B 我的答案：B得分： 4.3分
+答案解析：
+
+不是所有的编译器都对数组进行自动初始化。但是，如果要把数组初始化为0，可以写成int matrix[5][5]={0}
+
+===============================================
+
+【单选题】
+如下程序执行后的输出结果是( )。
+#include <iostream>
+#include <cstring>
+using namespace std;
+int main( ) {
+  char k[2][3] = {'a', 'b', 'c', 'd', '\0'};
+  cout << sizeof(k[0]) << sizeof(k[1]) << sizeof(k);
+  cout << strlen(k[0]) << strlen(k[1]);
+  return 0;
+}
+
+A、
+33641
+
+B、
+36641
+
+C、
+66641
+
+D、
+33644
+
+正确答案： A 我的答案：A得分： 4.3分
+答案解析：
+
+sizeof(数组名)：返回数组的大小。
+
+strlen(字符串)：返回字符串长度，计算方法是从字符串的第一个字符开始往后数，碰到 '\0' 为止，有几个算几个。
+
+因此：
+
+(1) sizeof(k[0]): 由于k是二维数组，也可以看成一维数组，其每个元素还是个一维数组。因此，k[0]是k的第一个元素，同时也是个一维数组，这个数组的大小为3（即二维数组 k 的列数）。sizeof(k[1])也是一样。
+
+(2) sizeof(k)：指整个二维数组占的字节个数。
+
+(3) strlen(k[0])：如上所属，该表达式表示从指定的字符开始，一个个字符往后数，直到碰到 '\0'，与数组的元素个数、维数都没关系。
+
+=========================================
+
+【单选题】
+如下程序执行后的输出结果是( )。
+#include <iostream>
+#include <cstring>
+using namespace std;
+int main( ) {
+  char k[2][3] = {'a', 'b', 'c', 'd', '\0'};
+  cout << sizeof(k[0]) << sizeof(k[1]) << sizeof(k);
+  cout << strlen(k[0]) << strlen(k[1]);
+  return 0;
+}
+
+A、
+33641
+
+B、
+36641
+
+C、
+66641
+
+D、
+33644
+
+正确答案： A 我的答案：A得分： 4.3分
+答案解析：
+
+sizeof(数组名)：返回数组的大小。
+
+strlen(字符串)：返回字符串长度，计算方法是从字符串的第一个字符开始往后数，碰到 '\0' 为止，有几个算几个。
+
+因此：
+
+(1) sizeof(k[0]): 由于k是二维数组，也可以看成一维数组，其每个元素还是个一维数组。因此，k[0]是k的第一个元素，同时也是个一维数组，这个数组的大小为3（即二维数组 k 的列数）。sizeof(k[1])也是一样。
+
+(2) sizeof(k)：指整个二维数组占的字节个数。
+
+(3) strlen(k[0])：如上所属，该表达式表示从指定的字符开始，一个个字符往后数，直到碰到 '\0'，与数组的元素个数、维数都没关系。
+
+===========================================================
+
