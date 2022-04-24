@@ -1,0 +1,140 @@
+【单选题】
+以下循环体执行次数为______。
+for(int i = 0; i < 10; i++) {
+  if(i < 1)
+    continue;
+  if(i == 5)
+    break;
+}
+
+A、
+死循环
+
+B、
+1
+
+C、
+10次
+
+D、
+6次
+
+正确答案： D 我的答案：D得分： 0.8分
+答案解析：
+
+如果continue被执行，C++会立即判断循环条件，决定是否继续循环；如果break被执行，表示立即跳出循环(不判断条件)
+
+======================================================
+
+【单选题】
+The ? mark in the following code should be replaced by ___________.
+
+#include <iostream>
+
+#include <cctype>
+
+#include <cstring>
+
+using namespace std;
+
+int countLetters(const char s[ ]) {
+
+  int count = 0;
+
+  for (int i = 0; i < ? ; i++) {
+
+    if (isalpha(s[i])) count++;
+
+  }
+
+  return count;
+
+}
+
+int main( ) {
+
+  // Prompt the user to enter a string
+
+  cout << "Enter a string: ";
+
+  char s[80];
+
+  cin.getline(s, 80);
+
+  cout << "The number of letters in " << s << " is " << countLetters(s) << endl;
+
+  return 0;
+
+}
+
+A、
+80
+
+B、
+79
+
+C、
+strlen(s)
+
+D、
+strlen(s) – 1
+
+正确答案： C 我的答案：C得分： 1.3分
+答案解析：
+
+用strlen计算字符串长度
+
+=============================================================
+
+【单选题】
+What is the output of the following code?
+string s("abcdefag");
+cout << s.find("def") << " " << s.find("a", 3);
+
+A、
+3 0
+
+B、
+3 6
+
+C、
+2 4
+
+D、
+0 0
+
+正确答案： B 我的答案：B得分： 1.3分
+答案解析：
+
+第一个find表示查找子串"def"首次出现的位置,
+
+第二个find表示从第3个位置开始查找子串"a"出现的位置
+
+===============================================================
+
+【单选题】
+What is the output of the following code?
+string s("abcdefg");
+cout << s.substr(3);
+
+A、
+abc
+
+B、
+bcd
+
+C、
+defg
+
+D、
+efg
+
+正确答案： C 我的答案：C得分： 1.3分
+答案解析：
+
+取第3个位置开始一直到最后位置的所有字符构成的子串
+
+==============================================================
+
+
+
