@@ -1,0 +1,81 @@
+#include<iostream>
+using namespace std;
+void A(double arr[][5],int x,int y)
+{
+
+	for(int i=0;i<x;i++)
+	{
+		double add=0;
+	    for(int j=0;j<y;j++)
+	    {
+			add+=arr[i][j];
+		}
+		cout<<"第"<<i+1<<"个学生的平均分为"<<add/y<<endl;
+	}
+	
+}
+
+void B(double arr[][5],int x,int y)
+{
+	for(int j=0;j<y;j++)
+	{
+		double add=0;
+		for(int i=0;i<x;i++)
+		{
+			add+=arr[i][j];
+		}
+		cout<<"第"<<j+1<<"科目的平均分为"<<add/x<<endl; 
+	}
+}
+
+void search(double arr[][5],int x,int y)
+{
+	double tmp=arr[0][0];
+	int row=0,col=0;
+	for(int i=0;i<x;i++)
+	for(int j=0;j<y-1;j++)
+	{
+		if(tmp<arr[i][j+1])
+		{
+			tmp=arr[i][j+1];
+			row=i+1;
+			col=j+2;
+		}
+	}
+	cout<<tmp<<" "<<row<<" "<<col<<endl;
+ } 
+ 
+ void C(double arr[][5],int x,int y)
+ {
+ 	double arr1[10]={0};
+ 	for(int i=0;i<x;i++)
+	{
+		double add=0;
+	    for(int j=0;j<y;j++)
+	    {
+			add+=arr[i][j];
+		}
+	    arr1[i]=add/y;
+	}
+	double add1=0,add2=0;
+	for(int i=0;i<10;i++)
+	{
+		add2+=arr1[i];
+		add1+=arr1[i]*arr1[i];
+	}
+	double result=(1/x*add1)-(add2/x)*(add2/x);
+	cout<<"方差为"<<result<<endl; 
+ }
+int main()
+{
+	double arr[10][5]={{1,2,3,4,5},{6,7,5,4,5},{0,1,2,3,45},{5,4,6,4,2}};
+	A(arr,10,5);
+	B(arr,10,5);
+	search(arr,10,5);
+	C(arr,10,5);
+	return 0;
+ } 
+ 
+ =========================================
+ 
+ 
