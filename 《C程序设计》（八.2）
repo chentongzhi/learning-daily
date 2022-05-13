@@ -1,0 +1,23 @@
+#include<iostream>
+using namespace std;
+//写一个函数，输入一个十六进制数，输出相应的十进制数
+int devert(int num)
+{
+	int n=0;
+	while((num/=16)>=16)
+	{
+		int tmp=num%16
+		if(tmp>=0&&tmp<=9)
+			n = n * 10 + tmp;
+		else if(tmp==10)
+			
+	}
+}
+int main()
+{
+	int num;
+	cin>>num;
+	int result=devert(num);
+	cout<<result;
+	return 0;
+}
