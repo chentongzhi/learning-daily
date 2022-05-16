@@ -1,0 +1,472 @@
+【单选题】
+Analyze the following code.
+
+#include <iostream>
+
+using namespace std;
+
+class Test {
+
+public:
+
+  int x;
+
+  Test( ) { cout << "Test"; }
+
+};
+
+int main( ) {
+
+  Test test;
+
+  cout << test.x;
+
+  return 0;
+
+}
+
+A、
+The program has a compile error because test is not initialized.
+
+B、
+The program has a compile error because x has not been initialized.
+
+C、
+The program runs fine, but test.x is unpredictable.
+
+D、
+The program has a compile error because Test does not have a default constructor.
+
+正确答案： C 我的答案：C得分： 6.6分
+答案解析：
+
+构造函数没有为数据成员 x 进行初始化，所以输出的结果是不可预料的
+
+=================================================
+
+【单选题】
+There are no default value for data fields in a class.
+
+A、
+true
+
+B、
+false
+
+正确答案： A 我的答案：A得分： 6.6分
+答案解析：
+
+类的数据成员不能在定义时初始化，只能通过构造函数初始化
+
+=================================================
+
+【多选题】
+Which of the following statements are true?
+
+A、
+C++ allows you to separate class declaration from implementation.
+
+B、
+The class declaration simply lists all the data fields, constructor prototypes, and the function prototypes. The class implementation implements the constructors and functions.
+
+C、
+The class declaration and implementation are in two separate files. Both files should have the same name, but with different extension names.
+
+D、
+The class declaration file has an extension name .h and the class implementation file has an extension name .cpp.
+
+E、
+If you don't use the public keyword, the visibility is private by default.
+
+正确答案： AE 我的答案：AE得分： 50.0分
+答案解析：
+
+在 C++中，类的定义和类的实现（成员函数是实现）可以全部分开进行、也可以全部不分开、还可以部分分开部分不分开；
+
+类的声明与实现可以分别放在两个不同的文件里，但是对文件名没有要求；
+
+通常，人们把类的声明存到 .h 文件，把类的实现存到 .cpp 文件中，但这不是强制的。
+
+另外，如果没用 public 声明，成员默认为 private，即在类外不可见。
+
+=======================================================================
+
+【单选题】
+如下类中定义的 4 个成员函数，正确的是______。
+
+class AA {
+
+private:
+
+  int a;
+
+public:
+
+  int getRef( ) const { return &a; }    // (1)
+
+  int getValue( )const{ return a; }     // (2)
+
+  void set(int n)const{ a = n; }          // (3)
+
+  friend void show(AA aa)const {cout << a; } // (4)
+
+};
+
+A、
+1
+
+B、
+2
+
+C、
+3
+
+D、
+4
+
+正确答案： B 我的答案：B得分： 20.0分
+答案解析：
+
+A 选项返回 a 的地址（&A），因此返回值类型应该为 int *型；
+
+C 选项是用常成员修改数据成员，这是 C++不允许的；
+
+D 选修定义友元函数为常的，这是不对的，因为友元是普通函数，不能定义为常函数
+
+=============================================================
+
+【多选题】
+Analyze the following code:
+
+#include <iostream>
+
+using namespace std;
+
+class A {
+
+public:
+
+  A( );
+
+  double getNumber( );
+
+private:
+
+  double number;
+
+};
+
+A::A( ) {
+
+  number = 1;
+
+}
+
+double A::getNumber( )  {
+
+  return number;
+
+}
+
+void printA(const A &a) {
+
+  cout << "The numberr is " << a.getNumber( ) << endl;
+
+}
+
+int main ( ) {
+
+  A myObject;
+
+  printA(myObject);
+
+  return 0;
+
+}
+
+A、
+The program will compile and run fine.
+
+B、
+The program will compile if the getNumber function is defined as const.
+
+C、
+The program will compile if const A &a is changed to A &a in the function printA.
+
+D、
+The program will compile if A myObject is changed to A myObject( ).
+
+E、
+The program will compile if printA(myObject) is changed to printA(&myObject).
+
+正确答案： BC 我的答案：BC得分： 20.0分
+答案解析：
+
+常对象只能访问常成员函数
+
+===================================================================
+
+【多选题】
+What is correct in the following code?
+
+#include <iostream>
+
+using namespace std;
+
+class Test {
+
+public:
+
+  static int square(int n) { return n*n; }
+
+  int getAge( ) { return age; }
+
+private:
+
+  int age;
+
+};
+
+int main( ) {
+
+  cout << Test.square(4);
+
+  return 0;
+
+}
+
+A、
+It is a compile error to invoke Test.square(4).
+
+B、
+You should replace Test.square(4) with square(4).
+
+C、
+You should replace Test.square(4) with Test->square(4).
+
+D、
+You should replace Test.square(4) with Test::square(4).
+
+正确答案： AD 我的答案：AD得分： 25.0分
+答案解析：
+
+静态成员函数可以用“类名::静态成员函数名”调用，但不可以用“类名.静态成员函数名”调用
+
+==========================================
+
+【单选题】
+What will be displayed by the following code?
+
+#include <iostream>
+
+using namespace std;
+
+class Count {
+
+public:
+
+  int count;
+
+  Count(int c) { count = c; }
+
+  Count( ) { count = 0; }
+
+};
+
+void increment(Count c, int times) {
+
+  c.count++;
+
+  times++;
+
+}
+
+int main( ) {
+
+  Count myCount;
+
+  int times = 0;
+
+  for (int i = 0; i < 100; i++)
+
+    increment(myCount, times);
+
+  cout << "myCount.count is " << myCount.count;
+
+  cout << " times is " << times;
+
+  return 0;
+
+}
+
+A、
+myCount.count is 0 times is 0
+
+B、
+myCount.count is 100 times is 100
+
+C、
+myCount.count is 0 times is 100
+
+D、
+myCount.count is 100 times is 0
+
+正确答案： A 我的答案：A得分： 16.6分
+答案解析：
+
+调用函数 increment(myCount, times) 不会影响实参，因为两个参数都是值传递
+
+=============================================
+
+#include <iostream>
+
+#include <string>
+
+using namespace std;
+
+
+
+class MyDate {
+
+public:
+
+  int year, month, day;
+
+
+
+  MyDate( ) {
+
+    year = 2003;
+
+    month = 2;
+
+    day = 3;
+
+  }
+
+
+
+  MyDate(int year1, int month1, int day1) {
+
+    year = year1;
+
+    month = month1;
+
+    day = day1;
+
+  }
+
+};
+
+
+
+class Name {
+
+public:
+
+  string firstName;
+
+  char mi;
+
+  string lastName;
+
+  MyDate birthDate;
+
+
+
+  Name(string firstName1, char mi1, string lastName1, MyDate birthDate1) {
+
+    firstName = firstName1;
+
+    mi = mi1;
+
+    lastName = lastName1;
+
+    birthDate = birthDate1;
+
+  }
+
+};
+
+
+
+int main( ) {
+
+  MyDate birthDate(1990, 3, 4);
+
+  Name name("John", 'F', "Smith", birthDate);
+
+  birthDate = MyDate(1991, 1, 2);
+
+  birthDate.year = 1992;
+
+  cout << name.birthDate.year << endl;
+
+  return 0;
+
+}
+
+
+=============================================================
+
+A variable's (         ) indicates where in the program a variable can be used.
+
+A、
+lifetime
+
+B、
+range
+
+C、
+scope
+
+D、
+span
+
+正确答案： C 我的答案：C得分： 8.3分
+答案解析：
+
+变量的作用域是指它可以被使用的范围
+
+===============================================================
+
+
+【单选题】
+Which of the following is the scope resolution operator?
+
+A、
+(two colons) ::
+
+B、
+(asterisk) *
+
+C、
+(period) .
+
+D、
+(hyphen and a greater than symbol) ->
+
+正确答案： A 我的答案：A得分： 8.3分
+答案解析：
+
+用双冒号可以访问突破就近原则,“揪”出被隐藏的对象
+
+====================================================
+
+
+【单选题】
+Private data member can be accessed directly by a public member method.
+
+A、
+True
+
+B、
+False
+
+正确答案： A 我的答案：A得分： 8.7分
+答案解析：
+
+类的私有数据成员可以被其公有成员直接访问,即类内访问
+
+===================================
+
