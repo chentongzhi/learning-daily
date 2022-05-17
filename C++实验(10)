@@ -1,0 +1,94 @@
+#include <iostream>
+using namespace std;
+
+class Sort{
+public:
+	virtual void sort(int arr[],int size);
+};
+class SelectionSort:public Sort{
+public:
+	void sort(int arr[],int size);
+};
+void SelectionSort::sort(int arr[],int size)
+{
+	for(int i=0;i<size;i++)
+		for(int j=i+1;j<size;j++)
+		{
+			int tmp=arr[i];
+			arr[i]=arr[j];
+			arr[j]=tmp;
+		}
+}
+class QuickSort:public Sort{
+public:
+	void sort(int arr[],int size);
+};
+void QuickSort::sort(int arr[],int size)
+{
+	int left=0,right=size-1;
+	if(left>=right)
+	return;
+	int i=left,j=right;
+	int tmp = arr[left];
+	while(i<j)
+	{
+		while(arr[j]>=tmp&&i<j)
+			j--;
+		while(arr[i]<=tmp&&i<j)
+			i++;
+		if(i<j)
+		{
+			int base=arr[j];
+			arr[j]=arr[i];
+			arr[i]=base;
+		}	
+	}
+	arr[left]=arr[i];
+	arr[i]=tmp;
+	QuickSort::sort(arr,(size-1));
+	QuickSort::sort(arr+i,size-i-1);
+}
+class BubbleSort:public Sort{
+public:
+	void sort(int arr[],int size);
+};
+
+void BubbleSort::sort(int arr[],int size)
+{
+	for(int i=0;i<size;i++)
+		for(int j=0;j<size-1;j++)
+			if(arr[j]>arr[j+1])
+			{
+				int tmp=arr[j];
+				arr[j]=arr[j+1];
+				arr[j+1]=tmp;
+			}
+}
+
+void sort(int arr[] , int size , Sort & s){
+	s.sort(arr , size);
+}
+
+void outPutArr(int arr[] , int size){
+	for(int i = 0; i < size; i ++){
+		cout << arr[i] << " ";
+	}
+	cout << endl;
+}
+
+int main(){
+	int arr1[] = {90,100,86,77,52,83,69,75,98,77,67,81,83,92,86,85};
+	int arr2[] = {90,100,86,77,52,83,69,75,98,77,67,81,83,92,86,85};
+	int arr3[] = {90,100,86,77,52,83,69,75,98,77,67,81,83,92,86,85};
+	int size = sizeof(arr1) / sizeof(int);
+	SelectionSort ss;
+	BubbleSort bs;
+	QuickSort qs;
+	sort(arr1 , size , ss);
+	sort(arr2 , size , bs);
+	sort(arr3 , size , qs);
+	outPutArr(arr1 , size);
+	outPutArr(arr2 , size);
+	outPutArr(arr3 , size);
+	return 0;
+}
