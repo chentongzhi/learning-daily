@@ -1,0 +1,672 @@
+【单选题】
+If you define the swap function as follows:
+template <typename T>
+void Swap(T &var1, T &var2) {
+  T temp = var1;
+  var1 = var2;
+  var2 = temp;
+}
+You can invoke Swap using ______.
+
+A、
+Swap(1, 2)
+
+B、
+int v1 = 1, v2 = 2; 
+
+Swap(v1, v2);
+
+C、
+int v1 = 1, v2 = 2; 
+
+Swap(&v1, &v2);
+
+D、
+int v1 = 1; 
+
+double v2 = 2; 
+
+Swap(v1, v2);
+
+正确答案： B 我的答案：B得分： 12.5分
+
+=========================================
+
+类模板的使用实际上是将类模板实例化成一个(     )。
+
+A、
+函数
+
+B、
+对象
+
+C、
+类
+
+D、
+抽象类
+
+正确答案： C 我的答案：C得分： 14.2分
+
+
+========================================
+
+
+【单选题】
+类模板的模板参数(     )。
+
+A、
+可以作为数据成员的类型
+
+B、
+可以作为成员函数的返回类型
+
+C、
+可以作为成员函数的参数类型
+
+D、
+以上三种都可以
+
+正确答案： D 我的答案：D得分： 14.2分
+
+================================================
+
+【单选题】
+类模板的实例化(     )。
+
+A、
+在编译时进行
+
+B、
+属于动态联编
+
+C、
+在运行时进行
+
+D、
+在连接时进行
+
+正确答案： A 我的答案：A得分： 14.2分
+
+======================================================
+
+【单选题】
+类模板的参数(     )。
+
+A、
+可以是多个
+
+B、
+不能有基本数据类型
+
+C、
+可以是0个
+
+D、
+参数不能给初值
+
+正确答案： A 我的答案：A得分： 14.2分
+
+=======================================================
+
+【单选题】
+以下类模板,正确的实例化方式为(     )。
+template <class T> 
+
+class TAdd {
+private:
+  T x, y;
+public:
+  TAdd(T a, T b) : x(a), y(b) { }
+  T add( ) { return x + y; }
+};
+
+A、
+TAdd<char> K;
+
+B、
+TAdd<char*> K('3', '4');
+
+C、
+TAdd<double, double> K(3.4, 4.8);
+
+D、
+TAdd<float> K(3.14, 2.78);
+
+正确答案： D 我的答案：D得分： 14.2分
+
+============================================================
+
+
+【多选题】
+Suppose you define
+template <typename T = int>
+class Stack{
+public:
+  Stack( ) { }
+// ...
+};
+Which of the following statements are correct?
+
+A、
+Stack<double> s;
+
+B、
+Stack<int> s;
+
+C、
+Stack<> s;
+
+D、
+Stack s;
+
+E、
+Stack<int, double> s;
+
+正确答案： ABC 我的答案：ABC得分： 14.8分
+答案解析：
+
+首先，typename 可以等同于 class；
+
+其次，T 的默认取值为 int，如果确切告诉了 T 是什么类型（例如 A 和 B 选项），那 T 就是给定的类型，如果没给出 T 的具体类型（例如 C 选项），则 T 默认为 int 型。
+
+其中，D 选项不符合语法要求，而 E 选项给了两个类型，可未知类型只有一个，所以 E 也是错误的。
+
+=================================================================
+
+【单选题】
+以下类模板定义正确的为(     )。
+
+A、
+template <class T, int i = 0>
+
+B、
+template <class T, class int i>
+
+C、
+template <class T, typenname T>
+
+D、
+template <class T1, T2>
+
+正确答案： A 我的答案：A得分： 20.0分
+答案解析：
+
+class 和 typename 不能混着用
+
+================================================================
+
+【单选题】
+以下类模板:
+template <class T1, class T2 = int, int num = 10>
+class TClass{…};
+正确的实例化方式为(     )。
+
+A、
+TClass<char&, char> Cl;
+
+B、
+TClass< > Cl;
+
+C、
+TClass<char*, 100> C1;
+
+D、
+TClass<char, 100, int> C1;
+
+正确答案： A 我的答案：A得分： 20.0分
+
+===============================================================
+
+【单选题】
+以下程序运行的结果为(     )。
+#include <iostream>
+using namespace std;
+class FunArray {
+private:
+  int *pa; // 指向一个数组空间
+  int size; // 数组元素个数
+public:
+  FunArray(int a[ ], int thesize) : pa(a), size(thesize) { }
+  int Size( ) { return size; }
+  int& operator[ ](int index) { return pa[index - 1]; }
+};
+void main( ) {
+  int s[ ] = {3, 7, 6};
+  FunArray ma(s, sizeof(s)/sizeof(int));
+  ma[2] = 9;
+  for(int i = 1; i <= ma.Size( ); i++)
+    cout << ma[i] << ' ';
+}
+
+A、
+3 9 6
+
+B、
+3 6 9
+
+C、
+9 3 6
+
+D、
+3 7 6
+
+正确答案： A 我的答案：A得分： 20.0
+
+=================================================
+
+【单选题】
+What is wrong in the following code?
+
+#include <iostream>
+
+#include <vector>
+
+using namespace std;
+
+int main( ) {
+
+    vector<int> v;
+
+    cout << v[0];
+
+    return 0;
+
+}
+
+
+
+A、
+The program has a compile error on v[0].
+
+B、
+The program has a runtime error on vector<int> v.
+
+C、
+The program has a runtime error on v[0], because the vector is empty.
+
+
+
+
+
+D、
+The program has a compile error on vector<int> v.
+
+正确答案： C 我的答案：A得分： 0.0分
+答案解析：
+
+vector 对象在初始化的时候默认为空，即：没有元素。所以 v[0] 不存在，运行时会报错
+
+==========================================================
+
+【单选题】
+What is wrong in the following code?
+
+  vector<int> v;
+
+  v[0] = 2.5;
+
+
+
+A、
+The program has a runtime error because you cannot assign a double value to v[0].
+
+B、
+The program has a runtime error because there are no elements in the vector.
+
+C、
+The program has a compile error because there are no elements in the vector.
+
+D、
+The program has a compile error because you cannot assign a double value to v[0].
+
+正确答案： B 我的答案：D得分： 0.0分
+答案解析：
+
+单独的 vector<int> v;  是定义 v，但是 v 里可以容纳的元素个数是 0.
+
+如果需要分配空间，应使用 vector<int> v(5);  // 可存放 5 个元素
+
+=========================================
+
+【单选题】
+下面对派生类的描述中，错误的是______。
+
+A、
+一个派生类可以作为另外一个派生类的基类
+
+B、
+派生类至少有一个基类
+
+C、
+派生类的成员除了它自己的成员外，还包含了它的基类的成员
+
+D、
+派生类中继承的基类成员的访问权限到派生类中保持不变
+
+正确答案： D 我的答案：D得分： 25.0分
+答案解析：
+
+只有在公有继承时，派生类中继承的基类成员的访问权限到派生类中才能保持不变
+
+===================================================
+
+【单选题】
+下列对友元关系叙述正确的是______。
+
+A、
+不能继承
+
+B、
+是类与类的关系
+
+C、
+是一个类的成员函数与另一个类的关系
+
+D、
+提高程序的运行效率
+
+正确答案： A 我的答案：A得分： 25.0分
+答案解析：
+
+友元函数不属于成员函数，因此不能被继承
+
+=========================================
+
+
+【单选题】
+下面叙述不正确的是______。
+
+A、
+基类的保护成员在派生类仍然是保护的
+
+B、
+基类的保护成员在公有派生类中是保护的
+
+C、
+基类的保护成员在私有派生类中是私有的
+
+D、
+对基类成员的访问必须是无二义性的
+
+正确答案： A 我的答案：A得分： 9.0分
+答案解析：
+
+在私有继承时，基类的保护成员在派生类中是私有的
+
+===========================================
+
+【多选题】
+Which of the following statements are true?
+
+A、
+To redefine a function, the function must be defined in the derived class using the same signature and return type as in its base class.
+
+B、
+Overloading a function is to provide more than one function with the same name but with different signatures to distinguish them.
+
+C、
+It is a compilation error if two functions differ only in return type.
+
+D、
+A private function cannot be redefined. If a function defined in a derived class is private in its base class, the two functions are completely unrelated.
+
+正确答案： ABC 我的答案：ABC得分： 9.0分
+答案解析：
+
+私有成员函数也可以在派生类中被重写
+
+===================================================
+
+
+【单选题】
+What will be displayed by the following code?
+#include <iostream>
+using namespace std;
+class C {
+public:
+  string toString( ) { return "C"; }
+};
+class B: public C {
+  string toString( ) { return "B"; }
+};
+class A: public B {
+  string toString( ) { return "A"; }
+};
+
+
+void displayObject(C *p) {
+  cout << p->toString( );
+}
+
+
+
+int main( ) {
+
+  A a;
+
+  B b;
+
+  C c;
+
+  displayObject(&a);
+
+  displayObject(&b);
+
+  displayObject(&c);
+
+  return 0;
+
+}
+
+
+
+A、
+ABC
+
+B、
+CBA
+
+C、
+AAA
+
+D、
+BBB
+
+E、
+CCC
+
+正确答案： E 我的答案：E得分： 25.0分
+答案解析：
+
+三次调用displayObject函数都在运行类C中toString函数
+
+===============================================
+
+
+【单选题】
+下面叙述不正确的是______。
+
+A、
+实际中，公有派生用的更多一些
+
+B、
+对基类成员的访问必须是无二义性的
+
+C、
+类型兼容规则也适用于多重继承的场合
+
+D、
+基类的公有成员在派生类中仍然是公有的
+
+正确答案： D 我的答案：D得分： 25.0分
+答案解析：
+
+对于私有派生，基类中的所有成员在派生类中都是私有的
+
+=========================================
+
+【单选题】
+What is the output of the following code?
+#include <iostream>
+using namespace std;
+class ParentClass {
+private:
+  int id;
+public:
+  ParentClass(int id) { this->id = id; }
+  void print( ) { cout << id << endl; }
+};
+class ChildClass: public ParentClass {
+private:
+  int id;
+public:
+  ChildClass(int id): ParentClass(1) {
+    this->id = id;
+  }
+};
+int main( ) {
+  ChildClass cc(2);
+  cc.print( );
+  return 0;
+}
+
+A、
+0
+
+B、
+1
+
+C、
+2
+
+D、
+Nothing
+
+正确答案： B 我的答案：B得分： 9.0分
+答案解析：
+
+对象cc调用的print函数是来自基类的成员，因此输出基类的id
+
+=====================================================
+
+【单选题】
+如下程序执行后的输出结果是______。
+
+#include <iostream>
+
+using namespace std;
+
+class A {
+
+public:
+
+  A( )     { cout << "A"; }
+
+  ~A( )   { cout << "-A"; }
+
+};
+
+class B : public A {
+
+private:
+
+  A *p;
+
+public:
+
+  B( ) { cout << "B"; p = new A; }
+
+  ~B( ) {cout << "-B"; delete p; }
+
+};
+
+int main( ) { 
+
+  B obj;
+
+  return 0;
+
+}
+
+
+
+A、
+BAA-A-B-A
+
+B、
+ABA-B-A-A
+
+C、
+BAA-B-A-A
+
+D、
+ABA-A-B-A
+
+正确答案： B 我的答案：B得分： 9.0分
+答案解析：
+
+1、main函数里定义了一个B对象obj，此时要调用B的构造函数。由于B是个派生类，因此在执行B的构造函数前会先调用B的基类A的构造函数，故输出A；完事后再调用B的构造函数：先输出B，再动态创建A对象（p = new A;），故又一次调用A的构造函数，即输出A。
+2、main函数结束时，则对象obj要消失，因此会先调用B的析构再调用A的析构。调用B的析构时，先输出-B，接着动态释放p执向的A对象（delete  p），故执行A的析构，即输出-A，这样B的析构完事了；然后执行A的析构，结果会再次输出-A。
+
+
+
+============================================================
+
+【单选题】
+下列关于虚基类的描述中，错误的是(      )
+
+A、
+使用虚基类可以消除由多继承产生的二义性
+
+B、
+构造派生类对象时，虚基类的构造函数只被调用一次
+
+C、
+声明 class B : virtual public A 说明类 B 为虚基类
+
+D、
+建立派生类对象时，首先调用虚基类的构造函数
+
+正确答案： C 我的答案：C得分： 33.3分
+答案解析：
+
+声明 class B : virtual public A 说明类 A 为虚基类，不是 B
+
+=========================================
+
+
+【单选题】
+下列运算中，______运算符在C++中不能重载。
+
+A、
+&&
+
+B、
+[ ]
+
+C、
+:: (双冒号, 域名运算符)
+
+D、
+new
+
+正确答案： C 我的答案：C得分： 25.0分
+答案解析：
+
+域名运算符 (::) 不能被重载。特别说明，C++ 中不可重载的运算符有：
+
+【1】成员访问运算符 (.)；
+
+【2】成员指针访问运算符 (.* 和 ->*)；
+
+【3】域运算符 (::)；
+
+【4】长度运算符 (sizeof)；
+
+【5】条件运算符 (? :)；
+
+【6】预处理符号 (#). 
+
+===============================================================
+
