@@ -1,0 +1,109 @@
+#include <iostream>
+using namespace std;
+
+class Sort{
+public:
+	virtual void sort(int arr[],int size) = 0;  //纯虚函数，要求派生类必须重写 
+};
+class SelectionSort:public Sort{
+public:
+	void sort(int arr[],int size);
+};
+void SelectionSort::sort(int arr[],int size)
+{
+	for(int i=0;i<size-1;i++)
+		for(int j=i+1;j<size;j++)
+		{
+			if(arr[i]>arr[j])
+			{
+				int tmp=arr[i];
+				arr[i]=arr[j];
+				arr[j]=tmp;
+			 } 
+		}
+}
+class QuickSort:public Sort{
+public:
+	void sort(int arr[],int size);
+	void sort(int arr[],int left,int right);
+	int searchMid(int arr[] , int start , int end);
+};
+void QuickSort::sort(int arr[],int size)
+{
+	sort(arr,0,size-1);
+}
+void QuickSort::sort(int arr[],int left,int right)
+{
+	if(left>=right)
+	return;
+	//寻找中间值 
+	int mid = searchMid(arr , left , right);
+	sort(arr,left,mid-1);
+	sort(arr,mid+1,right);
+}
+int QuickSort::searchMid(int arr[] , int start , int end){
+	while(start < end){
+		while(arr[start] <= arr[end] && start < end){
+			end --;
+		}
+		if(start < end){
+			int temp = arr[start];
+			arr[start] = arr[end];
+			arr[end] = temp;
+		}
+		while(arr[start] <= arr[end] && start < end){
+			start ++;
+		}
+		if(start < end){
+			int temp = arr[start];
+			arr[start] = arr[end];
+			arr[end] = temp;
+		}
+	}
+	return start;
+}
+
+class BubbleSort:public Sort{
+public:
+	void sort(int arr[],int size);
+};
+
+void BubbleSort::sort(int arr[],int size)
+{
+	for(int i=0;i<size;i++)
+		for(int j=0;j<size-1;j++)
+			if(arr[j]>arr[j+1])
+			{
+				int tmp=arr[j];
+				arr[j]=arr[j+1];
+				arr[j+1]=tmp;
+			}
+}
+
+void sort(int arr[] , int size , Sort & s){
+	s.sort(arr , size);
+}
+
+void outPutArr(int arr[] , int size){
+	for(int i = 0; i < size; i ++){
+		cout << arr[i] << " ";
+	}
+	cout << endl;
+}
+
+int main(){
+	int arr1[] = {90,100,86,77,52,83,69,75,98,77,67,81,83,92,86,85};
+	int arr2[] = {90,100,86,77,52,83,69,75,98,77,67,81,83,92,86,85};
+	int arr3[] = {90,100,86,77,52,83,69,75,98,77,67,81,83,92,86,85};
+	int size = sizeof(arr1) / sizeof(int);
+	SelectionSort ss;
+	BubbleSort bs;
+	QuickSort qs;
+	sort(arr1 , size , ss);
+	sort(arr2 , size , bs);
+	sort(arr3 , size , qs);
+	outPutArr(arr1 , size);
+	outPutArr(arr2 , size);
+	outPutArr(arr3 , size);
+	return 0;
+}
