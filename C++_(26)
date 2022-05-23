@@ -1,0 +1,623 @@
+【单选题】
+若定义: short int i = 32769; cout << i; 的输出结果为______。
+
+A、
+32769
+
+B、
+32767
+
+C、
+-32767
+
+D、
+不确定
+
+正确答案： C 我的答案：C得分： 14.2分
+答案解析：
+
+32769 为整型（int）常量，十六进制形式为 0x0000 8001，赋给短整型（short int）后，截取低 16 位 0x8001，对应的十进制值为 -32767
+
+===================================================================
+
+【单选题】
+Which of the following declares a char named constant called TOP_GRADE?
+
+A、
+const char TOP_GRADE = 'A';
+
+B、
+const char TOP_GRADE = "A";
+
+C、
+const char TOP_GRADE;
+
+D、
+both "const char TOP_GRADE = 'A';" and "const char TOP_GRADE;"
+
+正确答案： A 我的答案：A得分： 33.3分
+答案解析：
+
+常量必须初始化
+
+======================================================================
+
+
+【单选题】
+-24 % -5 is _____
+
+A、
+3
+
+B、
+-3
+
+C、
+4
+
+D、
+-4
+
+E、
+0
+
+正确答案： D 我的答案：D得分： 5.5分
+答案解析：
+
+运算符左边数的符号为结果的符号
+
+================================================================
+
+【单选题】
+执行如下代码后
+
+int a = 12;
+
+a += a -= a * a;
+
+a 的值是______。
+
+A、
+552
+
+B、
+264
+
+C、
+144
+
+D、
+-264
+
+正确答案： D 我的答案：D得分： 6.6分
+答案解析：
+
+从右向左依次计算
+
+===========================================================
+
+【单选题】
+The expression static_cast<int>(76.0252175 *100) / 100 evaluates to _________.
+
+A、
+76.02
+
+B、
+76
+
+C、
+76.0252175
+
+D、
+76.03
+
+正确答案： B 我的答案：B得分： 9.0分
+答案解析：
+
+先算括号里的乘法运算，再取整，最后除以 int 型，结果还是 int 型，小数部分被忽略
+
+=======================================================
+
+【单选题】
+Which of the following is correct to define a new type that is synonymous to an existing type?
+
+A、
+typedef existingType newType;
+
+B、
+typedef newType existingType
+
+C、
+typedef existingType as newType;
+
+D、
+typedef newType as existingType
+
+正确答案： A 我的答案：A得分： 100.0分
+
+================================================
+
+【单选题】
+___________ are called stream insertion and stream extraction operators 
+for sending output to the console and reading from the console, respectively.
+
+A、
+>> and <<
+
+B、
+<< and >>
+
+正确答案： B 我的答案：B得分： 12.5分
+答案解析：
+
+输出符号(<<)和输入符号(>>)还可以被分别称为插入符号和提取符号
+
+================================================
+
+【单选题】
+Is the following loop compiled fine?
+
+for (; ; );
+
+A、
+Yes
+
+B、
+No
+
+正确答案： A 我的答案：A得分： 16.6分
+答案解析：
+
+从语法讲没有错误，能编译，但是执行时会导致无限循环
+
+===================================================
+
+
+【单选题】
+要求以下程序的功能是计算：s = 1 + 1/2 + 1/3 + … + 1/10
+
+#include <iostream>
+
+using namespace std;
+
+int main( ) {
+
+  float s = 1.0;
+  int n;
+  for (n = 10; n > 1; n--)
+    s = s + 1/n;
+  cout << s << endl;
+
+  return 0;
+}
+运行后输出结果错误，导致错误的程序行是______。
+
+A、
+float s = 1.0;
+
+B、
+for(n = 10; n > 1; n -- )
+
+C、
+s = s + 1/n;
+
+D、
+cout << s << endl;
+
+正确答案： C 我的答案：C得分： 17.0分
+答案解析：
+
+1/n为0，因为都是整型
+
+================================================
+
+【单选题】
+以下正确的函数头（非原型）为___________。
+
+A、
+void fun(void)
+
+B、
+double fun(int x; int y)
+
+C、
+int fun( );
+
+D、
+double fun(int x, y)
+
+正确答案： A 我的答案：A得分： 1.4分
+答案解析：
+
+函数中不需要参数时，可以在小括号里写 void 或什么都不
+
+==============================================
+
+
+The following code displays ________.
+cout << "a" << setw(6) << "abc";
+
+A、
+a abc
+
+B、
+aabc
+
+C、
+a
+
+D、
+abc
+
+正确答案： A 我的答案： A得分： 2.3分
+答案解析：
+
+setw(6)表示在6个列宽上输出后面的数据
+
+=============================================
+
+2
+What is the correct term for numbers[99]?
+
+A、
+index
+
+B、
+index variable
+
+C、
+array
+
+D、
+array element
+
+正确答案： D 我的答案： C得分： 0.0分
+答案解析：
+
+表达式 number[99] 表示数组 number 的第 99 个元素（从 0 开始计数）；而 int number[99]; 表示声明一个包含 99 个元素的数组。
+
+============================================
+
+What is the output of the following code?
+string s("abcdefg");
+cout << s.substr(3);
+
+A、
+abc
+
+B、
+bcd
+
+C、
+defg
+
+D、
+efg
+
+正确答案： C 我的答案： A得分： 0.0分
+答案解析：
+
+取第3个位置开始一直到最后位置的所有字符构成的子串
+
+================================================
+
+
+Suppose int i = 5, which of the following can be used as an index for array double t[100]?
+
+A、
+i
+
+B、
+rand( ) % 100
+
+C、
+i + 10
+
+D、
+i + 6.5
+
+正确答案： ABC 我的答案： AC得分： 0.7分
+答案解析：
+
+数组元素的下标必须为整数
+
+================================================
+
+
+若有说明：int a[ ][3] = {1, 2, 3, 4, 5}; 则 a 数组第一维的大小是(      )。
+
+A、
+2
+
+B、
+3
+
+C、
+4
+
+D、
+无确定值
+
+正确答案： A 我的答案： D得分： 0.0分
+答案解析：
+
+第一维大小由实际数值自动算出，且大小为刚好能容纳元素个数的值
+
+============================================
+
+
+【单选题】
+Analyze the following code.
+
+#include <iostream>
+
+using namespace std;
+
+class B {
+
+public:
+
+  B( ) { };
+
+private:
+
+  int k;
+
+};
+
+int main( ) {
+
+  B b;
+
+  cout << b.k << endl;
+
+  return 0;
+
+}
+
+A、
+The program displays 0.
+
+B、
+The program displays 1.
+
+C、
+The program displays unpredictable number.
+
+D、
+The program has a compile error because b.k cannot be accessed.
+
+E、
+The program has a runtime error because b.k does not have a value.
+
+正确答案： D 我的答案：C得分： 0.0分
+答案解析：
+
+通过对象名只能访问公有成员
+
+=====================================
+
+【单选题】
+Which of the following statements are true?
+
+A、
+A constant member function cannot change the data fields in the object.
+
+B、
+A constant memebr function may be an instance or a static function.
+
+C、
+A constant function may be defined for any functions not just instance member functions.
+
+D、
+A constructor can be defined as a constant member funciton.
+
+正确答案： A 我的答案：C得分： 0.0分
+
+==========================================
+
+
+【单选题】
+由于常对象不能被更新，因此（　　）。
+
+A、
+通过常对象只能调用它的常成员函数
+
+B、
+通过常对象只能调用静态成员函数
+
+C、
+常对象的成员都是常成员
+
+D、
+通过常对象可以调用任何不改变对象值的成员函数
+
+正确答案： A 我的答案：C得分： 0.0分
+答案解析：
+
+常对象只能调用常成员函数
+
+==================================
+
+【单选题】
+You should add the static keyword in the place of ? in which of the following function:
+
+#include <iostream>
+
+using namespace std;
+
+class Test {
+
+public:
+
+  ? int square(int n) { return n*n; }
+
+  ? int getAge( ) { return age; }
+
+private:
+
+  int age;
+
+};
+
+A、
+in the square function because the function does not use any instance data fields.
+
+B、
+in the getAge function
+
+C、
+in both lthe square function and the getAge function
+
+D、
+none
+
+正确答案： A 我的答案：B得分： 0.0分
+答案解析：
+
+如果必须加的话只能在 square 函数加，因为它没有访问非静态数据成员
+
+=================================================
+
+
+【多选题】
+What is correct in the following code?
+
+#include <iostream>
+
+using namespace std;
+
+class Test {
+
+public:
+
+  static int square(int n) { return n*n; }
+
+  int getAge( ) { return age; }
+
+private:
+
+  int age;
+
+};
+
+int main( ) {
+
+  cout << Test.square(4);
+
+  return 0;
+
+}
+
+A、
+It is a compile error to invoke Test.square(4).
+
+B、
+You should replace Test.square(4) with square(4).
+
+C、
+You should replace Test.square(4) with Test->square(4).
+
+D、
+You should replace Test.square(4) with Test::square(4).
+
+正确答案： AD 我的答案：AB得分： 0.0分
+答案解析：
+
+静态成员函数可以用“类名::静态成员函数名”调用，但不可以用“类名.静态成员函数名”调用
+
+===============================================
+
+【多选题】
+What is correct in the following code?
+
+#include <iostream>
+
+using namespace std;
+
+class Test {
+
+public:
+
+  static int square(int n) { return n*n; }
+
+  int getAge( ) { return age; }
+
+  static int k = 5;
+
+private:
+
+  int age;
+
+};
+
+int main( ) {
+
+  cout << Test::square(4);
+
+}
+
+A、
+The static variable k cannot be initialized inside the class.
+
+B、
+You should replace static int k = 5 with static int k and declare int Test::k = 5 outside the Test class.
+
+C、
+You should replace static int k = 5 with static int k and declare int Test.k = 5 outside the Test class.
+
+D、
+You should replace static int k = 5 with static int k and declare int Test->k = 5 outside the Test class.
+
+正确答案： AB 我的答案：AC得分： 0.0分
+
+==============================================
+
+【单选题】
+下列程序段的运行结果为______。
+#define ADD(X)   X + X
+int main( ) {
+  int m = 1, n = 2, k = 3;
+  int sum = ADD(m + n) * k; // m + n + m + n * k
+  cout << sum << endl;
+
+  return 0;
+}
+
+=========================================
+
+【单选题】
+下列程序的运行结果为______。
+#include <iostream>
+using namespace std;
+#define DEBUG 2
+int main( ) {
+  int i = 3;
+  #ifndef DEBUG
+    cout << DEBUG << "," << i;
+  #else
+    cout << i << ",";
+  #endif
+  cout << DEBUG;
+
+  return 0;
+}
+
+A、
+2, 3
+
+B、
+2
+
+C、
+3, 2
+
+D、
+编译时出错
+
+正确答案： C 我的答案：A得分： 0.0分
+答案解析：
+
+由于 DEBUG 被定义为 2，所以 cout << DEBUG << "," << i; 不会被编译
+
+===========================================
