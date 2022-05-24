@@ -1,0 +1,580 @@
+
+【单选题】
+What is the output of the following code?
+#include <iostream>
+using namespace std;
+void swap(int *pValue1, int *pValue2) {
+  cout << "swap 1 invoked" << endl;
+}
+void swap(int& pValue1, int& pValue2) {
+  cout << "swap 2 invoked" << endl;
+}
+int main( ) {
+  int num1 = 1;
+  int num2 = 2;
+  swap(&num1, &num2);
+  return 0;
+}
+
+A、
+swap 1 invoked
+
+B、
+swap 2 invoked
+
+C、
+The program has a runtime error because swap is declared multiple times.
+
+D、
+The program has a compile error because swap is declared multiple times.
+
+正确答案： A 我的答案：A得分： 10.0分
+答案解析：
+
+实参为地址，形参应该是指针
+
+======================================================
+
+
+【单选题】
+What is the output of the following code?
+#include <iostream>
+using namespace std;
+void swap(int pValue1, int pValue2) {
+  cout << "swap 1 invoked" << endl;
+}
+void swap(int& pValue1, int& pValue2) {
+  cout << "swap 2 invoked" << endl;
+}
+int main( ) {
+  int num1 = 1;
+  int num2 = 2;
+  swap(num1, num2);
+  return 0;
+}
+
+A、
+swap 1 invoked
+
+B、
+swap 2 invoked
+
+C、
+The program has a runtime error because swap is declared multiple times.
+
+D、
+The program has a compile error because swap(num1, num2) could match either swap(int pValue1, int pValue2) or swap(int& pValue1, int& pValue2).
+
+正确答案： D 我的答案：D得分： 10.0分
+答案解析：
+
+实参是普通变量，形参为引用或普通变量，两个swap无法区分
+
+==========================================================
+
+【单选题】
+以下程序执行后的输出结果是（  ）。
+
+void fun(char *a, char *b) {
+
+  a = b;
+
+  (*a) ++;
+
+}
+
+void main( ) {
+
+  char c1 = 'A' , c2 = 'a' ,*p1, *p2;
+
+  p1 = &c1; p2 = &c2;
+
+  fun(p1, p2);
+
+  cout << c1 << c2;
+
+}
+
+A、
+Ab
+
+B、
+aa
+
+C、
+Aa
+
+D、
+Bb
+
+正确答案： A 我的答案：A得分： 10.0分
+答案解析：
+
+fun中对形参指向的对象进行了改变，这样对应的实参就被改了
+
+==============================================
+
+【单选题】
+Which of the following statements is correct.
+
+A、
+int count = 5; 
+
+int *x = &count;
+
+B、
+int count = 5; 
+
+int x = &count;
+
+C、
+int count = 5;
+
+int &x = &count;
+
+D、
+int count = 5; 
+
+int **x = &count;
+
+正确答案： A 我的答案：C得分： 0.0分
+答案解析：
+
+指针的初始化
+
+==============================================
+
+【单选题】
+Analyze the following code:
+#include <iostream>
+using namespace std;
+class Circle {
+public:
+  Circle(double radius) { this->radius = radius; }
+  double getArea( ) const {
+    return 3.1415*radius*radius;
+  }
+private:
+  double radius;
+};
+int main( ) {
+  Circle r1(5);
+  cout << r1.getArea( ) << endl;
+  return 0;
+}
+
+A、
+The program will compile, and create an object of Circle with a radius 5.
+
+B、
+The program will compile, but you cannot create an object of Circle with a specified radius. The object will have an unpredictable value for radius.
+
+C、
+The program has a compilation error because you cannot assign radius to radius.
+
+D、
+The program does not compile because Circle does not have a default constructor.
+
+正确答案： A 我的答案：B得分： 0.0分
+答案解析：
+
+Circle类的构造函数里，this->radius是当前对象的radius，而没有用this修饰的是形参
+
+=================================================
+
+
+【单选题】
+如果int型指针q1和q2分别指向了int型数组元素a[2]和a[5]，则q2-q1的值是(        )。
+
+A、
+3
+
+B、
+12
+
+C、
+错误的表达式
+
+D、
+表达式正确，但结果无法确定
+
+正确答案： A 我的答案：B得分： 0.0分
+答案解析：
+
+两个指针相减，结果为int型，即地址差除以sizeof(指针类型)
+
+==================================================
+
+【单选题】
+“指针可以和int型数据做比较”是(        )的。
+
+A、
+错误
+
+B、
+正确
+
+正确答案： A 我的答案：B得分： 0.0分
+答案解析：
+
+除了可以与0(NULL)做等于(==)和不等于(!=)运算外，指针不可以和int数据做比较运算
+
+=================================================
+
+【单选题】
+Analyze the following code.
+#include <iostream>
+using namespace std;
+int main( ) {
+  char t[10];
+  char *p = t;
+  cout << "Enter a string: ";
+  cin >> p;
+  cout << p << endl;
+  return 0;
+}
+
+A、
+If you run the program and enter abc, nothing will be displayed. The program runs without errors.
+
+B、
+If you run the program and enter abc, abc will be displayed.
+
+C、
+If you run the program and enter abc, unpredictable characters will be displayed.
+
+D、
+If you run the program and enter abc, a runtime error will occur, because p is being used without initialized.
+
+正确答案： B 我的答案：A得分： 0.0分
+答案解析：
+
+p指向了字符型数组t，因此输入的字符串将存到该数组中
+
+====================================================
+
+【单选题】
+能正确表示数组元素地址的表达式是_______。
+int x[ ] = {1, 3, 4, 7, 9, 11}, *ptr = x, k = 3;
+
+A、
+x++
+
+B、
+&ptr
+
+C、
+&ptr[k]
+
+D、
+&(x + 1)
+
+正确答案： C 我的答案：D得分： 0.0分
+答案解析：
+
+x是数组的名称,是常量，不能自加(A错误)；ptr是数组首地址；&ptr是ptr的地址(B错误)；&(x+1)是错误的表达式，因为算术表达式没有地址(D错误)
+
+=================================================
+
+【单选题】
+若有定义:int a[8]; 则以下表达式中不能代表数组元素a[1]的地址的是_______。
+
+A、
+&a[0] + 1
+
+B、
+&a[1]
+
+C、
+&a[0]++
+
+D、
+a + 1
+
+正确答案： C 我的答案：A得分： 0.0分
+答案解析：
+
+&a[0]是地址常量，不能自加
+
+================================================
+
+【单选题】
+当定义const char *p = "ABC"; 时，下列语句正确的是_______。
+
+A、
+char **q = p;
+
+B、
+p[0] = 'B';
+
+C、
+*p = '\0';
+
+D、
+p = NULL;
+
+正确答案： D 我的答案：A得分： 0.0分
+答案解析：
+
+const离p远，表明p还可以指向其它对象，但是不能通过p修改它指向的对象
+
+================================================
+
+【单选题】
+当定义char* const p = "ABC"; 时，下列语句正确的是_______。
+
+A、
+*p++;
+
+B、
+p[0] = 'b';
+
+C、
+p++;
+
+D、
+p = NULL;
+
+正确答案： B 我的答案：A得分： 0.0分
+答案解析：
+
+p指向了一个字符数组，const离p近，表明p的值不能被修改，但是可以通过p修改它指向的对象
+
+==========================================
+
+【单选题】
+以下程序段中，不能正确赋字符串(编译时系统会提示错误)的是(     )。
+
+A、
+char s[10] = "abcdefg";
+
+B、
+char t[ ] = "abcdefg", *s = t;
+
+C、
+char s[10]; s = "abcdefg";
+
+D、
+char s[10]; strcpy(s,"abcdefg");
+
+正确答案： C 我的答案：B得分： 0.0分
+答案解析：
+
+s 是数组名字，是地址常量，不能被改动
+
+=============================================
+
+【单选题】
+下列选项中正确的语句组是
+
+A、
+char s[8]; s = {"Beijing"};
+
+B、
+char *s; s = {"Beijing"};
+
+C、
+char s[8]; s = "Beijing";
+
+D、
+char *s; s = "Beijing";
+
+正确答案： D 我的答案：C得分： 0.0分
+答案解析：
+
+s是数组名字，是地址常量，不能被改动(AC错误)，B不符合语法要求
+
+============================================
+
+【单选题】
+以下程序执行后的输出结果是( )。
+int main( ) {
+  char str[20] = {"Hello, Beijing"}, *p = str;
+  cout << strlen ( p + 7 );
+  return 0;
+}
+
+A、
+0
+
+B、
+5
+
+C、
+7
+
+D、
+20
+
+正确答案： C 我的答案：B得分： 0.0分
+答案解析：
+
+从 p+7（是一个地址）开始计算字符串的长度，遇到 '\0' 结束
+【提醒：逗号后面有一个空格，这是英文的习惯，中文没有这个习惯，希望大家永远记住】
+
+=====================================================================
+
+【单选题】
+下面能正确进行字符串赋值操作的是(     )。
+
+A、
+char s[5] = {"ABCDE"};
+
+B、
+char s[5] = {'A', 'B', 'C', 'D', 'E'};
+
+C、
+char *s; s = "ABCDE";
+
+D、
+char *s; cin >> s;
+
+正确答案： C 我的答案：B得分： 0.0分
+答案解析：
+
+A定义的数组太小，不能存放长度为5的字符串(因为还有'\0'); 
+
+B不是字符串;
+
+D中的s没有被初始化
+
+=========================================
+
+【单选题】
+下面定义不正确的是(     )。
+
+A、
+char a[10] = "China";
+
+B、
+char *a = 0;
+
+C、
+char a[10], *p = a; p = "China";
+
+D、
+int *p = 10;
+
+正确答案： D 我的答案：B得分： 0.0分
+答案解析：
+
+指针变量不能被赋予整型数值(0，也就是NULL除外)
+
+===========================================
+
+【单选题】
+设有语句int array[3][4]; 则引用下标为i和j的数组元素的方法中，不正确的引用方式是_______。
+
+A、
+array[i][j]
+
+B、
+*(*(array + i) + j)
+
+C、
+*(array[i] + j)
+
+D、
+*(array + i * 4 + j)
+
+正确答案： D 我的答案：B得分： 0.0分
+答案解析：
+
+array是二维数组的名称，array+i相当于加了i行(4个int)，因此D不正确
+
+===============================================
+
+【单选题】
+Analyze the following code:
+#include <iostream>
+#include "Circle.h"
+using namespace std;
+int main( ) {
+  cout << Circle(5).getArea( ) << endl;
+  cout << (new Circle(5))->getArea( ) << endl;
+  return 0;
+}
+
+A、
+The program has a compile error on Circle(5).getArea( ).
+
+B、
+The program has a compile error on new Circle(5).getArea( ).
+
+C、
+The program compiles, but cannot run.
+
+D、
+The program compiles and runs, but new Circle(5) creates an anonymous object on the heap. This causes memory leak.
+
+正确答案： D 我的答案：B得分： 0.0分
+答案解析：
+
+第一个Circle(5) 是创建一个匿名对象，new Circle(5) 是动态申请一个对象
+
+========================================
+
+【单选题】
+有如下类定义:
+class Test {
+private:
+int a ;
+  static int b;
+  const int c;
+public:
+  Test( ) { a = 0; c = 0; }                 // (1)
+  int f(int a)const { this->a = a; }   // (2)
+  static int g( ) { return a; }            // (3)
+  void h(int b) {Test::b = b; }         // (4)
+};
+int Test::b = 0;
+在标注号码的行中，能被正确编译的是______。
+
+A、
+1
+
+B、
+2
+
+C、
+3
+
+D、
+4
+
+正确答案： D 我的答案：C得分： 0.0分
+答案解析：
+
+A选项错误，因为构造函数在对常成员c的初始化时没有放到成员初始化列表中；
+
+B选项错误，因为常成员函数f不能修改数据成员；
+
+C选项错误，因为静态成员函数不能访问非静态数据成员a
+
+========================================
+
+【多选题】
+Suppose you declare the following:
+double radius = 5;
+const double *pValue = &radius;
+Which of the following statements are allowed?
+
+A、
+radius++;
+
+B、
+(*pValue)++;
+
+C、
+pValue = &radius;
+
+D、
+*pValue = 0;
+
+正确答案： AC 我的答案：ABC得分： 0.0分
+答案解析：
+
+const 离 pValue 远，表明不能用 pValue 修改它所指的单元
+
+=========================================
+
