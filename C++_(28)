@@ -1,0 +1,469 @@
+【单选题】
+在 C++ 程序中，对象之间的相互通信通过______。
+
+A、
+继承实现
+
+B、
+调用成员函数实现
+
+C、
+封装实现
+
+D、
+函数重载实现
+
+正确答案： B 我的答案：A
+
+==============================================
+
+【单选题】
+下列关于运算符重载的描述中正确的是______。
+
+A、
+运算符重载可以改变运算数的个数
+
+B、
+运算符重载可以改变优先级
+
+C、
+运算符重载可以改变结合性
+
+D、
+运算符重载不能改变语法结构
+
+正确答案： D 我的答案：C得分： 0.0分
+答案解析：
+
+=============================================
+
+【单选题】
+What is the correct signature for the overloaded postfix ++ operator in class R?
+
+A、
+R operator++(R &r)
+
+B、
+R operator++( )
+
+C、
+R operator++(int dummy)
+
+D、
+R operator++(int &dummy)
+
+正确答案： C 我的答案：A
+
+===========================================
+
+【单选题】
+What is the correct signature for the overloaded unary operator + in class R?
+
+A、
+R R::operator+(const R &r)
+
+B、
+R R::operator+( )
+
+C、
+R R::operator<+>(const R &r)
+
+D、
+R R::operator(+)(const R &r)
+
+正确答案： B 我的答案：A
+
+=============================================
+
+【单选题】
+已知一个类包含如下函数原型：VOLUME operator - (VOLUME)const; ，下列关于这个函数的叙述错误的是______。
+
+A、
+这是运算符-的重载运算符函数
+
+B、
+这个函数所重载的运算符一定是一个一元运算符
+
+C、
+这是一个成员函数
+
+D、
+这个函数不改变类的任何数据成员的值
+
+正确答案： B 我的答案：D
+
+======================================
+
+【单选题】
+执行如下程序后的输出结果是______。
+#include <iostream>
+using namespace std;
+class complex {
+private:
+  double re, im;
+public:
+  complex (double r, double i) : re(r), im(i) { }
+  double real ( ) const { return re; }
+  double image ( ) const { return im; }
+  complex &operator += (complex a) {
+    re += a.re; im += a.im;
+
+    return *this;
+  }
+};
+void disp(const complex &z) {
+  cout << "(" << z.real( ) << ", " << z.image( ) << ")";
+}
+
+// ostream& operator<<(ostream &s, const complex &z) {
+//   return s << "(" << z.real( ) << ", " << z.image( ) << ")";
+// }
+int main ( ) {
+  complex x(1, -2), y(2, 3);
+
+  disp(x+=y);   // cout << (x+=y);
+  return 0;
+}
+
+A、
+(1, -2)
+
+B、
+(2, 3)
+
+C、
+(3, 5)
+
+D、
+(3, 1)
+
+正确答案： D 我的答案：C得分： 0.0分
+答案解析：
+
+operator<<(ostream &s, const complex &z)是对插入运算符<<的重载
+
+================================================
+
+【单选题】
+Suppose r is an object with class type R, in order to perform 4 + r, the R class header file must contain:
+
+A、
+int operator( );
+
+B、
+R(int n)
+
+C、
+friend R operator+(int r1, const R& r2)
+
+D、
+R operator+(const R& r1)
+
+E、
+friend R operator+(const R& r2, int r1)
+
+正确答案： C 我的答案：D得分： 0.0分
+答案解析：
+
+第一个操作数是int型数据，必须用友元函数
+
+====================================================
+
+单选题】
+在表达式x + y * z中，+ 是作为成员函数重载的运算符，* 是作为非成员函数重载的运算符。下列叙述中正确的是______。
+
+A、
+operator+有两个参数，operator*有两个参数
+
+B、
+operator+有两个参数，operator*有一个参数
+
+C、
+operator+有一个参数，operator*有两个参数
+
+D、
+operator+有一个参数，operator*有一个参数
+
+正确答案： C 我的答案：D得分： 0.0分
+
+===================================
+
+【单选题】
+Analyze the following code:
+#include <iostream>
+using namespace std;
+class AA {
+public:
+  AA( ) {
+    t( );
+    // cout << "i from AA is " << i << endl;
+  }
+  void t( ) { setI(20); }
+  virtual void setI(int i) { this->i = 2*i; }
+  int i;
+};
+class BB: public AA {
+public:
+  BB( ) { cout << "i from BB is " << i << endl; }
+  virtual void setI(int i) { this->i = 3*i; }
+};
+int main( ) {
+  AA *p = new BB( );
+  return 0;
+}
+
+A、
+The constructor of class AA is not called.
+
+B、
+The constructor of class AA is called and it displays "i from BB is 0".
+
+C、
+The constructor of class AA is called and it displays "i from BB is 40".
+
+D、
+The constructor of class AA is called and it displays "i from BB is 60".
+
+正确答案： C 我的答案：D得分： 0.0分
+
+======================================
+
+【单选题】
+Analyze the following code:
+#include <iostream>
+using namespace std;
+class AA {
+public:
+  AA( ) {
+    t( );
+    cout << "i from AA is " << i << endl;
+  }
+  void t( ) { setI(20); }
+  virtual void setI(int i) { this->i = 2*i; }
+  int i;
+};
+class BB: public AA {
+public:
+  BB( ) {
+    // cout << "i from BB is " << i << endl;
+  }
+  virtual void setI(int i) { this->i = 3*i; }
+};
+int main( ) {
+  AA *p = new BB( );
+  return 0;
+}
+
+A、
+The constructor of class AA is not called.
+
+B、
+The constructor of class AA is called and it displays "i from AA is 0".
+
+C、
+The constructor of class AA is called and it displays "i from AA is 40".
+
+D、
+The constructor of class AA is called and it displays "i from AA is 60".
+
+正确答案： C 我的答案：D
+
+=============================================
+
+【单选题】
+What will be displayed by the following code?
+#include <iostream>
+using namespace std;
+class CC {
+public:
+  virtual string toString( ) { return "C"; }
+};
+class BB: public CC {
+  string toString( ) { return "B"; }
+};
+class AA: public BB {
+  string toString( ) { return "A"; }
+};
+void displayObject(CC *p) {
+  cout << p->toString( );
+}
+int main( ) {
+  AA a;
+  BB b;
+  CC c;
+  displayObject(&a);
+  displayObject(&b);
+  displayObject(&c);
+  return 0;
+}
+
+A、
+ABC
+
+B、
+CBA
+
+C、
+AAA
+
+D、
+BBB
+
+E、
+CCC
+
+正确答案： A 我的答案：E得分： 0.0分
+答案解析：
+
+动态绑定，基类中的虚函数在子类中自动为虚函数
+
+==========================================
+
+【单选题】
+What will be displayed by the following code?
+#include <iostream>
+using namespace std;
+class CC {
+public:
+  virtual string toString( ) { return "C"; }
+};
+class BB: public CC {
+  string toString( ) { return "B"; }
+};
+class AA: public BB {
+  virtual string toString( ) { return "A"; }
+};
+void displayObject(CC p) {
+  cout << p.toString( );
+}
+int main( ) {
+  AA a;
+  BB b;
+  CC c;
+  displayObject(a);
+  displayObject(b);
+  displayObject(c);
+  return 0;
+}
+
+A、
+ABC
+
+B、
+CBA
+
+C、
+AAA
+
+D、
+BBB
+
+E、
+CCC
+
+正确答案： E 我的答案：A得分： 0.0分
+答案解析：
+
+不满足动态绑定的条件
+
+=============================================
+
+
+【单选题】
+类 B 是类 A 的公有派生类，类 A 和类 B 中都定义了虚函数 fun( )，p 是一个 A 类型指针，则 p->fun( ); 将______。
+
+A、
+调用类 A 中的函数 fun( )
+
+B、
+调用类 B 中的函数 fun( )
+
+C、
+根据 p 所指的对象类型而确定调用类 A 或类 B 中的函数 fun( )
+
+D、
+既调用类 A 中的函数，也调用类 B 中的函数
+
+正确答案： C 我的答案：B
+
+========================================
+
+【单选题】
+下列关于虚函数的说明中，正确的是______。
+
+A、
+从虚基类继承的函数都是虚函数
+
+B、
+虚函数不能是静态成员函数，但可以是友元函数
+
+C、
+只能通过指针或引用调用函数
+
+D、
+抽象类中的成员函数都是虚函数
+
+正确答案： C 我的答案：A
+
+==================================
+
+【多选题】
+Analyze the following code:
+#include <iostream>
+using namespace std;
+class Date {
+  friend void p( );
+private:
+  int year, month, day;
+};
+void p( ) {
+  Date date;
+  date.year = 2000;
+  cout << date.year;
+}
+int main( ) {
+  p( );
+  return 0;
+}
+
+A、
+The program has a compile error because year is a private data field in Date.
+
+B、
+The program compiles and runs fine and display 2000.
+
+C、
+The program will have a compile error if the line friend void p( ) is deleted.
+
+D、
+Since year is private, you cannot access it using date.year in function p( ).
+
+正确答案： BC 我的答案：C
+
+==========================================
+
+【多选题】
+Suppose r is an object with class type R, in order to perform r + 4, the R class header file must contain:
+
+A、
+int operator( );
+
+B、
+R(int n)
+
+C、
+friend R operator+(int r1, const R& r2)
+
+D、
+R operator+(int r1)
+
+E、
+friend R operator+(const R& r2, int r1)
+
+正确答案： DE 我的答案：C得分： 0.0分
+答案解析：
+
+第一个操作数是对象，所以运算符重载可以用友元，也可以用成员
+
+================================
+
