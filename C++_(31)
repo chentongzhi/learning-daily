@@ -1,0 +1,1700 @@
+【多选题】
+Suppose a template function is defined as follows:
+template <typename T>
+void printArray(T list[ ], int arraySize) {
+  for (int i = 0; i < arraySize; i++) {
+    cout << list[i] << " ";
+  }
+  cout << endl;
+}
+Which of the following statements are correct?
+
+A、
+int list[ ] = {1, 2, 3, 4}; printArray(list, 4);
+
+B、
+int list[ ] = {1, 2.5, 3, 4}; printArray(list, 4);
+
+C、
+double list[ ] = {1, 2, 3, 4}; printArray(list, 4);
+
+D、
+string list[ ] = {"Atlanta", "Dallas", "Houston", "Chicago"}; printArray(list, 4);
+
+正确答案： ABCD 我的答案：ABCD得分： 12.5分
+
+==========================
+
+
+【单选题】
+类模板的模板参数(     )。
+
+A、
+可以作为数据成员的类型
+
+B、
+可以作为成员函数的返回类型
+
+C、
+可以作为成员函数的参数类型
+
+D、
+以上三种都可以
+
+正确答案： D 我的答案：D得分： 14.2分
+
+===================
+
+【单选题】
+类模板的实例化(     )。
+
+A、
+在编译时进行
+
+B、
+属于动态联编
+
+C、
+在运行时进行
+
+D、
+在连接时进行
+
+正确答案： A 我的答案：A得分： 14.2分
+
+==================
+
+【单选题】
+类模板的参数(     )。
+
+A、
+可以是多个
+
+B、
+不能有基本数据类型
+
+C、
+可以是0个
+
+D、
+参数不能给初值
+
+正确答案： A 我的答案：A得分： 14.2分
+
+==================
+
+【单选题】
+以下类模板,正确的实例化方式为(     )。
+template <class T> 
+
+class TAdd {
+private:
+  T x, y;
+public:
+  TAdd(T a, T b) : x(a), y(b) { }
+  T add( ) { return x + y; }
+};
+
+A、
+TAdd<char> K;
+
+B、
+TAdd<char*> K('3', '4');
+
+C、
+TAdd<double, double> K(3.4, 4.8);
+
+D、
+TAdd<float> K(3.14, 2.78);
+
+正确答案： D 我的答案：D得分： 14.2分
+
+===================
+
+
+【多选题】
+Suppose you define
+template <typename T = int>
+class Stack{
+public:
+  Stack( ) { }
+// ...
+};
+Which of the following statements are correct?
+
+A、
+Stack<double> s;
+
+B、
+Stack<int> s;
+
+C、
+Stack<> s;
+
+D、
+Stack s;
+
+E、
+Stack<int, double> s;
+
+正确答案： ABC 我的答案：ABC得分： 14.8分
+答案解析：
+
+首先，typename 可以等同于 class；
+
+其次，T 的默认取值为 int，如果确切告诉了 T 是什么类型（例如 A 和 B 选项），那 T 就是给定的类型，如果没给出 T 的具体类型（例如 C 选项），则 T 默认为 int 型。
+
+其中，D 选项不符合语法要求，而 E 选项给了两个类型，可未知类型只有一个，所以 E 也是错误的
+
+==========================
+
+【单选题】
+以下类模板定义正确的为(     )。
+
+A、
+template <class T, int i = 0>
+
+B、
+template <class T, class int i>
+
+C、
+template <class T, typenname T>
+
+D、
+template <class T1, T2>
+
+正确答案： A 我的答案：A得分： 20.0分
+答案解析：
+
+class 和 typename 不能混着用
+
+=======================
+
+【单选题】
+以下类模板:
+template <class T1, class T2 = int, int num = 10>
+class TClass{…};
+正确的实例化方式为(     )。
+
+A、
+TClass<char&, char> Cl;
+
+B、
+TClass< > Cl;
+
+C、
+TClass<char*, 100> C1;
+
+D、
+TClass<char, 100, int> C1;
+
+正确答案： A 我的答案：A得分： 20.0分
+
+=====================
+
+【单选题】
+What is wrong in the following code?
+
+#include <iostream>
+
+#include <vector>
+
+using namespace std;
+
+int main( ) {
+
+    vector<int> v;
+
+    cout << v[0];
+
+    return 0;
+
+}
+
+
+
+A、
+The program has a compile error on v[0].
+
+B、
+The program has a runtime error on vector<int> v.
+
+C、
+The program has a runtime error on v[0], because the vector is empty.
+
+D、
+The program has a compile error on vector<int> v.
+
+正确答案： C 我的答案：C得分： 25.0分
+答案解析：
+
+vector 对象在初始化的时候默认为空，即：没有元素。所以 v[0] 不存在，运行时会报错。
+
+=================================
+
+【单选题】
+To add an int value 5 to a vector v of integers, use (   ).
+
+A、
+v.push_back(5);
+
+B、
+v.add(5);
+
+C、
+v.append(5);
+
+D、
+v.insert(5);
+
+正确答案： A 我的答案：A得分： 25.0分
+答案解析：
+
+给 vector 对象添加新数据，用对象的 push_back( ) 成员函数。
+
+=====================
+
+
+【单选题】
+What is wrong in the following code?
+
+  vector<int> v;
+
+  v[0] = 2.5;
+
+
+
+A、
+The program has a runtime error because you cannot assign a double value to v[0].
+
+B、
+The program has a runtime error because there are no elements in the vector.
+
+C、
+The program has a compile error because there are no elements in the vector.
+
+D、
+The program has a compile error because you cannot assign a double value to v[0].
+
+正确答案： B 我的答案：B得分： 25.0分
+答案解析：
+
+单独的 vector<int> v;  是定义 v，但是 v 里可以容纳的元素个数是 0.
+
+如果需要分配空间，应使用 vector<int> v(5);  // 可存放 5 个元素
+
+=======================
+
+【多选题】
+To obtain the first element in a vector v, use _______.
+
+A、
+v[1];
+
+B、
+v.at(1);
+
+C、
+v.at(0);
+
+D、
+v[0];
+
+正确答案： CD 我的答案：CD得分： 25.0分
+答案解析：
+
+获取 vector 对象的第一个（下标从 0 开始）元素的方法为使用 at 成员函数和 [ ] 运算符。
+
+==================
+
+【单选题】
+下面对派生类的描述中，错误的是______。
+
+A、
+一个派生类可以作为另外一个派生类的基类
+
+B、
+派生类至少有一个基类
+
+C、
+派生类的成员除了它自己的成员外，还包含了它的基类的成员
+
+D、
+派生类中继承的基类成员的访问权限到派生类中保持不变
+
+正确答案： D 我的答案：D得分： 25.0分
+答案解析：
+
+只有在公有继承时，派生类中继承的基类成员的访问权限到派生类中才能保持不变
+
+===========================
+
+【单选题】
+下列对友元关系叙述正确的是______。
+
+A、
+不能继承
+
+B、
+是类与类的关系
+
+C、
+是一个类的成员函数与另一个类的关系
+
+D、
+提高程序的运行效率
+
+正确答案： A 我的答案：A得分： 25.0分
+答案解析：
+
+友元函数不属于成员函数，因此不能被继承
+
+=======================
+
+
+【多选题】
+Which of the following statements are true?
+
+A、
+A derived class is a subset of a base class.
+
+B、
+A derived class is usually extended to contain more functions and more detailed information than its base class.
+
+C、
+"class A: public B" means A is a derived class of B.
+
+D、
+"class A: public B" means B is a derived class of A.
+
+正确答案： BC 我的答案：BC得分： 25.0分
+答案解析：
+
+派生类通常是基类的扩展(成员函数和成员数据更多)
+
+========================
+
+
+【多选题】
+Which of the following statements are true?
+
+A、
+A class template can be derived from another class template.
+
+B、
+A class template can be derived from a nontemplate class.
+
+C、
+Friends are used exactly the same for template and nontemplate classes.
+
+D、
+You can define static members in a template class. Each template specialization has its own copy of a static data field.
+
+正确答案： ABCD 我的答案：ABCD得分： 25.0分
+答案解析：
+
+1、派生类和基类都可以是模板类，如：
+
+template
+
+class B {  
+
+ // 基类是模板类
+
+};
+
+template
+
+class C: public B {
+
+ // 派生类是模板类
+
+};
+
+或
+
+class B {  
+
+ // 基类不是模板类
+
+};
+
+template
+
+class C: public B {
+
+ // 派生类是模板类
+
+};
+
+或
+
+template 
+
+class B {  
+
+ // 基类是模板类
+
+};
+
+class C: public B {
+
+ // 派生类不是模板类
+
+};
+
+
+
+2、模板类也可以有友元。但是，友元不是成员，因此不能被继承
+
+
+
+3、模板类里可以有静态成员。
+
+========================
+
+【单选题】
+下面叙述不正确的是______。
+
+A、
+基类的保护成员在派生类仍然是保护的
+
+B、
+基类的保护成员在公有派生类中是保护的
+
+C、
+基类的保护成员在私有派生类中是私有的
+
+D、
+对基类成员的访问必须是无二义性的
+
+正确答案： A 我的答案：A得分： 9.0分
+答案解析：
+
+在私有继承时，基类的保护成员在派生类中是私有的
+
+=======================
+
+【单选题】
+当保护继承时，基类的______在派生类中成为保护成员，不能通过派生类的对象来直接访问。
+
+A、
+任何成员
+
+B、
+公有成员和保护成员
+
+C、
+私有成员
+
+D、
+公有成员和私有成员
+
+正确答案： B 我的答案：B得分： 9.0分
+
+=====================
+
+【单选题】
+若派生类的成员函数不能直接访问基类中的某个成员，则该成员一定是基类中的______。
+
+A、
+私有成员
+
+B、
+公有成员
+
+C、
+保护成员
+
+D、
+保护成员或私有成员
+
+正确答案： A 我的答案：A得分： 9.0分
+
+===================
+
+【单选题】
+类MyDERIVED中保护的数据成员和成员函数的个数是______。
+class MyBASE {
+private:
+  int k;
+public:
+  void set(int n) { k = n; }
+  int get( ) const { return k; }
+};
+class MyDERIVED : protected MyBASE {
+protected:
+  int j;
+public:
+  void set(int m, int n) { MyBASE::set(m); j = n; }
+  int get( ) const { return MyBASE::get( ) + j; }
+};
+
+A、
+4
+
+B、
+3
+
+C、
+2
+
+D、
+1
+
+正确答案： B 我的答案：B得分： 9.0分
+答案解析：
+
+保护继承
+
+===================
+
+【单选题】
+如下程序中有语法错误的语句是______。
+#include <iostream>
+using namespace std;
+class Base {
+private:
+  void fun1( ) const { cout << "fun1"; }
+protected:
+  void fun2 ( ) const { cout << "fun2"; }
+public:
+  void fun3 ( ) const { cout << "fun3"; }
+};
+class Derived : protected Base {
+public:
+  void fun4( ) const { cout << "fun4"; }
+};
+void main( ) {
+  Derived obj;
+  obj.fun1( ); // (1)
+  obj.fun2( ); // (2)
+  obj.fun3( ); // (3)
+  obj.fun4( ); // (4)
+}
+
+A、
+(1)(2)(3)(4)
+
+B、
+(1)(2)(3)
+
+C、
+(2)(3)(4)
+
+D、
+(1)(4)
+
+正确答案： B 我的答案：B得分： 9.0分
+
+=================
+
+
+【多选题】
+Which of the following statements are true?
+
+A、
+To redefine a function, the function must be defined in the derived class using the same signature and return type as in its base class.
+
+B、
+Overloading a function is to provide more than one function with the same name but with different signatures to distinguish them.
+
+C、
+It is a compilation error if two functions differ only in return type.
+
+D、
+A private function cannot be redefined. If a function defined in a derived class is private in its base class, the two functions are completely unrelated.
+
+正确答案： ABC 我的答案：ABC得分： 9.0分
+答案解析：
+
+私有成员函数也可以在派生类中被重写
+
+=============================
+
+【多选题】
+Which of the following statements are true?
+
+A、
+A function can be overloaded in the same class.
+
+B、
+A function can be redefined in the same class.
+
+C、
+If a function overloads another function, these two functions must have the same signature.
+
+D、
+If a function redefines another function, these two functions must have the same signature.
+
+正确答案： AD 我的答案：AD得分： 10.0分
+答案解析：
+
+成员函数只能在派生类中被重写；
+
+重载函数必须有不同的函数参数
+
+======================
+
+
+【多选题】
+Suppose Circle and Rectangle classes are derived from GeometricObject and you declared
+void displayGeometricObject(GeometricObject shape) {
+  cout << shape.toString( ) << endl;
+}
+Which of the following function call is correct?
+
+A、
+displayGeometricObject(GeometricObject("black", true));
+
+B、
+displayGeometricObject(Circle(5));
+
+C、
+displayGeometricObject(Rectangle(2, 3));
+
+D、
+displayGeometricObject(string( ));
+
+正确答案： ABC 我的答案：ABC得分： 25.0分
+答案解析：
+
+类的兼容性规则：子类对象可以赋值给基类对象
+
+==================
+
+【单选题】
+What is the output of the following code?
+
+#include <iostream>
+
+using namespace std;
+
+class B {
+
+public:
+
+  ~B( ) { cout << "B"; }
+
+};
+
+class A: public B {
+
+public:
+
+  ~A( ) { cout << "A"; }
+
+};
+
+int main( ) {
+
+  A a;
+
+  return 0;
+
+}
+
+
+
+A、
+AB
+
+B、
+BA
+
+C、
+A
+
+D、
+B
+
+E、
+AA
+
+正确答案： A 我的答案：A得分： 9.0分
+答案解析：
+
+析构函数的执行顺序是先派生类后基类
+
+==================
+
+【单选题】
+在派生类构造函数的初始化列表中不能包含______。
+
+A、
+基类的构造函数
+
+B、
+派生类的常数据成员
+
+C、
+派生类中内嵌对象的初始化
+
+D、
+基类对象的初始化
+
+正确答案： D 我的答案：D得分： 9.0分
+答案解析：
+
+不能保护基类对象的初始化
+
+================
+
+【单选题】
+关于构造函数XB，正确的定义形式为______。
+class XA {
+private:
+  int x;
+public:
+  XA(int n) { x = n; }
+};
+class XB : public XA {
+private:
+  int y;
+public:
+  XB(int a, int b);
+};
+
+A、
+XB::XB( int a, int b) : x(a), y(b) { }
+
+B、
+XB::XB( int a, int b) : XA(a), y(b) { }
+
+C、
+XB::XB( int a, int b) : x(a), XB(b) { }
+
+D、
+XB::XB( int a, int b) : XA(a), XB(b) { }
+
+正确答案： B 我的答案：B得分： 9.0分
+答案解析：
+
+派生类构造函数的语法
+
+========================
+
+【单选题】
+继承具有______，即当基类本身也是某一个类的派生类时，底层的派生类也会自动间接继承基类的成员。
+
+A、
+规律性
+
+B、
+传递性
+
+C、
+重复性
+
+D、
+多样性
+
+正确答案： B 我的答案：B得分： 33.3分
+
+======================
+
+
+【单选题】
+在 C++ 程序中，对象之间的相互通信通过______。
+
+A、
+继承实现
+
+B、
+调用成员函数实现
+
+C、
+封装实现
+
+D、
+函数重载实现
+
+正确答案： B 我的答案：B得分： 33.3分
+
+========================
+
+【单选题】
+在C++中，用于实现运行时多态性的是______。
+
+A、
+内联函数
+
+B、
+重载函数
+
+C、
+模板函数
+
+D、
+虚函数
+
+正确答案： D 我的答案：D得分： 33.3分
+
+==================
+
+【单选题】
+下列关于运算符重载的描述中正确的是______。
+
+A、
+运算符重载可以改变运算数的个数
+
+B、
+运算符重载可以改变优先级
+
+C、
+运算符重载可以改变结合性
+
+D、
+运算符重载不能改变语法结构
+
+正确答案： D 我的答案：D得分： 25.0分
+
+=======================
+
+
+【多选题】
+You can overload the following operators.
+
+A、
++
+
+B、
++=
+
+C、
+>
+
+D、
+&&
+
+E、
+?:
+
+正确答案： ABCD 我的答案：ABCD得分： 25.0分
+答案解析：
+
+不可重载的运算符有：【1】成员访问运算符 (.)；【2】成员指针访问运算符 (.* 和 ->*)；【3】域运算符 (::)；
+【4】长度运算符 (sizeof)；【5】条件运算符 (? :)；【6】预处理符号 (#).  
+
+===================
+
+【单选题】
+What is the correct signature for the overloaded postfix ++ operator in class R?
+
+A、
+R operator++(R &r)
+
+B、
+R operator++( )
+
+C、
+R operator++(int dummy)
+
+D、
+R operator++(int &dummy)
+
+正确答案： C 我的答案：C得分： 12.5分
+
+===================
+
+【单选题】
+What is the correct signature for the overloaded postfix ++ operator in class R?
+
+A、
+R operator++(R &r)
+
+B、
+R operator++( )
+
+C、
+R operator++(int dummy)
+
+D、
+R operator++(int &dummy)
+
+正确答案： C 我的答案：C得分： 12.5分
+
+===================
+
+
+【单选题】
+What is the correct signature for the overloaded unary operator + in class R?
+
+A、
+R R::operator+(const R &r)
+
+B、
+R R::operator+( )
+
+C、
+R R::operator<+>(const R &r)
+
+D、
+R R::operator(+)(const R &r)
+
+正确答案： B 我的答案：B得分： 12.5分
+
+===================
+
+
+【单选题】
+What is the correct signature for the = operator function in class R?
+
+A、
+operator==(const R& s);
+
+B、
+operator=(const R& s);
+
+C、
+R operator=(const R& s);
+
+D、
+R operator==(const R& s);
+
+正确答案： C 我的答案：C得分： 12.5分
+
+====================
+
+
+【单选题】
+What is the correct signature for the overloaded subscript operator [ ] in class R?
+
+A、
+long R::operator[ ](const int index)
+
+B、
+long &operator[ ](const int index);
+
+C、
+&long operator[ ](const int index);
+
+D、
+long operator&[ ](const int index);
+
+正确答案： B 我的答案：B得分： 12.5分
+答案解析：
+
+1、[ ] 是二元运算符。
+
+2、long operator&[ ](const int index);  和 &long operator[ ](const int index);  应该排除掉，因为语法错误。
+
+首先，operator&[ ] 说明要重载 “&[ ]”，这不一个合法的 C++ 运算符。
+
+其次，&long 的写法是错误的，C++里没有这个写法。
+
+3、long R::operator[ ](const int index)，严格来说没有错误，但是题目问的是函数原型（signature），这句话后面没有分号。
+
+===================
+
+【单选题】
+在下列成对的表达式中，运算符“+”的意义不相同的一对是______。
+
+A、
+5.0+2.0和5.0+2
+
+B、
+5.0+2.0和5+2.0
+
+C、
+5.0+2.0和5+2
+
+D、
+5+2.0和5.0+2
+
+正确答案： C 我的答案：C得分： 12.5分
+答案解析：
+
+C选项分别为double型相加和int型相加
+
+==================
+
+【单选题】
+已知一个类包含如下函数原型：VOLUME operator - (VOLUME)const; ，下列关于这个函数的叙述错误的是______。
+
+A、
+这是运算符-的重载运算符函数
+
+B、
+这个函数所重载的运算符一定是一个一元运算符
+
+C、
+这是一个成员函数
+
+D、
+这个函数不改变类的任何数据成员的值
+
+正确答案： B 我的答案：B得分： 12.5分
+
+===============
+
+选题】
+执行如下程序后的输出结果是______。
+#include <iostream>
+using namespace std;
+class complex {
+private:
+  double re, im;
+public:
+  complex (double r, double i) : re(r), im(i) { }
+  double real ( ) const { return re; }
+  double image ( ) const { return im; }
+  complex &operator += (complex a) {
+    re += a.re; im += a.im;
+
+    return *this;
+  }
+};
+void disp(const complex &z) {
+  cout << "(" << z.real( ) << ", " << z.image( ) << ")";
+}
+
+// ostream& operator<<(ostream &s, const complex &z) {
+//   return s << "(" << z.real( ) << ", " << z.image( ) << ")";
+// }
+int main ( ) {
+  complex x(1, -2), y(2, 3);
+
+  disp(x+=y);   // cout << (x+=y);
+  return 0;
+}
+
+A、
+(1, -2)
+
+B、
+(2, 3)
+
+C、
+(3, 5)
+
+D、
+(3, 1)
+
+正确答案： D 我的答案：D得分： 12.5分
+答案解析：
+
+operator<<(ostream &s, const complex &z)是对插入运算符<<的重载
+
+====================
+
+【单选题】
+Suppose r is an object with class type R, in order to perform 4 + r, the R class header file must contain:
+
+A、
+int operator( );
+
+B、
+R(int n)
+
+C、
+friend R operator+(int r1, const R& r2)
+
+D、
+R operator+(const R& r1)
+
+E、
+friend R operator+(const R& r2, int r1)
+
+正确答案： C 我的答案：C得分： 12.5分
+答案解析：
+
+第一个操作数是int型数据，必须用友元函数
+
+====================
+
+【单选题】
+在表达式x + y * z中，+ 是作为成员函数重载的运算符，* 是作为非成员函数重载的运算符。下列叙述中正确的是______。
+
+A、
+operator+有两个参数，operator*有两个参数
+
+B、
+operator+有两个参数，operator*有一个参数
+
+C、
+operator+有一个参数，operator*有两个参数
+
+D、
+operator+有一个参数，operator*有一个参数
+
+正确答案： C 我的答案：C得分： 12.5分
+
+====================
+
+【单选题】
+下面是重载为非成员函数的二元运算符函数原型，其中错误的是______。
+
+A、
+Fraction operator + (Fraction, Fraction);
+
+B、
+Fraction operator - ( );
+
+C、
+Fraction& operator = (Fraction&, Fraction);
+
+D、
+Fraction& operator += (Fraction&, Fraction);
+
+正确答案： B 我的答案：B得分： 12.5分
+
+===================
+
+【多选题】
+Suppose r is an object with class type R, in order to perform r + 4, the R class header file must contain:
+
+A、
+int operator( );
+
+B、
+R(int n)
+
+C、
+friend R operator+(int r1, const R& r2)
+
+D、
+R operator+(int r1)
+
+E、
+friend R operator+(const R& r2, int r1)
+
+正确答案： DE 我的答案：DE得分： 12.5分
+答案解析：
+
+第一个操作数是对象，所以运算符重载可以用友元，也可以用成员
+
+=======================
+
+【多选题】
+Analyze the following code:
+#include <iostream>
+using namespace std;
+class Date {
+  friend void p( );
+private:
+  int year, month, day;
+};
+void p( ) {
+  Date date;
+  date.year = 2000;
+  cout << date.year;
+}
+int main( ) {
+  p( );
+  return 0;
+}
+
+A、
+The program has a compile error because year is a private data field in Date.
+
+B、
+The program compiles and runs fine and display 2000.
+
+C、
+The program will have a compile error if the line friend void p( ) is deleted.
+
+D、
+Since year is private, you cannot access it using date.year in function p( ).
+
+正确答案： BC 我的答案：BC得分： 12.5分
+
+================
+
+【单选题】If A is derived from B, and B is derived from C, B has a virtual function, will this function be dynamically binded?
+A、
+Yes
+
+B、
+No
+
+正确答案： A 我的答案：A得分： 7.1分
+答案解析：
+
+在类B和类C之间实现动态绑定
+
+==================
+
+【单选题】If A is derived from B, and B is derived from C, B has a virtual function, will this function be dynamically binded?
+A、
+Yes
+
+B、
+No
+
+正确答案： A 我的答案：A得分： 7.1分
+答案解析：
+
+在类B和类C之间实现动态绑定
+
+===============
+
+【单选题】
+对于如下类定义，正确的叙述是______。
+class AA {
+public:
+  virtual void func1( ) { }
+  void func2 ( ) { }
+};
+class BB : public AA {
+public:
+  void func1( ) {
+    cout << "class BB func1" << end1;
+  }
+  virtual void func2( ) {
+    cout << "class BB func2" << end1;
+  }
+};
+
+A、
+func2( ) 和BB::func1( )都是虚函数
+
+B、
+AA::func2( ) 和BB::func1( ) 都不是虚函数
+
+C、
+BB::func1( ) 是虚函数,而AA::func2( )不是虚函数
+
+D、
+BB::func1( ) 不是虚函数,而AA::func2( )是虚函数
+
+正确答案： C 我的答案：C得分： 7.1
+
+====================
+
+【单选题】
+下列关于虚函数的说明中，正确的是______。
+
+A、
+从虚基类继承的函数都是虚函数
+
+B、
+虚函数不能是静态成员函数，但可以是友元函数
+
+C、
+只能通过指针或引用调用函数
+
+D、
+抽象类中的成员函数都是虚函数
+
+正确答案： C 我的答案：C得分： 7.1分
+
+====================
+
+【单选题】
+如果一个类至少有一个纯虚函数，那么就称该类为______。
+
+A、
+抽象类
+
+B、
+虚基类
+
+C、
+派生类
+
+D、
+都不对
+
+正确答案： A 我的答案：A得分： 14.2分
+
+==================
+
+
+【单选题】
+关于纯虚函数和抽象类的描述中，错误的是______。
+
+A、
+纯虚函数是一种特殊的虚函数，它没有具体的定义
+
+B、
+抽象类是指具有纯虚函数的类
+
+C、
+一个基类中有纯虚函数，该基类的派生类一定不再是抽象类
+
+D、
+抽象类只能作为基类来使用，其纯虚函数的定义由派生类给出
+
+正确答案： C 我的答案：C得分： 14.2分
+答案解析：
+
+如果抽象类中的纯虚函数没有在派生类中实现，则该派生类仍是抽象类
+
+=====================
+
+【单选题】
+下列描述中，______是抽象类的特性。
+
+A、
+可以定义虚函数
+
+B、
+可以进行构造函数重载
+
+C、
+可以定义友元函数
+
+D、
+不能定义其对象
+
+正确答案： D 我的答案：D得分： 14.2分
+答案解析：
+
+抽象类不能定义对象
+
+=================
+
+【单选题】
+To read data from a file, you create an instance of _________.
+
+A、
+iostream
+
+B、
+ifstream
+
+C、
+ofstream
+
+D、
+stream
+
+正确答案： B 我的答案：B得分： 12.5分
+
+======================
+
+【单选题】
+To write data to a file, you create an instance of _________.
+
+A、
+iostream
+
+B、
+ifstream
+
+C、
+ofstream
+
+D、
+stream
+
+正确答案： C 我的答案：C得分： 12.5分\
+
+================
+
+【单选题】
+To create an object for reading data from file test.txt, use ________.
+
+A、
+ofstream("test.txt");
+
+B、
+ofstream input("test.txt");
+
+C、
+ifstream input("test.txt");
+
+D、
+ifstream("test.txt");
+
+正确答案： C 我的答案：C得分： 12.5分
+
+===================
+
+【单选题】
+To create an object for writing data to file test.txt, use ________.
+
+A、
+ofstream("test.txt");
+
+B、
+ofstream output("test.txt");
+
+C、
+ifstream("test.txt");
+
+D、
+ifstream output("test.txt");
+
+正确答案： B 我的答案：B得分： 12.5分
+
+====================
+
+【单选题】
+What do the following statements do?
+ofstream stream;
+stream.open("scores.txt");
+
+A、
+Open a file for input.
+
+B、
+Open a file for output, the statement fails if the file already exists.
+
+C、
+Open a file for output, the contents of the file is destroyed if the file already exists.
+
+D、
+Open a file for input, the statement fails if the file does not exist.
+
+正确答案： C 我的答案：C得分： 12.5分
+
+======================
+
+【单选题】
+What is the purpose of invoking the close function?
+
+A、
+If this function is not invoked, the data may not be saved properly in the file.
+
+B、
+If this function is not invoked, the file may be deleted.
+
+正确答案： A 我的答案：A得分： 12.5分
+
+=================
+
+【单选题】
+Suppose the file scores.txt does not exist. What will be displayed by the following code?
+// Open a file
+ifstream input;
+input.open("scores.txt");
+if (input.fail( )) {
+  cout << "File does not exist" << endl;
+  return 0;
+}
+
+A、
+File does not exist
+
+B、
+Nothing printed
+
+正确答案： A 我的答案：A得分： 50.0分
+
+===============
+
+【单选题】
+当使用ifstream 定义一个文件流，并将一个打开的文件与之连接，文件默认的打开方式为______。
+
+A、
+ios::in
+
+B、
+ios::out
+
+C、
+ios::trunk
+
+D、
+ios::binary
+
+正确答案： A 我的答案：A得分： 50.0分
+
+==================
+
+【多选题】
+You can open a file using the following modes:
+
+A、
+ios::in
+
+B、
+ios::out
+
+C、
+ios::app
+
+D、
+ios::ate
+
+E、
+ios::binary
+
+正确答案： ABCDE 我的答案：ABCDE得分： 50.0分
+
+==============\
+
+
+【单选题】
+下列输出字符方式，错误的是______。
+
+A、
+cout << put('A');
+
+B、
+cout << 'A';
+
+C、
+cout.put('A');
+
+D、
+char C = 'A'; cout << C;
+
+正确答案： A 我的答案：A得分： 50.0分
+
+==============
+
+【单选题】
+To write a character string to a binary file, use the function _______.
+
+A、
+biStream.write(char *address, int size)
+
+B、
+biStream.write(char *address)
+
+C、
+biStream.write(string address, int size)
+
+D、
+biStream.write(string address)
+
+正确答案： A 我的答案：A得分： 11.1分
+
+=====================
+
+
+【单选题】
+Suppose you declare int value = 99, to write it to a binary file, use ________.
+
+A、
+binaryio.write(value);
+
+B、
+binaryio.write(reinterpret_cast<char*>(&value), sizeof(value));
+
+C、
+binaryio.write(reinterpret_cast<char*>(&value));
+
+D、
+binaryio.write(reinterpret_cast<char*>(value));
+
+E、
+binaryio.write(reinterpret_cast<char*>(value), sizeof(value));
+
+正确答案： B 我的答案：B得分： 11.1分
+
+=================
+
+【单选题】
+从一个文件中读一个字节存于char c; 正确的语句为______。
+
+A、
+file.read((char *)(&c), sizeof(c));
+
+B、
+file.read((const char *)(&c), sizeof(c));
+
+C、
+file.read((char *)(&c), c);
+
+D、
+file.read((char const *)(&c), c);
+
+正确答案： A 我的答案：A得分： 11.1分
+
+====================
+
+【多选题】
+To open a file for binary input, use the mode ___.
+
+A、
+ios::in | ios::binary
+
+B、
+ios::out | ios::binary
+
+C、
+ios::app | ios::binary
+
+D、
+ios::ate | ios::binary
+
+E、
+ios::binary | ios::in
+
+正确答案： AE 我的答案：AE得分： 11.2分
+答案解析：
+
+用“位或”运算表示并
+
+======================
+
+【多选题】
+The functions seekg and seekp may have two arguments. The first argument is the offset and the second argument may be __________ to indicate the base for the offset.
+
+A、
+ios::beg
+
+B、
+ios::end
+
+C、
+ios::cur
+
+D、
+ios::now
+
+正确答案： ABC 我的答案：ABC得分： 33.4分
+
+=====================
+
+【多选题】
+You can combine modes using the ____ operator.
+
+A、
++
+
+B、
+|
+
+C、
+||
+
+D、
+&
+
+E、
+&&
+
+正确答案： AB 我的答案：AB得分： 50.0分
+
+========================
+
+【单选题】
+Is there a special character stored in a file to denote the end of file?
+
+A、
+Yes.
+
+B、
+No.
+
+正确答案： B 我的答案：B得分： 33.3分
+
+========================
+
+【单选题】
+To know whether the I/O operation succeeded, you use the function ________.
+
+A、
+stream.eof( )
+
+B、
+stream.fail( )
+
+C、
+stream.bad( )
+
+D、
+stream.good( )
+
+E、
+stream.clear( )
+
+正确答案： B 我的答案：B得分： 33.4分
+
+===================
+
