@@ -1,0 +1,1523 @@
+【单选题】
+What will be displayed by the following code?
+#include <iostream>
+using namespace std;
+const int COLUMN_SIZE = 3;
+double sum(const double m[ ][COLUMN_SIZE], int rowSize) {
+  int sum = 0;
+  for (int i = 0; i < rowSize; i++)
+    sum += m[i][i];
+  return sum;
+}
+int main( ) {
+  double m[3][3] = {{1, 2, 3}, {1.5, 2.5, 3.5}, {0.1, 0.1, 0.1}};
+  cout << "\nSum of all elements is " << sum(m,3) << endl;
+  return 0;
+}
+
+A、
+Sum of all elements is 4.5
+
+B、
+Sum of all elements is 4
+
+C、
+Sum of all elements is 3
+
+D、
+Sum of all elements is 3.6
+
+E、
+Sum of all elements is 3.0
+
+正确答案： C 我的答案：C得分： 25.0分
+答案解析：
+
+函数sum计算double型二维数组对角元素的和，但是该函数把局部变量sum定义为int型，所以得不到准确结果
+
+================================
+
+
+【单选题】
+_______ represents an entity in the real world that can be distinctly identified.
+
+A、
+A class
+
+B、
+An object
+
+C、
+A function
+
+D、
+A data field
+
+正确答案： B 我的答案：B得分： 16.6分
+答案解析：
+
+对象可以表示真实世界中的实体
+
+=============================
+
+【单选题】
+Which of the following statements are true?
+
+A、
+Object names are like variable names. Once an object name is declared, it references to an object.
+
+B、
+Object names can be reassigned to reference another object.
+
+C、
+An object name is a constant, and the contents of the object may not be changed.
+
+D、
+An object is associated with only one object name.
+
+正确答案： A 我的答案：A得分： 4.3分
+答案解析：
+
+对象的名字与变量的名字的意义是一样的，一个名字表示一个对象时，它不能再表示其它对象；对象是可以被改变的；一个对象可以有多个名字，比如用引用表示的“别名”
+
+=============================
+
+【单选题】
+Typically, the data members (attributes) of a class are represented by ____ in a class definition.
+
+A、
+constant declarations
+
+B、
+method prototypes
+
+C、
+method definitions
+
+D、
+variable declarations
+
+正确答案： D 我的答案：D得分： 4.3分
+答案解析：
+
+一般情况下，类的数据成员（属性）用变量声明（类型 变量名）的方式表示
+
+================================
+
+【单选题】
+在建立类的对象时______。
+
+A、
+只为每个对象分配用于保存数据成员的内存空间
+
+B、
+只为每个对象分配用于保存函数成员的内存空间
+
+C、
+为所有的对象的数据成员和函数成员分配一个共享的内存
+
+D、
+为每个对象的数据成员和函数成员同时分配不同内存
+
+正确答案： A 我的答案：A得分： 4.3分
+答案解析：
+
+创建对象时，只为该对象分配存放数据成员的空间，而成员函数是被所有的对象共享的
+
+=============================
+
+【单选题】
+Analyze the following code.
+
+#include <iostream>
+
+using namespace std;
+
+class Test {
+
+public:
+
+  int x;
+
+  Test( ) { cout << "Test"; }
+
+};
+
+int main( ) {
+
+  Test test;
+
+  cout << test.x;
+
+  return 0;
+
+}
+
+A、
+The program has a compile error because test is not initialized.
+
+B、
+The program has a compile error because x has not been initialized.
+
+C、
+The program runs fine, but test.x is unpredictable.
+
+D、
+The program has a compile error because Test does not have a default constructor.
+
+正确答案： C 我的答案：C得分： 6.6分
+答案解析：
+
+构造函数没有为数据成员 x 进行初始化，所以输出的结果是不可预料的
+
+============================
+
+【单选题】
+There are no default value for data fields in a class.
+
+A、
+true
+
+B、
+false
+
+正确答案： A 我的答案：A得分： 6.6分
+答案解析：
+
+类的数据成员不能在定义时初始化，只能通过构造函数初始化
+
+==============================
+
+
+【单选题】
+在下列函数原型中，可以作为类 AA 的构造函数的是______。
+
+A、
+void AA(int);
+
+B、
+int AA( );
+
+C、
+AA(int)const;
+
+D、
+AA(int);
+
+正确答案： D 我的答案：D得分： 6.6分
+答案解析：
+
+构造函数的不能是常函数，也不能有返回值类型
+
+==============================
+
+
+【多选题】
+Which of the following statements are true?
+
+A、
+C++ allows you to separate class declaration from implementation.
+
+B、
+The class declaration simply lists all the data fields, constructor prototypes, 
+and the function prototypes. The class implementation implements the constructors and functions.
+
+C、
+The class declaration and implementation are in two separate files.
+Both files should have the same name, but with different extension names.
+
+D、
+The class declaration file has an extension name .h and the class 
+implementation file has an extension name .cpp.
+
+E、
+If you don't use the public keyword, the visibility is private by default.
+
+正确答案： AE 我的答案：AE得分： 50.0分
+答案解析：
+
+在 C++中，类的定义和类的实现（成员函数是实现）可以全部分开进行、也可以全部不分开、还可以部分分开部分不分开；
+
+类的声明与实现可以分别放在两个不同的文件里，但是对文件名没有要求；
+
+通常，人们把类的声明存到 .h 文件，把类的实现存到 .cpp 文件中，但这不是强制的。
+
+另外，如果没用 public 声明，成员默认为 private，即在类外不可见。
+
+================================================
+
+
+【单选题】
+由于常对象不能被更新，因此（　　）。
+
+A、
+通过常对象只能调用它的常成员函数
+
+B、
+通过常对象只能调用静态成员函数
+
+C、
+常对象的成员都是常成员
+
+D、
+通过常对象可以调用任何不改变对象值的成员函数
+
+正确答案： A 我的答案：A得分： 20.0分
+答案解析：
+
+常对象只能调用常成员函数
+
+================================
+
+【多选题】
+Analyze the following code:
+
+#include <iostream>
+
+using namespace std;
+
+class A {
+
+public:
+
+  A( );
+
+  double getNumber( );
+
+private:
+
+  double number;
+
+};
+
+A::A( ) {
+
+  number = 1;
+
+}
+
+double A::getNumber( )  {
+
+  return number;
+
+}
+
+void printA(const A &a) {
+
+  cout << "The numberr is " << a.getNumber( ) << endl;
+
+}
+
+int main ( ) {
+
+  A myObject;
+
+  printA(myObject);
+
+  return 0;
+
+}
+
+A、
+The program will compile and run fine.
+
+B、
+The program will compile if the getNumber function is defined as const.
+
+C、
+The program will compile if const A &a is changed to A &a in the function printA.
+
+D、
+The program will compile if A myObject is changed to A myObject( ).
+
+E、
+The program will compile if printA(myObject) is changed to printA(&myObject).
+
+正确答案： BC 我的答案：BC得分： 20.0分
+答案解析：
+
+常对象只能访问常成员函数
+
+====================================
+
+【多选题】
+What is correct in the following code?
+
+#include <iostream>
+
+using namespace std;
+
+class Test {
+
+public:
+
+  static int square(int n) { return n*n; }
+
+  int getAge( ) { return age; }
+
+private:
+
+  int age;
+
+};
+
+int main( ) {
+
+  cout << Test.square(4);
+
+  return 0;
+
+}
+
+A、
+It is a compile error to invoke Test.square(4).
+
+B、
+You should replace Test.square(4) with square(4).
+
+C、
+You should replace Test.square(4) with Test->square(4).
+
+D、
+You should replace Test.square(4) with Test::square(4).
+
+正确答案： AD 我的答案：AD得分： 25.0分
+答案解析：
+
+静态成员函数可以用“类名::静态成员函数名”调用，但不可以用“类名.静态成员函数名”调用
+
+==================================
+
+【单选题】
+When invoking a function with a reference object parameter, _______ is passed.
+
+A、
+the contents of the object
+
+B、
+a copy of the object
+
+C、
+the reference of the object
+
+D、
+the object is copied, then the reference of the copied object
+
+正确答案： C 我的答案：C得分： 16.6分
+答案解析：
+
+形参为引用，实参的引用（别名）会被传过去，在被调函数里改变形参会影响实参，如果不希望这样，可以使用常引用做形参
+
+======================
+
+【多选题】
+Given the declaration Circle x[10];, which of the following statements is correct?
+
+A、
+x contains an array of ten int values.
+
+B、
+x contains an array of ten objects of the Circle type.
+
+C、
+Each element in the array x is a Circle object.
+
+D、
+You cannot assign a new object to the elements in the array, but you can change the contents in each object element.
+
+正确答案： BC 我的答案：BC得分： 100.0分
+答案解析：
+
+定义含有10个Circle对象的数组x，每个元素都是Circle类型的、且可以被赋值
+
+==============================
+
+【单选题】
+下面关于友元的描述中，错误的是（      ） 
+
+A、
+友元函数可以直接访问该类的私有成员。 
+
+B、
+一个类的友元类中的所有成员函数都是这个类的友元函数。
+
+C、
+利用友元可以提高程序的运行效率，但却破坏了封装性。 
+
+D、
+友元关系不能被继承，但它是双向的。
+
+正确答案： D 我的答案：D得分： 33.3分
+答案解析：
+
+友元关系是单向的，不是对称（双向）的，也不能传递。
+
+===========================
+
+
+【单选题】
+A variable's (         ) indicates where in the program a variable can be used.
+
+A、
+lifetime
+
+B、
+range
+
+C、
+scope
+
+D、
+span
+
+正确答案： C 我的答案：C得分： 8.3分
+答案解析：
+
+变量的作用域是指它可以被使用的范围
+
+===========================
+
+【单选题】
+Which of the following is the scope resolution operator?
+
+A、
+(two colons) ::
+
+B、
+(asterisk) *
+
+C、
+(period) .
+
+D、
+(hyphen and a greater than symbol) ->
+
+正确答案： A 我的答案：A得分： 8.3分
+答案解析：
+
+用双冒号可以访问突破就近原则,“揪”出被隐藏的对象
+
+========================
+
+【单选题】
+A variable defined inside a function is referred to as _______.
+
+A、
+a global variable
+
+B、
+a function variable
+
+C、
+a block variable
+
+D、
+a local variable
+
+正确答案： D 我的答案：D得分： 8.3分
+答案解析：
+
+定义在函数内部的变量具有块作用域(block scope),被称为局部变量(local variable)
+
+===========================
+
+main函数中的i和j都是局部变量，全局变量j会被隐藏
+
+7
+【单选题】
+以下叙述不正确的是(  )。
+
+A、
+在不同的函数中可以定义相同名字的变量
+
+B、
+函数中的形式参数具有局部作用域
+
+C、
+在一个函数体内定义的变量只在函数范围内有效
+
+D、
+在一个函数内的复合语句中定义的变量在函数内有效
+
+正确答案： D 我的答案：D得分： 8.3分
+答案解析：
+
+main函数中的i和j都是局部变量,全局变量j会被隐藏
+
+==========================
+
+【单选题】
+Private data member can be accessed directly by a public member method.
+
+A、
+True
+
+B、
+False
+
+正确答案： A 我的答案：A得分： 8.7分
+答案解析：
+
+类的私有数据成员可以被其公有成员直接访问,即类内访问
+
+=========================
+
+【单选题】
+To declare a constant MAX_LENGTH using the define directive, you write ______.
+
+A、
+#define MAX_LENGTH = 99.98;
+
+B、
+#define MAX_LENGTH = 99.98
+
+C、
+#define MAX_LENGTH 99.98;
+
+D、
+#define MAX_LENGTH 99.98
+
+正确答案： D 我的答案：D得分： 25.0分
+答案解析：
+
+用 define 定义的常量是宏替换，不用等号，也不能带分号（因为预处理不是语句）
+
+=====================
+
+【单选题】
+以下叙述中不正确的是______。
+
+A、
+预处理命令行必须以 # 号开头
+
+B、
+凡是以 # 开头的语句都是预处理命令行
+
+C、
+在源程序编译前执行预处理命令
+
+D、
+#define PI = 3.14 是一条正确的预处理命令
+
+正确答案： D 我的答案：D得分： 25.0分
+答案解析：
+
+用 define 定义常量不用等号
+
+==================
+
+【单选题】
+Which of the following statements is correct.
+
+A、
+int count = 5; 
+
+int *x = &count;
+
+B、
+int count = 5; 
+
+int x = &count;
+
+C、
+int count = 5;
+
+int &x = &count;
+
+D、
+int count = 5; 
+
+int **x = &count;
+
+正确答案： A 我的答案：A得分： 8.3分
+答案解析：
+
+指针的初始化
+
+=====================
+
+【单选题】
+The asterisk (*) used in the following statement is known as _________.
+cout << *pCount;
+
+A、
+indirection operator
+
+B、
+dereference operator
+
+C、
+multiply operator
+
+D、
+address operator
+
+正确答案： B 我的答案：B得分： 8.3分
+答案解析：
+
+*pCount表示取pCount指向的单元
+
+==========================
+
+
+【单选题】
+Which of the following statements are true?
+
+A、
+A local variable is assigned an arbitrary value if you don't initialize it.
+
+B、
+A local pointer is assigned an arbitrary value if you don't initialize it.
+
+C、
+An array element is assigned an arbitrary value if you don't initialize it.
+
+D、
+Dereferencing a pointer that is not initialized could cause fatal runtime error or it could accidentally modify important data.
+
+E、
+All of the options
+
+正确答案： E 我的答案：E得分： 8.3分
+答案解析：
+
+间接引用一个没有初始化的指针会非常危险，因为不知道指针指向哪里，如果这个指针指向的是非常重要的数据区域，用指针间接修改数据会导致严重错误
+【单选题】
+Which of the following statements are true?
+
+A、
+A local variable is assigned an arbitrary value if you don't initialize it.
+
+B、
+A local pointer is assigned an arbitrary value if you don't initialize it.
+
+C、
+An array element is assigned an arbitrary value if you don't initialize it.
+
+D、
+Dereferencing a pointer that is not initialized could cause fatal runtime error or it could accidentally modify important data.
+
+E、
+All of the options
+
+正确答案： E 我的答案：E得分： 8.3分
+答案解析：
+
+间接引用一个没有初始化的指针会非常危险，因为不知道指针指向哪里，如果这个指针指向的是非常重要的数据区域，用指针间接修改数据会导致严重错误
+
+=================================
+
+
+【单选题】
+Analyze the following code.
+#include <iostream>
+using namespace std;
+int main( ) {
+  char *p;
+  cout << "Enter a string: ";
+  cin >> p;
+  cout << p << endl;
+  return 0;
+}
+
+A、
+If you run the program and enter abc, nothing will be displayed. The program runs without errors.
+
+B、
+If you run the program and enter abc, abc will be displayed.
+
+C、
+If you run the program and enter abc, unpredictable characters will be displayed.
+
+D、
+If you run the program and enter abc, a runtime error will occur, because p is used without being initialized.
+
+正确答案： D 我的答案：D得分： 8.3分
+答案解析：
+
+p没有被初始化，输入的数据不知道会存到哪里，会导致运行时错误
+
+==========================================
+
+【单选题】
+若有语句
+int *point, a = 4;
+point = &a;
+下面代表地址的一组选项是(     )。
+
+A、
+a, point, &a
+
+B、
+&*a, &a, *point
+
+C、
+*&point, *point, &a
+
+D、
+&a, &*point, point
+
+正确答案： D 我的答案：D得分： 8.3分
+答案解析：
+
+a是变量，所以&a是指针；point是指针，存的是地址；&*point还是表示point
+
+=================
+
+【单选题】
+下列语句中，错误的是(      )。
+
+A、
+const int buffer=256;
+
+B、
+const double *point;
+
+C、
+int const buffer=256;
+
+D、
+double *const point;
+
+正确答案： D 我的答案：D得分： 20.0分
+答案解析：
+
+const 离指针名近，表示这个指针不能再指向其他对象，因此它必须被初始化
+
+===============
+
+【单选题】
+任意类型的指针可以直接赋给void型指针，但是void型指针不可以直接赋给指定类型的指针，这句话是(       )的。
+
+A、
+正确
+
+B、
+错误
+
+正确答案： A 我的答案：A得分： 50.0分
+答案解析：
+
+void型指针的特点
+
+================
+
+【单选题】
+已知
+
+int a;
+
+int *pa = &a;
+
+下列输出式中，结果不是 pa 的值（a 的地址）的为______。
+
+A、
+cout << pa;
+
+B、
+cout << (char*)pa;
+
+C、
+cout << (void*)pa;
+
+D、
+cout << (int*)pa;
+
+正确答案： B 我的答案：B得分： 50.0分
+答案解析：
+
+把 pa 转换为 char* 后，cout 会到指定位置开始逐个字符输出
+
+======================
+
+【单选题】
+有以下程序段执行后，表达式 **c的值是(      )。
+int a = 5, *b, **c ;
+c = &b;
+b = &a;
+
+A、
+变量a的地址
+
+B、
+变量b
+
+C、
+变量a
+
+D、
+变量b的地址
+
+正确答案： C 我的答案：C得分： 33.4分
+答案解析：
+
+c指向了b，所以*c就是b；又因为b指向了a，所以*b就是a；综上，**c就是*b，也就是a
+
+===================
+
+【单选题】
+类型相同的两个指针变量之间，不能进行的运算是(     )。
+
+A、
+<
+
+B、
+=
+
+C、
++
+
+D、
+-
+
+正确答案： C 我的答案：C得分： 3.0分
+答案解析：
+
+两个指针不能直接相加
+
+====================
+
+
+【单选题】
+类型相同的两个指针相减的结果是（    ）类型。
+
+A、
+指针类型
+
+B、
+double
+
+C、
+int
+
+D、
+以上都不对
+
+正确答案： C 我的答案：C得分： 3.0分
+答案解析：
+
+两个指针相减，结果为 int 型
+
+===================
+
+【单选题】
+“指针可以和int型数据做比较”是(        )的。
+
+A、
+错误
+
+B、
+正确
+
+正确答案： A 我的答案：A得分： 3.0分
+答案解析：
+
+除了可以与0(NULL)做等于(==)和不等于(!=)运算外，指针不可以和int数据做比较运算
+
+======================
+
+【单选题】
+Suppose you declare an array double list[ ] = {1, 3.4, 5.5, 3.5}. &list[1] is same as ________.
+
+A、
+list
+
+B、
+list + 1
+
+C、
+list + 2
+
+D、
+list[0]
+
+E、
+list[1]
+
+正确答案： B 我的答案：B得分： 3.0分
+答案解析：
+
+list是数组的首地址，加整型1的结果还是地址，也就是数组元素ist[1]的地址
+
+======================
+
+【单选题】
+Analyze the following code.
+#include <iostream>
+using namespace std;
+int main( ) {
+  char t[10];
+  char *p = t;
+  cout << "Enter a string: ";
+  cin >> p;
+  cout << p << endl;
+  return 0;
+}
+
+A、
+If you run the program and enter abc, nothing will be displayed. The program runs without errors.
+
+B、
+If you run the program and enter abc, abc will be displayed.
+
+C、
+If you run the program and enter abc, unpredictable characters will be displayed.
+
+D、
+If you run the program and enter abc, a runtime error will occur, because p is being used without initialized.
+
+正确答案： B 我的答案：B得分： 3.0分
+答案解析：
+
+p指向了字符型数组t，因此输入的字符串将存到该数组中
+
+==================
+
+【单选题】
+若有定义:int a[8]; 则以下表达式中不能代表数组元素a[1]的地址的是_______。
+
+A、
+&a[0] + 1
+
+B、
+&a[1]
+
+C、
+&a[0]++
+
+D、
+a + 1
+
+正确答案： C 我的答案：C得分： 3.0分
+答案解析：
+
+&a[0]是地址常量，不能自加
+
+====================
+
+【单选题】
+当定义const char *p = "ABC"; 时，下列语句正确的是_______。
+
+A、
+char **q = p;
+
+B、
+p[0] = 'B';
+
+C、
+*p = '\0';
+
+D、
+p = NULL;
+
+正确答案： D 我的答案：D得分： 3.0分
+答案解析：
+
+const离p远，表明p还可以指向其它对象，但是不能通过p修改它指向的对象
+
+======================
+
+【单选题】
+当定义const char *p = "ABC"; 时，下列语句正确的是_______。
+
+A、
+char **q = p;
+
+B、
+p[0] = 'B';
+
+C、
+*p = '\0';
+
+D、
+p = NULL;
+
+正确答案： D 我的答案：D得分： 3.0分
+答案解析：
+
+const离p远，表明p还可以指向其它对象，但是不能通过p修改它指向的对象
+
+20
+【单选题】
+当定义char* const p = "ABC"; 时，下列语句正确的是_______。
+
+A、
+*p++;
+
+B、
+p[0] = 'b';
+
+C、
+p++;
+
+D、
+p = NULL;
+
+正确答案： B 我的答案：B得分： 3.0分
+答案解析：
+
+p指向了一个字符数组，const离p近，表明p的值不能被修改，但是可以通过p修改它指向的对象
+
+============================
+
+【单选题】
+以下程序段中，不能正确赋字符串(编译时系统会提示错误)的是(     )。
+
+A、
+char s[10] = "abcdefg";
+
+B、
+char t[ ] = "abcdefg", *s = t;
+
+C、
+char s[10]; s = "abcdefg";
+
+D、
+char s[10]; strcpy(s,"abcdefg");
+
+正确答案： C 我的答案：C得分： 3.0分
+答案解析：
+
+s 是数组名字，是地址常量，不能被改动
+
+======================
+
+
+【单选题】
+下列选项中正确的语句组是
+
+A、
+char s[8]; s = {"Beijing"};
+
+B、
+char *s; s = {"Beijing"};
+
+C、
+char s[8]; s = "Beijing";
+
+D、
+char *s; s = "Beijing";
+
+正确答案： D 我的答案：D得分： 3.0分
+答案解析：
+
+s是数组名字，是地址常量，不能被改动(AC错误)，B不符合语法要
+
+======================
+
+【单选题】
+下面能正确进行字符串赋值操作的是(     )。
+
+A、
+char s[5] = {"ABCDE"};
+
+B、
+char s[5] = {'A', 'B', 'C', 'D', 'E'};
+
+C、
+char *s; s = "ABCDE";
+
+D、
+char *s; cin >> s;
+
+正确答案： C 我的答案：C得分： 3.0分
+答案解析：
+
+A定义的数组太小，不能存放长度为5的字符串(因为还有'\0'); 
+
+B不是字符串;
+
+D中的s没有被初始化
+
+===========================
+
+
+【单选题】
+下面定义不正确的是(     )。
+
+A、
+char a[10] = "China";
+
+B、
+char *a = 0;
+
+C、
+char a[10], *p = a; p = "China";
+
+D、
+int *p = 10;
+
+正确答案： D 我的答案：D得分： 3.0分
+答案解析：
+
+指针变量不能被赋予整型数值(0，也就是NULL除外)
+
+=============================
+
+【单选题】
+以下程序段的输出结果是(    )。
+char *str = "12345";
+cout << strlen(str) << " " << sizeof(str);
+
+A、
+6 5
+
+B、
+5 6
+
+C、
+5 4
+
+D、
+5 5
+
+正确答案： C 我的答案：B得分： 3.0分
+答案解析：
+
+strlen 返回字符串长度，sizeof 返回所占字节数。注意，指针变量所占的字节数可能是 4（32位系统）、
+也可能是 8（64位系统），也许未来还会是 16，因此本题正确的 sizeof(str) 只能选 4。
+
+=============================
+
+【单选题】
+定义 char *p = "abcd"; 能输出 p 的值（即 "abcd" 的地址）的为______。
+
+A、
+cout << &p;
+
+B、
+cout << p;
+
+C、
+cout << (char *)p;
+
+D、
+cout << (void*)p;
+
+正确答案： D 我的答案：D得分： 3.0分
+答案解析：
+
+cout 后面是 char* 型地址时，cout 会到指定位置处输出字符串；
+
+如果想输出这个地址，可以把该地址的类型进行转换，常见的是转换为 void* 型
+
+===============================
+
+【单选题】
+若有以下定义和语句,则对s数组元素的正确引用形式是_______。
+int s[4][5], (*ps)[5];
+ps = s;
+
+A、
+ps + 1
+
+B、
+*(ps + 3)
+
+C、
+ps[0][2]
+
+D、
+*(ps + 1) + 3
+
+正确答案： C 我的答案：C得分： 25.0分
+答案解析：
+
+ps可以指向5列的二维数组s，因此用ps访问二维数组的方式与用s访问的方式是一样的
+
+======================
+
+【单选题】
+设有语句int array[3][4]; 则引用下标为i和j的数组元素的方法中，不正确的引用方式是_______。
+
+A、
+array[i][j]
+
+B、
+*(*(array + i) + j)
+
+C、
+*(array[i] + j)
+
+D、
+*(array + i * 4 + j)
+
+正确答案： D 我的答案：D得分： 25.0分
+答案解析：
+
+array是二维数组的名称，array+i相当于加了i行(4个int)，因此D不正确
+
+========================
+
+【单选题】
+执行如下语句
+class point {
+private:
+  int x_, y_;
+public:
+  point( ) : x_(0), y_(0) { }
+  point(int x, int y = 0) : x_(x), y_(y) { }
+};
+point a(2), b[3], *c[4];
+则point类的构造函数被调用的次数是______。
+
+A、
+2次
+
+B、
+3次
+
+C、
+4次
+
+D、
+5次
+
+正确答案： C 我的答案：C得分： 50.0分
+答案解析：
+
+定义a调用1次构造函数，定义b[3]调用3次构造函数，而定义*c[4]是指针数组，不执行构造函数
+
+===========================
+
+【单选题】
+Analyze the following code:
+#include <iostream>
+#include "Circle.h"
+using namespace std;
+int main( ) {
+  cout << Circle(5).getArea( ) << endl;
+  cout << (new Circle(5))->getArea( ) << endl;
+  return 0;
+}
+
+A、
+The program has a compile error on Circle(5).getArea( ).
+
+B、
+The program has a compile error on new Circle(5).getArea( ).
+
+C、
+The program compiles, but cannot run.
+
+D、
+The program compiles and runs, but new Circle(5) creates an anonymous object on the heap. This causes memory leak.
+
+正确答案： D 我的答案：D得分： 11.1分
+答案解析：
+
+第一个Circle(5) 是创建一个匿名对象，new Circle(5) 是动态申请一个对象
+
+=============================
+
+【单选题】
+下列语句错误的是(      )。
+
+A、
+const int buffer = 256;
+
+B、
+const int temp;
+
+C、
+const double *point;
+
+D、
+const double *p = new double (3.1);
+
+正确答案： B 我的答案：B得分： 11.1分
+答案解析：
+
+const类型的符号常量必须被初始化
+
+=================
+
+【多选题】
+Which of the following declaration is correct?
+
+A、
+int *pValue = new double;
+
+B、
+int *pValue = new int;
+
+C、
+double *pValue = new double;
+
+D、
+double *pValue = new int;
+
+正确答案： BC 我的答案：BC得分： 11.1分
+答案解析：
+
+指针与它所指向的对象的类型必须一致
+
+=================
+
+【多选题】
+Which of the following statements are correct?
+
+A、
+Circle *pObject = new Circle( );
+
+B、
+Circle pObject = new Circle( );
+
+C、
+Circle *pObject = new Circle;
+
+D、
+Circle pObject = Circle( );
+
+正确答案： AC 我的答案：AC得分： 11.2分
+答案解析：
+
+动态申请空间的语法要求
+
+======================
+
+
+【单选题】
+下列关于this指针的叙述中，正确的是______。
+
+A、
+任何与类相关的函数都有this指针
+
+B、
+类的成员函数都有this指针
+
+C、
+类的友元函数都有this指针
+
+D、
+类的非静态成员函数都有this指针
+
+正确答案： D 我的答案：D得分： 25.0分
+答案解析：
+
+this只存在类的每个非静态成员函数中
+
+===================
+
+【单选题】
+有如下类定义:
+class Test {
+private:
+int a ;
+  static int b;
+  const int c;
+public:
+  Test( ) { a = 0; c = 0; }                 // (1)
+  int f(int a)const { this->a = a; }   // (2)
+  static int g( ) { return a; }            // (3)
+  void h(int b) {Test::b = b; }         // (4)
+};
+int Test::b = 0;
+在标注号码的行中，能被正确编译的是______。
+
+A、
+1
+
+B、
+2
+
+C、
+3
+
+D、
+4
+
+正确答案： D 我的答案：D得分： 25.0分
+答案解析：
+
+A选项错误，因为构造函数在对常成员c的初始化时没有放到成员初始化列表中；
+
+B选项错误，因为常成员函数f不能修改数据成员；
+
+C选项错误，因为静态成员函数不能访问非静态数据成员a
+
+============================
+
+【单选题】
+下列情况下不会调用拷贝构造函数的是(   )。
+
+A、
+用一个对象去初始化同类的另一个对象
+
+B、
+将类的一个对象赋值给该类的另一个新建对象时
+
+C、
+函数的形参是类的引用，调用函数进行形参和实参结合时
+
+D、
+函数的返回值是类的对象，函数执行返回调用时
+
+正确答案： C 我的答案：C得分： 50.0分
+答案解析：
+
+形参是引用时，实参把“别名”传过去,没有新对象出现，所以不会调用拷贝构造函数
+
+======================
+
+
+【多选题】
+Which of the following statements is correct?
+
+A、
+Templates provide the capability to parameterize types in functions and classes.
+
+B、
+With templates, you can define one function or one class with a generic type that can be substituted for a concrete type by the compiler.
+
+C、
+Templates facilitates developing reusable software.
+
+D、
+Templates improves performance.
+
+正确答案： ABC 我的答案：ABC得分： 100.0分
+
+======================
+
+
+【单选题】
+关于class和typename,下列表述正确的是(     )。
+
+A、
+程序中的typename都可以替换为class
+
+B、
+程序中的class都可以替换为typename
+
+C、
+在模板形参表中只能用typename来声明参数的类型
+
+D、
+在模板形参表中只能用class或typename来声明参数的类型
+
+正确答案： D 我的答案：D得分： 12.5分
+
+======================
+【单选题】
+若一个类的成员函数前用static关键字修饰，则该成员函数______
+
+A、
+可以被声明为const
+
+B、
+没有this指针
+
+C、
+可以访问该类的所有成员
+
+D、
+只能用对象名来调用
+
+正确答案： B 我的答案：B得分： 25.0分
+答案解析：
+
+this只存在类的每个非静态成员函数中
+
+=====================
+
