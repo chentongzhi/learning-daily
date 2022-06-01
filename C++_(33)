@@ -1,0 +1,444 @@
+【单选题】
+Which of the following statements is correct.
+
+A、
+int count = 5; 
+
+int *x = &count;
+
+B、
+int count = 5; 
+
+int x = &count;
+
+C、
+int count = 5;
+
+int &x = &count;
+
+D、
+int count = 5; 
+
+int **x = &count;
+
+正确答案： A 我的答案：A得分： 8.3分
+答案解析：
+
+指针的初始化
+
+===================================
+
+【单选题】
+The asterisk (*) used in the following statement is known as _________.
+cout << *pCount;
+
+A、
+indirection operator
+
+B、
+dereference operator
+
+C、
+multiply operator
+
+D、
+address operator
+
+正确答案： B 我的答案：B得分： 8.3分
+答案解析：
+
+*pCount表示取pCount指向的单元
+
+========================
+
+【单选题】
+Analyze the following code.
+#include <iostream>
+using namespace std;
+int main( ) {
+  char *p;
+  cout << "Enter a string: ";
+  cin >> p;
+  cout << p << endl;
+  return 0;
+}
+
+A、
+If you run the program and enter abc, nothing will be displayed. The program runs without errors.
+
+B、
+If you run the program and enter abc, abc will be displayed.
+
+C、
+If you run the program and enter abc, unpredictable characters will be displayed.
+
+D、
+If you run the program and enter abc, a runtime error will occur, because p is used without being initialized.
+
+正确答案： D 我的答案：D得分： 8.3分
+答案解析：
+
+p没有被初始化，输入的数据不知道会存到哪里，会导致运行时错误
+
+=====================
+
+【单选题】
+假定A是一个类，a( ) 是该类的一个公有成员函数，x为该类的一个对象，rx是该类一个对象的引用，px指向了该类的一个对象，则下列能正确访问成员函数a( )的是______
+
+A、
+x.a( ); (*rx).a( ); px.a( );
+
+B、
+x.a( ); rx->( ); px->a( );
+
+C、
+x.a( ); rx.a( ); px->a( );
+
+D、
+x->a( ); rx->a( ); px.a( );
+
+正确答案： C 我的答案：C得分： 8.3分
+答案解析：
+
+用对象和引用访问类的公有成员都是用点(.)运算符，而指针可以用两种方式：一种是px->a( )，另一种是用(*px).a( )
+
+=====================
+
+【单选题】
+Does the following code cause a memory leak?
+int *pValue = new int;
+*pValue = 45;
+pValue = new int;
+delete pValue;
+
+A、
+yes
+
+B、
+no
+
+正确答案： A 我的答案：A得分： 11.1分
+答案解析：
+
+如果指针指向了一个动态申请的空间，在释放该空间之前，不要修改指针，否则会造成内存泄漏
+
+====================
+
+【单选题】
+Analyze the following code:
+#include <iostream>
+#include "Circle.h"
+using namespace std;
+int main( ) {
+  cout << Circle(5).getArea( ) << endl;
+  cout << (new Circle(5))->getArea( ) << endl;
+  return 0;
+}
+
+A、
+The program has a compile error on Circle(5).getArea( ).
+
+B、
+The program has a compile error on new Circle(5).getArea( ).
+
+C、
+The program compiles, but cannot run.
+
+D、
+The program compiles and runs, but new Circle(5) creates an anonymous object on the heap. This causes memory leak.
+
+正确答案： D 我的答案：D得分： 11.1分
+答案解析：
+
+第一个Circle(5) 是创建一个匿名对象，new Circle(5) 是动态申请一个对象
+
+=================
+
+
+【单选题】
+下列语句错误的是(      )。
+
+A、
+const int buffer = 256;
+
+B、
+const int temp;
+
+C、
+const double *point;
+
+D、
+const double *p = new double (3.1);
+
+正确答案： B 我的答案：B得分： 11.1分
+答案解析：
+
+const类型的符号常量必须被初始化
+
+====================
+
+【多选题】
+Which of the following statements are correct?
+
+A、
+Circle *pObject = new Circle( );
+
+B、
+Circle pObject = new Circle( );
+
+C、
+Circle *pObject = new Circle;
+
+D、
+Circle *pObject = Circle( );
+
+正确答案： AC 我的答案：AC得分： 11.2分
+答案解析：
+
+动态申请空间的语法要求
+
+======================
+
+【单选题】
+在程序代码：A::A(int a, int *b) { this->x = a; this->y = b; }中，this的类型是______
+
+A、
+int
+
+B、
+int*
+
+C、
+A
+
+D、
+A *
+
+正确答案： D 我的答案：D得分： 25.0分
+答案解析：
+
+this是类的指针类型
+
+=======================
+
+
+【单选题】
+下列情况下不会调用拷贝构造函数的是(   )。
+
+A、
+用一个对象去初始化同类的另一个对象
+
+B、
+将类的一个对象赋值给该类的另一个新建对象时
+
+C、
+函数的形参是类的引用，调用函数进行形参和实参结合时
+
+D、
+函数的返回值是类的对象，函数执行返回调用时
+
+正确答案： C 我的答案：C得分： 50.0分
+答案解析：
+
+形参是引用时，实参把“别名”传过去,没有新对象出现，所以不会调用拷贝构造函数
+
+======================
+
+【多选题】
+Which of the following statements is correct?
+
+A、
+Templates provide the capability to parameterize types in functions and classes.
+
+B、
+With templates, you can define one function or one class with a generic type that can be substituted for a concrete type by the compiler.
+
+C、
+Templates facilitates developing reusable software.
+
+D、
+Templates improves performance.
+
+正确答案： ABC 我的答案：ABC得分： 100.0分
+
+===================
+
+【多选题】
+Suppose a template function is defined as follows:
+template <typename T>
+void printArray(T list[ ], int arraySize) {
+  for (int i = 0; i < arraySize; i++) {
+    cout << list[i] << " ";
+  }
+  cout << endl;
+}
+Which of the following statements are correct?
+
+A、
+int list[ ] = {1, 2, 3, 4}; printArray(list, 4);
+
+B、
+int list[ ] = {1, 2.5, 3, 4}; printArray(list, 4);
+
+C、
+double list[ ] = {1, 2, 3, 4}; printArray(list, 4);
+
+D、
+string list[ ] = {"Atlanta", "Dallas", "Houston", "Chicago"}; printArray(list, 4);
+
+正确答案： ABCD 我的答案：ABCD得分： 12.5分
+
+==============
+
+
+【单选题】
+Suppose a template function is defined as follows:
+template <typename T1, typename T2>
+T1 maxValue(const T1 &v1, const T2 &v2) {
+  if (v1 > v2)
+    return v1;
+  else
+    return v2;
+}
+Which of the following statements are incorrect?
+
+A、
+cout << maxValue(1, 2)
+
+B、
+cout << maxValue(1.5, 2.5)
+
+C、
+cout << maxValue('A', 'B')
+
+D、
+cout << maxValue("AB", "AB")
+
+E、
+cout << maxValue(1.5, 2)
+
+正确答案： D 我的答案：D得分： 4.0分
+答案解析：
+
+特别注意：单独的一个字符串 "abcd" 也是一个表达式，它的值是一个地址，类型是 const char*。
+
+所以，maxValue("AB", "AB") 可以确定 T 为 const char* 类型，因为有 const，所以是常量，而常量不可以有引用。
+
+也就是说，
+
+ char   c;
+
+ char* &rc = &c;   // 错误，地址 &c 是常量，不能赋值给引用。
+ 
+ ==============
+ 
+ 【单选题】
+类模板的使用实际上是将类模板实例化成一个(     )。
+
+A、
+函数
+
+B、
+对象
+
+C、
+类
+
+D、
+抽象类
+
+正确答案： C 我的答案：C得分： 4.0分
+
+============
+
+
+【单选题】
+以下类模板定义正确的为(     )。
+
+A、
+template <class T, int i = 0>
+
+B、
+template <class T, class int i>
+
+C、
+template <class T, typenname T>
+
+D、
+template <class T1, T2>
+
+正确答案： A 我的答案：A得分： 4.0分
+答案解析：
+
+class 和 typename 不能混着用
+
+=================
+
+
+【单选题】
+以下程序运行的结果为(     )。
+#include <iostream>
+using namespace std;
+class FunArray {
+private:
+  int *pa; // 指向一个数组空间
+  int size; // 数组元素个数
+public:
+  FunArray(int a[ ], int thesize) : pa(a), size(thesize) { }
+  int Size( ) { return size; }
+  int& operator[ ](int index) { return pa[index - 1]; }
+};
+void main( ) {
+  int s[ ] = {3, 7, 6};
+  FunArray ma(s, sizeof(s)/sizeof(int));
+  ma[2] = 9;
+  for(int i = 1; i <= ma.Size( ); i++)
+    cout << ma[i] << ' ';
+}
+
+A、
+3 9 6
+
+B、
+3 6 9
+
+C、
+9 3 6
+
+D、
+3 7 6
+
+正确答案： A 我的答案：A得分： 4.0分
+
+===============
+
+【单选题】
+What is wrong in the following code?
+
+  vector<int> v;
+
+  v[0] = 2.5;
+
+
+
+A、
+The program has a runtime error because you cannot assign a double value to v[0].
+
+B、
+The program has a runtime error because there are no elements in the vector.
+
+C、
+The program has a compile error because there are no elements in the vector.
+
+D、
+The program has a compile error because you cannot assign a double value to v[0].
+
+正确答案： B 我的答案：B得分： 4.0分
+答案解析：
+
+单独的 vector<int> v;  是定义 v，但是 v 里可以容纳的元素个数是 0.
+
+如果需要分配空间，应使用 vector<int> v(5);  // 可存放 5 个元素
+
+==================
+
