@@ -1,0 +1,271 @@
+
+【单选题】
+若派生类的成员函数不能直接访问基类中的某个成员，则该成员一定是基类中的______。
+
+A、
+私有成员
+
+B、
+公有成员
+
+C、
+保护成员
+
+D、
+保护成员或私有成员
+
+正确答案： A 我的答案：A得分： 2.9分
+
+==================
+
+【单选题】
+有如下程序：
+
+#include <iostream>
+
+using namespace std;
+
+class Base {
+
+public:
+
+  void fun ( ) { cout << "Base::fun" << endl; }
+
+};
+
+class Derived : public Base {
+
+public:
+
+  void fun( ) {
+
+     _____________________;
+
+    cout << "Derived::fun" << endl;
+
+  }
+
+};
+
+void main( ) {
+
+  Derived d;
+
+  d.fun( );
+
+}
+
+已知其执行后的输出结果为：
+
+Base::fun
+
+Derived::fun
+
+则程序中下划线处应填入的语句是________。
+
+
+
+A、
+Base.fun( );
+
+B、
+Base::fun( );
+
+C、
+Base->fun( );
+
+D、
+fun( );
+
+正确答案： B 我的答案：B得分： 2.9分
+
+=======================
+
+【单选题】
+Suppose class A is derived from B and both A and B have no-arguments constructors. To invoke B's constructor from A, use ________.
+
+A、
+A( ): B( ) { ... }
+
+B、
+A( ): { B( ); ... }
+
+C、
+B( ): A( ) { ... }
+
+D、
+B( ): { A( ); ... }
+
+正确答案： A 我的答案：A得分： 2.9分
+答案解析：
+
+若派生类A的构造函数需调用基类B的构造函数，需写在A的构造函数的成员初始化列表
+
+====================
+
+【单选题】
+在派生类构造函数的初始化列表中不能包含______。
+
+A、
+基类的构造函数
+
+B、
+派生类的常数据成员
+
+C、
+派生类中内嵌对象的初始化
+
+D、
+基类对象的初始化
+
+正确答案： D 我的答案：D得分： 2.9分
+答案解析：
+
+不能保护基类对象的初始化
+
+==============
+
+
+【多选题】
+Which of the following statements are true?
+
+A、
+A derived class is a subset of a base class.
+
+B、
+A derived class is usually extended to contain more functions and more detailed information than its base class.
+
+C、
+"class A: public B" means A is a derived class of B.
+
+D、
+"class A: public B" means B is a derived class of A.
+
+正确答案： BC 我的答案：BC得分： 2.9分
+答案解析：
+
+派生类通常是基类的扩展(成员函数和成员数据更多)
+
+
+===============
+
+
+【多选题】
+Which of the following statements are true?
+
+A、
+A class template can be derived from another class template.
+
+B、
+A class template can be derived from a nontemplate class.
+
+C、
+Friends are used exactly the same for template and nontemplate classes.
+
+D、
+You can define static members in a template class. Each template specialization has its own copy of a static data field.
+
+正确答案： ABCD 我的答案：ABCD得分： 2.9分
+
+=================
+
+
+【多选题】
+Which of the following statements are true?
+
+A、
+To redefine a function, the function must be defined in the derived class using the same signature and return type as in its base class.
+
+B、
+Overloading a function is to provide more than one function with the same name but with different signatures to distinguish them.
+
+C、
+It is a compilation error if two functions differ only in return type.
+
+D、
+A private function cannot be redefined. If a function defined in a derived class is private in its base class, the two functions are completely unrelated.
+
+正确答案： ABC 我的答案：ABC得分： 2.9分
+
+==============
+
+【多选题】
+Which of the following statements are true?
+
+A、
+A function can be overloaded in the same class.
+
+B、
+A function can be redefined in the same class.
+
+C、
+If a function overloads another function, these two functions must have the same signature.
+
+D、
+If a function redefines another function, these two functions must have the same signature.
+
+正确答案： AD 我的答案：AD得分： 2.9分
+答案解析：
+
+成员函数只能在派生类中被重写；
+
+重载函数必须有不同的函数参数
+
+============
+
+
+【多选题】
+Suppose Circle and Rectangle classes are derived from GeometricObject and you declared
+void displayGeometricObject(GeometricObject shape) {
+  cout << shape.toString( ) << endl;
+}
+Which of the following function call is correct?
+
+A、
+displayGeometricObject(GeometricObject("black", true));
+
+B、
+displayGeometricObject(Circle(5));
+
+C、
+displayGeometricObject(Rectangle(2, 3));
+
+D、
+displayGeometricObject(string( ));
+
+正确答案： ABC 我的答案：ABC得分： 4.3分
+答案解析：
+
+类的兼容性规则：子类对象可以赋值给基类对象
+
+=============
+
+【多选题】
+What is wrong in the following code?
+class Fruit {
+public:
+  Fruit(int id) { }
+};
+class Apple: public Fruit {
+public:
+  Apple( ) { }
+};
+
+A、
+The program will compile if you add a no-arguments constructor for Fruit.
+
+B、
+The program has a compile error because Fruit does not have a no-arguments constructor.
+
+C、
+The program will compile if you delete the constructor in Fruit.
+
+D、
+The program will compile if you replace Apple( ) by Apple( ): Fruit(4).
+
+正确答案： ABCD 我的答案：ABCD得分： 2.9分
+答案解析：
+
+派生类的构造函数一定会调用基类的构造函数，无论是否被显式写明在派生类构造函数的成员初始化列表中。
+
+但是，基类的构造函数是带参数的，而子类的构造函数隐式调用基类的构造函数是没有参数的，因此程序编译时会出错
