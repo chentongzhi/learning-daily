@@ -1,0 +1,289 @@
+【单选题】
+要进行文件的输出，除了包含头文件 iostream 外，还要包含下列哪个头文件______。
+
+A、
+ifstream
+
+B、
+fstream
+
+C、
+ostream
+
+D、
+cstdio
+
+我的答案：B
+
+================
+
+
+【单选题】
+To read data from a file, you create an instance of _________.
+
+A、
+iostream
+
+B、
+ifstream
+
+C、
+ofstream
+
+D、
+stream
+
+我的答案：B
+
+-========================
+
+【单选题】
+What do the following statements do?
+ofstream stream;
+stream.open("scores.txt");
+
+A、
+Open a file for input.
+
+B、
+Open a file for output, the statement fails if the file already exists.
+
+C、
+Open a file for output, the contents of the file is destroyed if the file already exists.
+
+D、
+Open a file for input, the statement fails if the file does not exist.
+
+我的答案：C
+
+=================
+
+【单选题】
+What is the purpose of invoking the close function?
+
+A、
+If this function is not invoked, the data may not be saved properly in the file.
+
+B、
+If this function is not invoked, the file may be deleted.
+
+我的答案：A
+
+===============
+
+【单选题】
+当使用ifstream 定义一个文件流，并将一个打开的文件与之连接，文件默认的打开方式为______。
+
+A、
+ios::in
+
+B、
+ios::out
+
+C、
+ios::trunk
+
+D、
+ios::binary
+
+我的答案：A
+
+=============
+
+
+【单选题】
+To write a character string to a binary file, use the function _______.
+
+A、
+biStream.write(char *address, int size)
+
+B、
+biStream.write(char *address)
+
+C、
+biStream.write(string address, int size)
+
+D、
+biStream.write(string address)
+
+我的答案：A
+
+==============
+
+
+【单选题】
+Suppose you declare int value = 99, to write it to a binary file, use ________.
+
+A、
+binaryio.write(value);
+
+B、
+binaryio.write(reinterpret_cast<char*>(&value), sizeof(value));
+
+C、
+binaryio.write(reinterpret_cast<char*>(&value));
+
+D、
+binaryio.write(reinterpret_cast<char*>(value));
+
+E、
+binaryio.write(reinterpret_cast<char*>(value), sizeof(value));
+
+我的答案：B
+
+============
+
+
+【单选题】
+Suppose you want to read an int to the variable value from a binary file, use ______.
+
+A、
+value = biStream.read( );
+
+B、
+biStream.read(value);
+
+C、
+binaryio.read(reinterpret_cast<char*>(&value), sizeof(value));
+
+D、
+biStream.read(&value);
+
+我的答案：C
+
+===============
+
+【单选题】
+从一个文件中读一个字节存于char c; 正确的语句为______。
+
+A、
+file.read((char *)(&c), sizeof(c));
+
+B、
+file.read((const char *)(&c), sizeof(c));
+
+C、
+file.read((char *)(&c), c);
+
+D、
+file.read((char const *)(&c), c);
+
+我的答案：A
+
+=============
+
+【单选题】
+Is there a special character stored in a file to denote the end of file?
+
+
+B、
+No.
+
+=====================
+
+【多选题】
+You can open a file using the following modes:
+
+A、
+ios::in
+
+B、
+ios::out
+
+C、
+ios::app
+
+D、
+ios::ate
+
+E、
+ios::binary
+
+==============
+
+【多选题】
+You can combine modes using the ____ operator.
+
+A、
++
+
+B、
+|
+
+C、
+||
+
+D、
+&
+
+E、
+&&
+
+正确答案： AB 我的答案：AB得分： 50.0分
+
+================
+
+【多选题】
+The functions seekg and seekp may have two arguments. The first argument is the offset and the second argument may be __________ to indicate the base for the offset.
+
+A、
+ios::beg
+
+B、
+ios::end
+
+C、
+ios::cur
+
+D、
+ios::now
+
+正确答案： ABC 我的答案：ABC得分： 33.4分
+
+===============
+
+【多选题】
+Which of the following statements are true?
+
+A、
+Computers do not differentiate binary files and text files. All files are stored in binary format, and thus all files are essentially binary files.
+
+B、
+Text I/O is built upon binary I/O to provide a level of abstraction for character encoding and decoding.
+
+C、
+The C++ source programs are stored in text files and can be read by a text editor.
+
+D、
+The C++ executable files are stored in binary files and are read by the operating system.
+
+正确答案： ABCD 我的答案：ABCD得分： 11.1分
+
+=================
+
+
+【多选题】
+To open a file for binary input, use the mode ___.
+
+A、
+ios::in | ios::binary
+
+B、
+ios::out | ios::binary
+
+C、
+ios::app | ios::binary
+
+D、
+ios::ate | ios::binary
+
+E、
+ios::binary | ios::in
+
+正确答案： AE 我的答案：AE得分： 11.2分
+答案解析：
+
+用“位或”运算表示并
+
+=============
+
