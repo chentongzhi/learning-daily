@@ -1,0 +1,322 @@
+
+【单选题】
+What is the correct signature for the overloaded postfix ++ operator in class R?
+
+A、
+R operator++(R &r)
+
+B、
+R operator++( )
+
+C、
+R operator++(int dummy)
+
+D、
+R operator++(int &dummy)
+
+正确答案： C 我的答案：C
+
+==============
+
+【单选题】
+What is the correct signature for the overloaded unary operator + in class R?
+
+A、
+R R::operator+(const R &r)
+
+B、
+R R::operator+( )
+
+C、
+R R::operator<+>(const R &r)
+
+D、
+R R::operator(+)(const R &r)
+
+正确答案： B 我的答案：B得分： 2.2分
+
+==============
+
+【单选题】
+What is the correct signature for the overloaded subscript operator [ ] in class R?
+
+A、
+long R::operator[ ](const int index)
+
+B、
+long &operator[ ](const int index);
+
+C、
+&long operator[ ](const int index);
+
+D、
+long operator&[ ](const int index);
+
+正确答案： B 我的答案：B得分： 2.2分
+答案解析：
+
+1、[ ] 是二元运算符。
+
+2、long operator&[ ](const int index);  和 &long operator[ ](const int index);  应该排除掉，因为语法错误。
+
+首先，operator&[ ] 说明要重载 “&[ ]”，这不一个合法的 C++ 运算符。
+
+其次，&long 的写法是错误的，C++里没有这个写法。
+
+3、long R::operator[ ](const int index)，严格来说没有错误，但是题目问的是函数原型（signature），这句话后面没有分号
+
+================
+
+
+【单选题】
+在下列成对的表达式中，运算符“+”的意义不相同的一对是______。
+
+A、
+5.0+2.0和5.0+2
+
+B、
+5.0+2.0和5+2.0
+
+C、
+5.0+2.0和5+2
+
+D、
+5+2.0和5.0+2
+
+正确答案： C 我的答案：C得分： 2.2分
+答案解析：
+
+C选项分别为double型相加和int型相加
+
+==============
+
+【单选题】
+Suppose r is an object with class type R, in order to perform 4 + r, the R class header file must contain:
+
+A、
+int operator( );
+
+B、
+R(int n)
+
+C、
+friend R operator+(int r1, const R& r2)
+
+D、
+R operator+(const R& r1)
+
+E、
+friend R operator+(const R& r2, int r1)
+
+正确答案： C 我的答案：C得分： 2.2分
+答案解析：
+
+第一个操作数是int型数据，必须用友元函数
+
+===============
+
+
+【单选题】
+下面是重载为非成员函数的二元运算符函数原型，其中错误的是______。
+
+A、
+Fraction operator + (Fraction, Fraction);
+
+B、
+Fraction operator - ( );
+
+C、
+Fraction& operator = (Fraction&, Fraction);
+
+D、
+Fraction& operator += (Fraction&, Fraction);
+
+正确答案： B 我的答案：B得分： 2.2分
+
+=============
+
+
+【单选题】If A is derived from B, and B is derived from C, B has a virtual function, will this function be dynamically binded?
+A、
+Yes
+
+B、
+No
+
+正确答案： A 我的答案：A得分： 2.2分
+答案解析：
+
+在类B和类C之间实现动态绑定
+
+================
+
+
+【单选题】
+类 B 是类 A 的公有派生类，类 A 和类 B 中都定义了虚函数 fun( )，p 是一个 A 类型指针，则 p->fun( ); 将______。
+
+A、
+调用类 A 中的函数 fun( )
+
+B、
+调用类 B 中的函数 fun( )
+
+C、
+根据 p 所指的对象类型而确定调用类 A 或类 B 中的函数 fun( )
+
+D、
+既调用类 A 中的函数，也调用类 B 中的函数
+
+正确答案： C 我的答案：C得分： 2.2分
+
+==============
+
+【单选题】
+下列关于虚函数的说明中，正确的是______。
+
+A、
+从虚基类继承的函数都是虚函数
+
+B、
+虚函数不能是静态成员函数，但可以是友元函数
+
+C、
+只能通过指针或引用调用函数
+
+D、
+抽象类中的成员函数都是虚函数
+
+正确答案： C 我的答案：C得分： 2.2分
+
+===============
+
+【单选题】
+下列描述中，______是抽象类的特性。
+
+A、
+可以定义虚函数
+
+B、
+可以进行构造函数重载
+
+C、
+可以定义友元函数
+
+D、
+不能定义其对象
+
+正确答案： D 我的答案：D得分： 2.2分
+答案解析：
+
+抽象类不能定义对象
+
+===============
+
+【多选题】
+Analyze the following code:
+#include <iostream>
+using namespace std;
+class Date {
+  friend void p( );
+private:
+  int year, month, day;
+};
+void p( ) {
+  Date date;
+  date.year = 2000;
+  cout << date.year;
+}
+int main( ) {
+  p( );
+  return 0;
+}
+
+A、
+The program has a compile error because year is a private data field in Date.
+
+B、
+The program compiles and runs fine and display 2000.
+
+C、
+The program will have a compile error if the line friend void p( ) is deleted.
+
+D、
+Since year is private, you cannot access it using date.year in function p( ).
+
+正确答案： BC 我的答案：BC得分： 2.2分
+
+================
+
+
+【多选题】
+Suppose r is an object with class type R, in order to perform r + 4, the R class header file must contain:
+
+A、
+int operator( );
+
+B、
+R(int n)
+
+C、
+friend R operator+(int r1, const R& r2)
+
+D、
+R operator+(int r1)
+
+E、
+friend R operator+(const R& r2, int r1)
+
+正确答案： DE 我的答案：DE得分： 2.2分
+答案解析：
+
+第一个操作数是对象，所以运算符重载可以用友元，也可以用成员
+
+===============
+
+【多选题】
+Which of the following statements are true?
+
+A、
+If a function is defined virtual in a base class, it is automatically virtual 
+in all its derived classes. It is not necessary to add the keyword virtual in the function declaration in the derived class.
+
+B、
+If a function will not be redefined, it is more efficient without declaring it 
+virtual, because it takes more time and system resource to bind virtual functions dynamically at runtime.
+
+C、
+A virtual function may be implemented in several derived classes. C++ dynamically 
+binds the implementation of the function at runtime, decided by the actual class of the object referenced by the variable.
+
+D、
+The compiler finds a matching function according to parameter type, number of
+parameters, and order of the parameters at compile time.
+
+正确答案： ABCD 我的答案：ABCD得分： 2.2分
+答案解析：
+
+D选项是针对函数重载，它们的匹配是由编译器来来完成的，属于静态绑定
+
+===========================
+
+【多选题】
+Which of the following statements are true?
+
+A、
+An abstract class is declared using a keyword abstract.
+
+B、
+A class is abstract if it contains a pure virtual function.
+
+C、
+An abstract class is like a regular class except that you cannot create objects from it.
+
+D、
+You can declare a class abstract even though it does not contain abstract functions.
+
+正确答案： BC 我的答案：BC得分： 2.2分
+答案解析：
+
+抽象类的定义及特点
+
+==============
+
