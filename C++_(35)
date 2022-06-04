@@ -1,0 +1,39 @@
+C++语言程序能够在不同操作系统下编译、运行，说明 C++ 具有良好的______。
+
+A、
+适应性
+
+B、
+移植性
+
+C、
+兼容性
+
+D、
+操作性
+
+正确答案： B 我的答案：B得分： 4.5分
+答案解析：
+
+对于计算机硬件，一般使用“兼容”一词，对于程序或软件使用“移植”
+===========
+【单选题】
+The rules you must follow when using a programming language are called its _____.
+
+A、
+guidelines
+
+B、
+procedures
+
+C、
+regulations
+
+D、
+syntax
+
+正确答案： D 我的答案：D得分： 4.5分
+答案解析：
+
+编程语言必须遵循的规则是语法（syntax）
+=============
