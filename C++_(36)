@@ -1,0 +1,317 @@
+【单选题】
+C++语言程序能够在不同操作系统下编译、运行，说明 C++ 具有良好的______。
+
+A、
+适应性
+
+B、
+移植性
+
+C、
+兼容性
+
+D、
+操作性
+
+正确答案： B 我的答案：B得分： 50.0分
+答案解析：
+
+对于计算机硬件，一般使用“兼容”一词，对于程序或软件使用“移植”
+
+=============
+
+
+【单选题】
+以下每个选项都代表一个常量，其中不能正确表示实型常量的是______。
+
+A、
+2.607E-1
+
+B、
+0.807e2.0
+
+C、
+-77.77
+
+D、
+45.e-2
+
+正确答案： B 我的答案：B得分： 11.1分
+答案解析：
+
+用科学计数法表示常量时，e 的后面只能是整型
+
+===================
+
+【单选题】
+若 t 是 double 类型，表达式 t = 1, t + 5, t ++ 的值是______。
+
+A、
+1
+
+B、
+6.0
+
+C、
+2.0
+
+D、
+1.0
+
+正确答案： D 我的答案：D得分： 14.2分
+答案解析：
+
+逗号表达式，最后一个逗号后面的值为整个表达式的值
+
+=================
+
+
+【单选题】
+The computer will perform short-circuit evaluation when processing which of the following if clauses?
+
+A、
+if (3 * 2 < 4 && 5 > 3)
+
+B、
+if (6 < 9 || 5 > 3)
+
+C、
+if (12 > 4 * 4 && 6 > 2)
+
+D、
+all of the above
+
+正确答案： D 我的答案：D得分： 0.8分
+
+===============
+
+【单选题】
+要求以下程序的功能是计算：s = 1 + 1/2 + 1/3 + … + 1/10
+
+#include <iostream>
+
+using namespace std;
+
+int main( ) {
+
+  float s = 1.0;
+  int n;
+  for (n = 10; n > 1; n--)
+    s = s + 1/n;
+  cout << s << endl;
+
+  return 0;
+}
+运行后输出结果错误，导致错误的程序行是______。
+
+A、
+float s = 1.0;
+
+B、
+for(n = 10; n > 1; n -- )
+
+C、
+s = s + 1/n;
+
+D、
+cout << s << endl;
+
+正确答案： C 我的答案：C得分： 0.8分
+答案解析：
+
+1/n为0，因为都是整型
+
+=====================
+
+函数头不是函数原型，不用在行尾加分号
+
+===============
+
+【单选题】
+
+If the function definitions section is located below the main function in a program
+, the program will have one function prototype for each program-defined function automatically.
+
+A、
+True
+
+B、
+False
+
+正确答案： B 我的答案：B得分： 1.4分
+答案解析：
+
+如果函数定义在使用的后面，必须在使用前写明函数原型
+
+==============
+
+【单选题】
+下列引用方法中，错误的是___________。
+
+A、
+int i; int &r = i;
+
+B、
+int i; int &r; r = i;
+
+C、
+float f; float &r = f;
+
+D、
+char c; char &r = c;
+
+正确答案： B 我的答案：B得分： 1.4分
+答案解析：
+
+B 选项定义引用时没有初始化
+
+===============
+
+【单选题】
+Which of the following is false?
+
+A、
+When you pass a variable by reference, the receiving function can change the variable's contents.
+
+B、
+When you pass a variable by value, the receiving function creates a local variable that it uses to store the value.
+
+C、
+Unless specified otherwise, all variables in C++ are passed by value.
+
+D、
+To pass a variable by reference in C++, you place an ampersand (&) before the variable's name in the statement that calls the function.
+
+正确答案： D 我的答案：D得分： 1.4分
+答案解析：
+
+引用传递必须使用 & 号定义形参。但是实参不用加该符号
+
+===================
+
+【单选题】
+Which of the following is false?
+
+A、
+The number of actual arguments should agree with the number of formal parameters.
+
+B、
+The data type of each actual argument should match the data type of its corresponding formal parameter.
+
+C、
+The name of each actual argument should be identical to the name of its corresponding formal parameter.
+
+D、
+When you pass information to a function by value, the function stores the value of each item it receives in a separate memory location.
+
+正确答案： C 我的答案：C得分： 1.4分
+答案解析：
+
+函数调用时,实参和形参的名称可以不同
+
+=============
+
+【单选题】
+Which of the following is required in a program that uses the setprecision stream manipulator?
+
+A、
+#include <iostream>
+
+B、
+#include <setprecision>
+
+C、
+#include <iomanip>
+
+D、
+#include <manipulators>
+
+正确答案： C 我的答案：C得分： 2.3分
+答案解析：
+
+设置输出格式，必须包含iomanip头文件
+
+==============
+
+【单选题】
+Analyze the following code.
+#include <iostream>
+using namespace std;
+int main( ) {
+  int x[3];
+  cout << "x[0] is " << x[0];
+  return 0;
+}
+
+A、
+The program has a compile error because the size of the array wasn't specified when declaring the array.
+
+B、
+The program has a runtime error because the array elements are not initialized.
+
+C、
+The program runs fine and displays x[0] is 0.
+
+D、
+The program has a runtime error because the array element x[0] is not defined.
+
+E、
+x[0] has an unpredictable value.
+
+正确答案： E 我的答案：E得分： 1.3分
+答案解析：
+
+不是所有的编译器都会对数组元素进行初始化
+
+==============
+
+【单选题】
+设有数组定义：char array[ ] = "China"; 则数组 array 所占的空间为(      )。
+
+A、
+四个字节
+
+B、
+五个字节
+
+C、
+六个字节
+
+D、
+七个字节
+
+正确答案： C 我的答案：C得分： 1.3分
+答案解析：
+
+字符串后面带一个 '\0'
+
+================
+
+【单选题】
+What is the output of the following code?
+string s("abc");
+s.assign("welcome", 0, 3);
+cout << s << endl;
+
+A、
+abcwelcome
+
+B、
+abc
+
+C、
+welcome
+
+D、
+abcwww
+
+E、
+wel
+
+正确答案： E 我的答案：E得分： 1.3分
+答案解析：
+
+字符串赋值，选字符串的前三个字符
+
+============
+
