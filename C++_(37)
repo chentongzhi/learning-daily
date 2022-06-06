@@ -1,0 +1,170 @@
+【单选题】
+以下程序段中，不能正确赋字符串(编译时系统会提示错误)的是(     )。
+
+A、
+char s[10] = "abcdefg";
+
+B、
+char t[ ] = "abcdefg", *s = t;
+
+C、
+char s[10]; s = "abcdefg";
+
+D、
+char s[10]; strcpy(s,"abcdefg");
+
+正确答案： C 我的答案：B得分： 0.0分
+答案解析：
+
+s 是数组名字，是地址常量，不能被改动
+
+================
+
+【单选题】
+下列语句错误的是(      )。
+
+A、
+const int buffer = 256;
+
+B、
+const int temp;
+
+C、
+const double *point;
+
+D、
+const double *p = new double (3.1);
+
+正确答案： B 我的答案：B得分： 1.1分
+答案解析：
+
+const类型的符号常量必须被初始化
+
+================
+
+【单选题】
+下列语句中，错误的是(      )。
+
+A、
+const int buffer=256;
+
+B、
+const double *point;
+
+C、
+int const buffer=256;
+
+D、
+double *const point;
+
+正确答案： D 我的答案：C得分： 0.0分
+答案解析：
+
+const里指针名近,表示这个指针不能再指向其他对象,因此它必须被初始化
+
+================
+
+
+【单选题】
+类模板的实例化(     )。
+
+A、
+在编译时进行
+
+B、
+属于动态联编
+
+C、
+在运行时进行
+
+D、
+在连接时进行
+
+正确答案： A 我的答案：A得分： 4.0分
+
+==================
+
+
+【单选题】
+What is wrong in the following code?
+
+  vector<int> v;
+
+  v[0] = 2.5;
+
+
+
+A、
+The program has a runtime error because you cannot assign a double value to v[0].
+
+B、
+The program has a runtime error because there are no elements in the vector.
+
+C、
+The program has a compile error because there are no elements in the vector.
+
+D、
+The program has a compile error because you cannot assign a double value to v[0].
+
+正确答案： B 我的答案：B得分： 4.0分
+答案解析：
+
+单独的 vector<int> v;  是定义 v，但是 v 里可以容纳的元素个数是 0.
+
+如果需要分配空间，应使用 vector<int> v(5);  // 可存放 5 个元素
+
+==================
+
+【单选题】
+What is the correct signature for the overloaded postfix ++ operator in class R?
+
+A、
+R operator++(R &r)
+
+B、
+R operator++( )
+
+C、
+R operator++(int dummy)
+
+D、
+R operator++(int &dummy)
+
+正确答案： C 我的答案：C得分： 2.2分
+
+================
+
+【单选题】
+What is the correct signature for the overloaded subscript operator [ ] in class R?
+
+A、
+long R::operator[ ](const int index)
+
+B、
+long &operator[ ](const int index);
+
+C、
+&long operator[ ](const int index);
+
+D、
+long operator&[ ](const int index);
+
+正确答案： B 我的答案：B得分： 2.2分
+
+===================
+
+
+【单选题】If A is derived from B, and B is derived from C, B has a virtual function, will this function be dynamically binded?
+A、
+Yes
+
+B、
+No
+
+正确答案： A 我的答案：A得分： 2.2分
+答案解析：
+
+在类B和类C之间实现动态绑定
+
+==================
+
