@@ -1,0 +1,93 @@
+//用递归法将一个整数n转换成字符串。例如，输入483，应输出字符串“384”，
+//n的位数不确定，可以是任意位数的整数 
+//（考虑负数） 
+#include<iostream>
+#include<cmath>
+using namespace std;
+int main()
+{
+	int n;
+	cin>>n;
+	int tmp1=n,count=0;
+	if(tmp1>=0)
+	{
+		while(tmp1>9)
+		{
+			tmp1/=10;
+			count++;
+		}
+	}
+	else
+	{
+		cout<<"-"<<' ';
+		n=n*(-1);
+		tmp1=n;
+		while(tmp1>9)
+		{
+			tmp1/=10;
+			count++;
+		}
+	}
+	while(n>9)
+	{
+		int tmp2=pow(10,count);
+		cout<<n/tmp2<<' ';
+		n%=tmp2;
+		count--;
+	}
+	cout<<n<<endl;
+	return 0;
+ }
+ 
+ ===========================
+ 
+ //给出年、月、日，计算该日是该年的第几年
+#include<iostream>
+using namespace std;
+int main()
+{
+	int year,month,day;
+	cin>>year>>month>>day;
+	//判断闰年
+	int tmp,sum=0;
+	if(year%4==0&&year%100!=0||year%400==0)
+		tmp=1;
+	int arr[]={0,31,28,31,30,31,30,31,31,30,31,30,31};
+	for(int i=1;i<month;i++)
+	{
+		sum+=arr[i];
+	}
+	sum+=day;
+	if(tmp&&month>=3)
+		sum+=1;
+	cout<<"the day is "<<sum<<endl;
+	return 0;
+ } 
+ 
+ ======================
+ 
+ //善于利用指针
+//输入3个整数，按由小到大的顺序输出
+#include<iostream>
+using namespace std;
+void swap(int *p1,int *p2)
+{
+	int tmp;
+	tmp=*p1;
+	*p1=*p2;
+	*p2=tmp;
+}
+int main()
+{
+	int a,b,c;
+	cin>>a>>b>>c;
+	int *p1,*p2,*p3;
+	p1=&a;
+	p2=&b;
+	p3=&c;
+	if(a>b) swap(p1,p2);
+	if(a>c) swap(p1,p3);
+	if(b>c) swap(p2,p3);
+	cout<<a<<' '<<b<<' '<<c<<endl;
+	return 0;
+ } 
