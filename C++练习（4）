@@ -1,0 +1,100 @@
+//写一函数，求一个字符串的长度。
+//在main函数中输入字符串，并输出其长度
+ 
+#include<iostream>
+using namespace std;
+int str_len(char str[])
+{
+	int count=0;
+	for(int i=0;i<20;i++)
+	{
+		if(str[i]!='\0')
+		{
+			count++;
+		}
+		else
+			break;
+	}
+	return count;
+}
+int main()
+{
+	char str[20];
+	gets(str);
+	int len=str_len(str);
+	cout<<len<<endl; 
+	return 0;
+ } 
+ 
+ ==================
+ 
+ //有一字符串，包含n个字符。写一函数，将此
+//字符串中从第m个字符开始的全部字符复制成为另一个字符串
+#include<iostream>
+using namespace std;
+void str_str(char str2[],char str1[],int m)
+{
+	int j=0;
+	for(int i=m;i<20;i++)
+	{
+		if(str1[i]!='\0')
+		{
+			str2[j]=str1[i];
+			j++;
+		}
+		else
+		{
+			str2[i]='\0';
+			break;
+		}
+	}
+}
+int main()
+{
+	char str1[20];
+	char str2[30];
+	int m;
+	gets(str1);
+	cin>>m;
+	str_str(str2,str1,m);
+	cout<<str2<<endl;
+	return 0;
+ } 
+ 
+ =================
+ 
+ //输入一行文字，找出其中大写字母、小写字母
+//、空格、数字以及其他字符各有多少
+#include<iostream>
+using namespace std;
+void count_str(char *p)
+{
+	int upper=0,lower=0,digit=0,space=0,other=0;
+	while(*p!='\n')
+	{
+		if(('A'<=*p)&&(*p<='Z'))
+			upper++;
+		else if(('a'<=*p)&&(*p<='z'))
+			lower++;
+		else if(*p==' ')
+			space++;
+		else if((*p>='0')&&(*p<='9'))
+			digit++;
+		else
+			other++;
+		p++;
+	}
+	cout<<upper<<endl;
+	cout<<lower<<endl;
+	cout<<digit<<endl;
+	cout<<space<<endl;
+	cout<<other<<endl;
+}
+int main()
+{
+	char str[30];
+	int i=0;
+	while((str[i]=getchar())!='\n')	i++;
+	count_str(str);
+	return 0;
+ } 
