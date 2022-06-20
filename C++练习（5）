@@ -1,0 +1,115 @@
+//写一个函数，将一个3X3的整形矩阵转置
+#include<iostream>
+using namespace std;
+void devert(int arr[][3],int row,int col)
+{
+	int j=0;
+	for(int i=0;i<row;i++)
+	{
+		for(j=i;j<col;j++)
+		{
+			int tmp=arr[i][j];
+			arr[i][j]=arr[j][i];
+			arr[j][i]=tmp;
+		}
+	}
+}
+int main()
+{
+	int arr[3][3]={1,2,3,4,5,6,7,8,9};
+	devert(arr,3,3);
+	for(int i=0;i<3;i++)
+	{
+		for(int j=0;j<3;j++)
+		{
+			cout<<arr[i][j]<<' ';
+		}
+		cout<<endl;
+	}
+	cout<<endl;
+  return 0;//将一个5X5的矩阵中最大的元素放在中心，4个角分别放4个
+//最小的元素（顺序为从左到右，从上到下依次从小到大存放）
+//写一个函数实现它，用main函数调用它
+#include<iostream>
+using namespace std;
+void move(int arr[][5],int row,int col)
+{
+	int max=arr[0][0];
+	int min1=arr[0][0];
+	int min2=arr[0][0];
+	int min3=arr[0][0];
+	int min4=arr[0][0];
+	int r1=0,r2=0,r3=0,r4=0,r5=0;
+	int c1=0,c2=0,c3=0,c4=0,c5=0;
+	for(int i=0;i<row;i++)
+	{
+		for(int j=0;j<col;j++)
+		{
+			if(max<arr[i][j])
+				{
+					max=arr[i][j];
+					r1=i;
+					c1=j;
+				}
+		}
+	}
+	int tmp=arr[2][2];
+	arr[2][2]=max;
+	arr[r1][c1]=tmp;
+	for(int i=0;i<row;i++)
+	{
+		for(int j=0;j<col;j++)
+		{
+			if(min1<arr[i][j])
+				{
+					min1=arr[i][j];
+					r2=i;
+					c2=j;
+				}
+		}
+	}
+	tmp=arr[0][0];
+	arr[0][0]=min1;
+	arr[r2][c2]=tmp;
+	for(int i=0;i<row;i++)
+	{
+		for(int j=0;j<col;j++)
+		{
+			if(i==0&&j==0)	j++;
+			if(min1>arr[i][j])
+				{
+					min1=arr[i][j];
+					r2=i;
+					c2=j;
+				}
+		}
+	}
+	tmp=arr[0][0];
+	arr[0][0]=min1;
+	arr[r2][c2]=tmp;
+}
+//以此类推 
+int main()
+{
+	int arr[5][5]={{1,1,1,1,1},
+					{1,1,1,1,1},
+					{1,1,1,1,1},
+					{1,1,1,1,1},
+					{-1,-2,-3,-4,5}};
+	move(arr,5,5);
+	for(int i=0;i<5;i++)
+	{
+		for(int j=0;j<5;j++)
+		{
+			cout<<arr[i][j]<<'\t';
+		}
+		cout<<endl;
+	}
+	cout<<endl;
+	return 0;
+ } 
+ } 
+ 
+ ================
+ 
+ 
