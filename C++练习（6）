@@ -1,0 +1,111 @@
+//在主函数中输入10个等长的字符串。用另一个函数对他们
+//进行排序，然后在主函数中输出这10个排好序的字符串
+#include<iostream>
+#include<cstring>
+using namespace std;
+void sort(char s[10][6])
+{
+	int i,j;
+	char *p,temp[10];
+	p=temp;
+	for(i=0;i<9;i++)
+		for(j=0;j<9-i;j++)
+		if(strcmp(s[j],s[j+1])>0)
+		{
+			strcpy(p,s[j]);
+			strcpy(s[j],s[j+1]);
+			strcpy(s[j+1],p);
+		}
+}
+int main()
+{
+	int i;
+	char str[10][6];
+	for(i=0;i<10;i++)
+	{
+		cin>>str[i];
+	}
+	sort(str);
+	for(i=0;i<10;i++)
+	{
+		cout<<str[i]<<endl;
+	}
+	return 0;
+ } 
+ =======================
+ 
+ //在主函数中输入10个等长的字符串。用另一个函数对他们
+//进行排序，然后在主函数中输出这10个排好序的字符串
+//用指向一维数组的指针做函数参数
+ 
+#include<iostream>
+#include<cstring>
+using namespace std;
+void sort(char (*s)[6])
+{
+	int i,j;
+	char temp[6],*t=temp;
+	for(i=0;i<9;i++)
+		for(j=0;j<9-i;j++)
+		if(strcmp(s[j],s[j+1])>0)
+		{
+			strcpy(t,s[j]);
+			strcpy(s[j],s[j+1]);
+			strcpy(s[j+1],t);
+		}
+}
+int main()
+{
+	int i;
+	char str[10][6];
+	for(i=0;i<10;i++)
+	{
+		cin>>str[i];
+	}
+	sort(str);
+	for(i=0;i<10;i++)
+	{
+		cout<<str[i]<<endl;
+	}
+	return 0;
+ } 
+ 
+ ======================
+ 
+ //在主函数中输入10个等长的字符串。用另一个函数对他们
+//进行排序，然后在主函数中输出这10个排好序的字符串
+//用指针数组处理题目，字符串不等长 
+ 
+#include<iostream>
+#include<cstring>
+using namespace std;
+void sort(char *s[])
+{
+	int i,j;
+	char *temp;
+	for(i=0;i<9;i++)
+		for(j=0;j<9-i;j++)
+		if(strcmp(s[j],s[j+1])>0)
+		{
+			temp=*(s+j);
+			*(s+j)=*(s+j+1);
+			*(s+j+1)=temp; 
+		}
+}
+int main()
+{
+	int i;
+	char *p[10],str[10][20];
+	for(i=0;i<10;i++)
+		p[i]=str[i];
+	for(i=0;i<10;i++)
+	{
+		cin>>p[i];
+	}
+	sort(p);
+	for(i=0;i<10;i++)
+	{
+		cout<<p[i]<<endl;
+	}
+	return 0;
+ } 
