@@ -1,0 +1,27 @@
+// 将 n个数按输入时顺序的逆序排列，用函数表示 
+#include<iostream>
+using namespace std;
+void sort(int *p)
+{
+	int m=10;
+	int tmp,*p1,*p2;
+	for(int i=0;i<m/2;i++)
+	{
+		p1=p+i;
+		p2=p+(m-1-i);
+		tmp=*p1;
+		*p1=*p2;
+		*p2=tmp;
+	}
+}
+int main()
+{
+	int arr[10];
+	for(int i=0;i<10;i++)
+		cin>>arr[i];
+	sort(arr);
+	for(int j=0;j<10;j++)
+		cout<<arr[j]<<' ';
+	cout<<endl; 
+	return 0;
+ } 
